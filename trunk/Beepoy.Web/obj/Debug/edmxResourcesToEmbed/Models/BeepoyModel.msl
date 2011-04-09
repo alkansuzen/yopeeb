@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MvcBeepoyModelStoreContainer" CdmEntityContainer="MvcBeepoyEntities">
+    <EntitySetMapping Name="Beeps">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.Beep">
+        <MappingFragment StoreEntitySet="Beeps">
+          <ScalarProperty Name="BeepId" ColumnName="BeepId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="BeepIdFather" ColumnName="BeepIdFather" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeepsTags">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.BeepsTag">
+        <MappingFragment StoreEntitySet="BeepsTags">
+          <ScalarProperty Name="BeepId" ColumnName="BeepId" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.Event">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventsTags">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.EventsTag">
+        <MappingFragment StoreEntitySet="EventsTags">
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.Place">
+        <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tags">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.Tag">
+        <MappingFragment StoreEntitySet="Tags">
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrackUserEvents">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.TrackUserEvent">
+        <MappingFragment StoreEntitySet="TrackUserEvents">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrackUserPlaces">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.TrackUserPlace">
+        <MappingFragment StoreEntitySet="TrackUserPlaces">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrackUserUsers">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.TrackUserUser">
+        <MappingFragment StoreEntitySet="TrackUserUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserIdTracked" ColumnName="UserIdTracked" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
