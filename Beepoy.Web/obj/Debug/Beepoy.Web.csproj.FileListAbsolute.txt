@@ -1,0 +1,14 @@
+C:\Projetos\Beepoy\Beepoy.Solution\Beepoy.Web\bin\Beepoy.Web.dll
+C:\Projetos\Beepoy\Beepoy.Solution\Beepoy.Web\bin\Beepoy.Web.pdb
+C:\Projetos\Beepoy\Beepoy.Solution\Beepoy.Web\bin\EntityFramework.dll
+C:\Projetos\Beepoy\Beepoy.Solution\Beepoy.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Projetos\Beepoy\Beepoy.Solution\Beepoy.Web\obj\Debug\Beepoy.Web.dll
+C:\Projetos\Beepoy\Beepoy.Solution\Beepoy.Web\obj\Debug\Beepoy.Web.pdb
+C:\Projetos\Beepoy\Beepoy.Solution\Beepoy.Web\bin\EntityFramework.xml
+C:\Beepoy.Solution\Beepoy.Web\bin\Beepoy.Web.dll
+C:\Beepoy.Solution\Beepoy.Web\bin\Beepoy.Web.pdb
+C:\Beepoy.Solution\Beepoy.Web\bin\EntityFramework.dll
+C:\Beepoy.Solution\Beepoy.Web\bin\EntityFramework.xml
+C:\Beepoy.Solution\Beepoy.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Beepoy.Solution\Beepoy.Web\obj\Debug\Beepoy.Web.dll
+C:\Beepoy.Solution\Beepoy.Web\obj\Debug\Beepoy.Web.pdb

@@ -1,0 +1,1019 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MvcBeepoyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MvcBeepoyModelStoreContainer">
+          <EntitySet Name="Beeps" EntityType="MvcBeepoyModel.Store.Beeps" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BeepsTags" EntityType="MvcBeepoyModel.Store.BeepsTags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Events" EntityType="MvcBeepoyModel.Store.Events" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventsTags" EntityType="MvcBeepoyModel.Store.EventsTags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Places" EntityType="MvcBeepoyModel.Store.Places" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tags" EntityType="MvcBeepoyModel.Store.Tags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TrackUserEvents" EntityType="MvcBeepoyModel.Store.TrackUserEvents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TrackUserPlaces" EntityType="MvcBeepoyModel.Store.TrackUserPlaces" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TrackUserUsers" EntityType="MvcBeepoyModel.Store.TrackUserUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="MvcBeepoyModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="Beeps_BeepsTags_FK1" Association="MvcBeepoyModel.Store.Beeps_BeepsTags_FK1">
+            <End Role="Beeps" EntitySet="Beeps" />
+            <End Role="BeepsTags" EntitySet="BeepsTags" />
+          </AssociationSet>
+          <AssociationSet Name="Events_Beeps_FK1" Association="MvcBeepoyModel.Store.Events_Beeps_FK1">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Beeps" EntitySet="Beeps" />
+          </AssociationSet>
+          <AssociationSet Name="Events_EventsTags_FK1" Association="MvcBeepoyModel.Store.Events_EventsTags_FK1">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="EventsTags" EntitySet="EventsTags" />
+          </AssociationSet>
+          <AssociationSet Name="Events_TrackUsersEvents_FK1" Association="MvcBeepoyModel.Store.Events_TrackUsersEvents_FK1">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="TrackUserEvents" EntitySet="TrackUserEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Beeps_Beeps" Association="MvcBeepoyModel.Store.FK_Beeps_Beeps">
+            <End Role="Beeps" EntitySet="Beeps" />
+            <End Role="Beeps1" EntitySet="Beeps" />
+          </AssociationSet>
+          <AssociationSet Name="Places_Beeps_FK1" Association="MvcBeepoyModel.Store.Places_Beeps_FK1">
+            <End Role="Places" EntitySet="Places" />
+            <End Role="Beeps" EntitySet="Beeps" />
+          </AssociationSet>
+          <AssociationSet Name="Places_Events_FK1" Association="MvcBeepoyModel.Store.Places_Events_FK1">
+            <End Role="Places" EntitySet="Places" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="Places_TrackUsersPlaces_FK1" Association="MvcBeepoyModel.Store.Places_TrackUsersPlaces_FK1">
+            <End Role="Places" EntitySet="Places" />
+            <End Role="TrackUserPlaces" EntitySet="TrackUserPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="Tags_BeepsTags_FK1" Association="MvcBeepoyModel.Store.Tags_BeepsTags_FK1">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="BeepsTags" EntitySet="BeepsTags" />
+          </AssociationSet>
+          <AssociationSet Name="Tags_EventsTags_FK1" Association="MvcBeepoyModel.Store.Tags_EventsTags_FK1">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="EventsTags" EntitySet="EventsTags" />
+          </AssociationSet>
+          <AssociationSet Name="TrackUserUsers_Users_FK" Association="MvcBeepoyModel.Store.TrackUserUsers_Users_FK">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TrackUserUsers" EntitySet="TrackUserUsers" />
+          </AssociationSet>
+          <AssociationSet Name="Users_Beeps_FK1" Association="MvcBeepoyModel.Store.Users_Beeps_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Beeps" EntitySet="Beeps" />
+          </AssociationSet>
+          <AssociationSet Name="Users_Events_FK1" Association="MvcBeepoyModel.Store.Users_Events_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="Users_Places_FK1" Association="MvcBeepoyModel.Store.Users_Places_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Places" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="Users_TrackUsersEvents_FK1" Association="MvcBeepoyModel.Store.Users_TrackUsersEvents_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TrackUserEvents" EntitySet="TrackUserEvents" />
+          </AssociationSet>
+          <AssociationSet Name="Users_TrackUsersPlaces_FK1" Association="MvcBeepoyModel.Store.Users_TrackUsersPlaces_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TrackUserPlaces" EntitySet="TrackUserPlaces" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Beeps">
+          <Key>
+            <PropertyRef Name="BeepId" />
+          </Key>
+          <Property Name="BeepId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="varchar" Nullable="false" MaxLength="144" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="EventId" Type="bigint" Nullable="false" />
+          <Property Name="PlaceId" Type="bigint" Nullable="false" />
+          <Property Name="BeepIdFather" Type="bigint" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BeepsTags">
+          <Key>
+            <PropertyRef Name="BeepId" />
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="BeepId" Type="bigint" Nullable="false" />
+          <Property Name="TagId" Type="bigint" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceId" Type="bigint" Nullable="false" />
+          <Property Name="Text" Type="varchar" Nullable="false" MaxLength="144" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventsTags">
+          <Key>
+            <PropertyRef Name="TagId" />
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="TagId" Type="bigint" Nullable="false" />
+          <Property Name="EventId" Type="bigint" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Places">
+          <Key>
+            <PropertyRef Name="PlaceId" />
+          </Key>
+          <Property Name="PlaceId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="55" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tags">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrackUserEvents">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="EventId" Type="bigint" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrackUserPlaces">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PlaceId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="PlaceId" Type="bigint" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrackUserUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserIdTracked" />
+          </Key>
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="UserIdTracked" Type="bigint" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="55" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="Beeps_BeepsTags_FK1">
+          <End Role="Beeps" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="1" />
+          <End Role="BeepsTags" Type="MvcBeepoyModel.Store.BeepsTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beeps">
+              <PropertyRef Name="BeepId" />
+            </Principal>
+            <Dependent Role="BeepsTags">
+              <PropertyRef Name="BeepId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Events_Beeps_FK1">
+          <End Role="Events" Type="MvcBeepoyModel.Store.Events" Multiplicity="1" />
+          <End Role="Beeps" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="Beeps">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Events_EventsTags_FK1">
+          <End Role="Events" Type="MvcBeepoyModel.Store.Events" Multiplicity="1" />
+          <End Role="EventsTags" Type="MvcBeepoyModel.Store.EventsTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="EventsTags">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Events_TrackUsersEvents_FK1">
+          <End Role="Events" Type="MvcBeepoyModel.Store.Events" Multiplicity="1" />
+          <End Role="TrackUserEvents" Type="MvcBeepoyModel.Store.TrackUserEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="TrackUserEvents">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Beeps_Beeps">
+          <End Role="Beeps" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="1" />
+          <End Role="Beeps1" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beeps">
+              <PropertyRef Name="BeepId" />
+            </Principal>
+            <Dependent Role="Beeps1">
+              <PropertyRef Name="BeepIdFather" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Places_Beeps_FK1">
+          <End Role="Places" Type="MvcBeepoyModel.Store.Places" Multiplicity="1" />
+          <End Role="Beeps" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Places">
+              <PropertyRef Name="PlaceId" />
+            </Principal>
+            <Dependent Role="Beeps">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Places_Events_FK1">
+          <End Role="Places" Type="MvcBeepoyModel.Store.Places" Multiplicity="1" />
+          <End Role="Events" Type="MvcBeepoyModel.Store.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Places">
+              <PropertyRef Name="PlaceId" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Places_TrackUsersPlaces_FK1">
+          <End Role="Places" Type="MvcBeepoyModel.Store.Places" Multiplicity="1" />
+          <End Role="TrackUserPlaces" Type="MvcBeepoyModel.Store.TrackUserPlaces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Places">
+              <PropertyRef Name="PlaceId" />
+            </Principal>
+            <Dependent Role="TrackUserPlaces">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tags_BeepsTags_FK1">
+          <End Role="Tags" Type="MvcBeepoyModel.Store.Tags" Multiplicity="1" />
+          <End Role="BeepsTags" Type="MvcBeepoyModel.Store.BeepsTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="BeepsTags">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tags_EventsTags_FK1">
+          <End Role="Tags" Type="MvcBeepoyModel.Store.Tags" Multiplicity="1" />
+          <End Role="EventsTags" Type="MvcBeepoyModel.Store.EventsTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="EventsTags">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TrackUserUsers_Users_FK">
+          <End Role="Users" Type="MvcBeepoyModel.Store.Users" Multiplicity="1" />
+          <End Role="TrackUserUsers" Type="MvcBeepoyModel.Store.TrackUserUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TrackUserUsers">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_Beeps_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.Store.Users" Multiplicity="1" />
+          <End Role="Beeps" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Beeps">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_Events_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.Store.Users" Multiplicity="1" />
+          <End Role="Events" Type="MvcBeepoyModel.Store.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_Places_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.Store.Users" Multiplicity="1" />
+          <End Role="Places" Type="MvcBeepoyModel.Store.Places" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Places">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_TrackUsersEvents_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.Store.Users" Multiplicity="1" />
+          <End Role="TrackUserEvents" Type="MvcBeepoyModel.Store.TrackUserEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TrackUserEvents">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_TrackUsersPlaces_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.Store.Users" Multiplicity="1" />
+          <End Role="TrackUserPlaces" Type="MvcBeepoyModel.Store.TrackUserPlaces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TrackUserPlaces">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MvcBeepoyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MvcBeepoyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Beeps" EntityType="MvcBeepoyModel.Beep" />
+          <EntitySet Name="BeepsTags" EntityType="MvcBeepoyModel.BeepsTag" />
+          <EntitySet Name="Events" EntityType="MvcBeepoyModel.Event" />
+          <EntitySet Name="EventsTags" EntityType="MvcBeepoyModel.EventsTag" />
+          <EntitySet Name="Places" EntityType="MvcBeepoyModel.Place" />
+          <EntitySet Name="Tags" EntityType="MvcBeepoyModel.Tag" />
+          <EntitySet Name="TrackUserEvents" EntityType="MvcBeepoyModel.TrackUserEvent" />
+          <EntitySet Name="TrackUserPlaces" EntityType="MvcBeepoyModel.TrackUserPlace" />
+          <EntitySet Name="TrackUserUsers" EntityType="MvcBeepoyModel.TrackUserUser" />
+          <EntitySet Name="Users" EntityType="MvcBeepoyModel.User" />
+          <AssociationSet Name="Beeps_BeepsTags_FK1" Association="MvcBeepoyModel.Beeps_BeepsTags_FK1">
+            <End Role="Beeps" EntitySet="Beeps" />
+            <End Role="BeepsTags" EntitySet="BeepsTags" />
+          </AssociationSet>
+          <AssociationSet Name="Events_Beeps_FK1" Association="MvcBeepoyModel.Events_Beeps_FK1">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Beeps" EntitySet="Beeps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Beeps_Beeps" Association="MvcBeepoyModel.FK_Beeps_Beeps">
+            <End Role="Beeps" EntitySet="Beeps" />
+            <End Role="Beeps1" EntitySet="Beeps" />
+          </AssociationSet>
+          <AssociationSet Name="Places_Beeps_FK1" Association="MvcBeepoyModel.Places_Beeps_FK1">
+            <End Role="Places" EntitySet="Places" />
+            <End Role="Beeps" EntitySet="Beeps" />
+          </AssociationSet>
+          <AssociationSet Name="Users_Beeps_FK1" Association="MvcBeepoyModel.Users_Beeps_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Beeps" EntitySet="Beeps" />
+          </AssociationSet>
+          <AssociationSet Name="Tags_BeepsTags_FK1" Association="MvcBeepoyModel.Tags_BeepsTags_FK1">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="BeepsTags" EntitySet="BeepsTags" />
+          </AssociationSet>
+          <AssociationSet Name="Events_EventsTags_FK1" Association="MvcBeepoyModel.Events_EventsTags_FK1">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="EventsTags" EntitySet="EventsTags" />
+          </AssociationSet>
+          <AssociationSet Name="Events_TrackUsersEvents_FK1" Association="MvcBeepoyModel.Events_TrackUsersEvents_FK1">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="TrackUserEvents" EntitySet="TrackUserEvents" />
+          </AssociationSet>
+          <AssociationSet Name="Places_Events_FK1" Association="MvcBeepoyModel.Places_Events_FK1">
+            <End Role="Places" EntitySet="Places" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="Users_Events_FK1" Association="MvcBeepoyModel.Users_Events_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="Tags_EventsTags_FK1" Association="MvcBeepoyModel.Tags_EventsTags_FK1">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="EventsTags" EntitySet="EventsTags" />
+          </AssociationSet>
+          <AssociationSet Name="Places_TrackUsersPlaces_FK1" Association="MvcBeepoyModel.Places_TrackUsersPlaces_FK1">
+            <End Role="Places" EntitySet="Places" />
+            <End Role="TrackUserPlaces" EntitySet="TrackUserPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="Users_Places_FK1" Association="MvcBeepoyModel.Users_Places_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Places" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="Users_TrackUsersEvents_FK1" Association="MvcBeepoyModel.Users_TrackUsersEvents_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TrackUserEvents" EntitySet="TrackUserEvents" />
+          </AssociationSet>
+          <AssociationSet Name="Users_TrackUsersPlaces_FK1" Association="MvcBeepoyModel.Users_TrackUsersPlaces_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TrackUserPlaces" EntitySet="TrackUserPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="TrackUserUsers_Users_FK" Association="MvcBeepoyModel.TrackUserUsers_Users_FK">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TrackUserUsers" EntitySet="TrackUserUsers" />
+          </AssociationSet>
+          <AssociationSet Name="TrackUserUsers_Users_FK1" Association="MvcBeepoyModel.TrackUserUsers_Users_FK1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TrackUserUsers" EntitySet="TrackUserUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Beep">
+          <Key>
+            <PropertyRef Name="BeepId" />
+          </Key>
+          <Property Name="BeepId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="144" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="EventId" Type="Int64" Nullable="false" />
+          <Property Name="PlaceId" Type="Int64" Nullable="false" />
+          <Property Name="BeepIdFather" Type="Int64" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="BeepsTags" Relationship="MvcBeepoyModel.Beeps_BeepsTags_FK1" FromRole="Beeps" ToRole="BeepsTags" />
+          <NavigationProperty Name="Event" Relationship="MvcBeepoyModel.Events_Beeps_FK1" FromRole="Beeps" ToRole="Events" />
+          <NavigationProperty Name="Beeps" Relationship="MvcBeepoyModel.FK_Beeps_Beeps" FromRole="Beeps" ToRole="Beeps1" />
+          <NavigationProperty Name="BeepFather" Relationship="MvcBeepoyModel.FK_Beeps_Beeps" FromRole="Beeps1" ToRole="Beeps" />
+          <NavigationProperty Name="Place" Relationship="MvcBeepoyModel.Places_Beeps_FK1" FromRole="Beeps" ToRole="Places" />
+          <NavigationProperty Name="User" Relationship="MvcBeepoyModel.Users_Beeps_FK1" FromRole="Beeps" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="BeepsTag">
+          <Key>
+            <PropertyRef Name="BeepId" />
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="BeepId" Type="Int64" Nullable="false" />
+          <Property Name="TagId" Type="Int64" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Beep" Relationship="MvcBeepoyModel.Beeps_BeepsTags_FK1" FromRole="BeepsTags" ToRole="Beeps" />
+          <NavigationProperty Name="Tag" Relationship="MvcBeepoyModel.Tags_BeepsTags_FK1" FromRole="BeepsTags" ToRole="Tags" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceId" Type="Int64" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="144" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Beeps" Relationship="MvcBeepoyModel.Events_Beeps_FK1" FromRole="Events" ToRole="Beeps" />
+          <NavigationProperty Name="EventsTags" Relationship="MvcBeepoyModel.Events_EventsTags_FK1" FromRole="Events" ToRole="EventsTags" />
+          <NavigationProperty Name="TrackUserEvents" Relationship="MvcBeepoyModel.Events_TrackUsersEvents_FK1" FromRole="Events" ToRole="TrackUserEvents" />
+          <NavigationProperty Name="Place" Relationship="MvcBeepoyModel.Places_Events_FK1" FromRole="Events" ToRole="Places" />
+          <NavigationProperty Name="User" Relationship="MvcBeepoyModel.Users_Events_FK1" FromRole="Events" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="EventsTag">
+          <Key>
+            <PropertyRef Name="TagId" />
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="TagId" Type="Int64" Nullable="false" />
+          <Property Name="EventId" Type="Int64" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="MvcBeepoyModel.Events_EventsTags_FK1" FromRole="EventsTags" ToRole="Events" />
+          <NavigationProperty Name="Tag" Relationship="MvcBeepoyModel.Tags_EventsTags_FK1" FromRole="EventsTags" ToRole="Tags" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="PlaceId" />
+          </Key>
+          <Property Name="PlaceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="55" Unicode="false" FixedLength="false" />
+          <Property Name="Latitude" Type="Double" Nullable="false" />
+          <Property Name="Longitude" Type="Double" Nullable="false" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Beeps" Relationship="MvcBeepoyModel.Places_Beeps_FK1" FromRole="Places" ToRole="Beeps" />
+          <NavigationProperty Name="Events" Relationship="MvcBeepoyModel.Places_Events_FK1" FromRole="Places" ToRole="Events" />
+          <NavigationProperty Name="TrackUserPlaces" Relationship="MvcBeepoyModel.Places_TrackUsersPlaces_FK1" FromRole="Places" ToRole="TrackUserPlaces" />
+          <NavigationProperty Name="User" Relationship="MvcBeepoyModel.Users_Places_FK1" FromRole="Places" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="BeepsTags" Relationship="MvcBeepoyModel.Tags_BeepsTags_FK1" FromRole="Tags" ToRole="BeepsTags" />
+          <NavigationProperty Name="EventsTags" Relationship="MvcBeepoyModel.Tags_EventsTags_FK1" FromRole="Tags" ToRole="EventsTags" />
+        </EntityType>
+        <EntityType Name="TrackUserEvent">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="EventId" Type="Int64" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="MvcBeepoyModel.Events_TrackUsersEvents_FK1" FromRole="TrackUserEvents" ToRole="Events" />
+          <NavigationProperty Name="User" Relationship="MvcBeepoyModel.Users_TrackUsersEvents_FK1" FromRole="TrackUserEvents" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="TrackUserPlace">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PlaceId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="PlaceId" Type="Int64" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Place" Relationship="MvcBeepoyModel.Places_TrackUsersPlaces_FK1" FromRole="TrackUserPlaces" ToRole="Places" />
+          <NavigationProperty Name="User" Relationship="MvcBeepoyModel.Users_TrackUsersPlaces_FK1" FromRole="TrackUserPlaces" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="TrackUserUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserIdTracked" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="UserIdTracked" Type="Int64" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MvcBeepoyModel.TrackUserUsers_Users_FK" FromRole="TrackUserUsers" ToRole="Users" />
+          <NavigationProperty Name="UserTracked" Relationship="MvcBeepoyModel.TrackUserUsers_Users_FK1" FromRole="TrackUserUsers" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="55" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Beeps" Relationship="MvcBeepoyModel.Users_Beeps_FK1" FromRole="Users" ToRole="Beeps" />
+          <NavigationProperty Name="Events" Relationship="MvcBeepoyModel.Users_Events_FK1" FromRole="Users" ToRole="Events" />
+          <NavigationProperty Name="Places" Relationship="MvcBeepoyModel.Users_Places_FK1" FromRole="Users" ToRole="Places" />
+          <NavigationProperty Name="TrackUserEvents" Relationship="MvcBeepoyModel.Users_TrackUsersEvents_FK1" FromRole="Users" ToRole="TrackUserEvents" />
+          <NavigationProperty Name="TrackUserPlaces" Relationship="MvcBeepoyModel.Users_TrackUsersPlaces_FK1" FromRole="Users" ToRole="TrackUserPlaces" />
+          <NavigationProperty Name="TrackUserUsers" Relationship="MvcBeepoyModel.TrackUserUsers_Users_FK" FromRole="Users" ToRole="TrackUserUsers" />
+          <NavigationProperty Name="TrackUserUsersTracked" Relationship="MvcBeepoyModel.TrackUserUsers_Users_FK1" FromRole="Users" ToRole="TrackUserUsers" />
+        </EntityType>
+        <Association Name="Beeps_BeepsTags_FK1">
+          <End Role="Beeps" Type="MvcBeepoyModel.Beep" Multiplicity="1" />
+          <End Role="BeepsTags" Type="MvcBeepoyModel.BeepsTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beeps">
+              <PropertyRef Name="BeepId" />
+            </Principal>
+            <Dependent Role="BeepsTags">
+              <PropertyRef Name="BeepId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Events_Beeps_FK1">
+          <End Role="Events" Type="MvcBeepoyModel.Event" Multiplicity="1" />
+          <End Role="Beeps" Type="MvcBeepoyModel.Beep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="Beeps">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Beeps_Beeps">
+          <End Role="Beeps" Type="MvcBeepoyModel.Beep" Multiplicity="1" />
+          <End Role="Beeps1" Type="MvcBeepoyModel.Beep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beeps">
+              <PropertyRef Name="BeepId" />
+            </Principal>
+            <Dependent Role="Beeps1">
+              <PropertyRef Name="BeepIdFather" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Places_Beeps_FK1">
+          <End Role="Places" Type="MvcBeepoyModel.Place" Multiplicity="1" />
+          <End Role="Beeps" Type="MvcBeepoyModel.Beep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Places">
+              <PropertyRef Name="PlaceId" />
+            </Principal>
+            <Dependent Role="Beeps">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_Beeps_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.User" Multiplicity="1" />
+          <End Role="Beeps" Type="MvcBeepoyModel.Beep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Beeps">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tags_BeepsTags_FK1">
+          <End Role="Tags" Type="MvcBeepoyModel.Tag" Multiplicity="1" />
+          <End Role="BeepsTags" Type="MvcBeepoyModel.BeepsTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="BeepsTags">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Events_EventsTags_FK1">
+          <End Role="Events" Type="MvcBeepoyModel.Event" Multiplicity="1" />
+          <End Role="EventsTags" Type="MvcBeepoyModel.EventsTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="EventsTags">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Events_TrackUsersEvents_FK1">
+          <End Role="Events" Type="MvcBeepoyModel.Event" Multiplicity="1" />
+          <End Role="TrackUserEvents" Type="MvcBeepoyModel.TrackUserEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="EventId" />
+            </Principal>
+            <Dependent Role="TrackUserEvents">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Places_Events_FK1">
+          <End Role="Places" Type="MvcBeepoyModel.Place" Multiplicity="1" />
+          <End Role="Events" Type="MvcBeepoyModel.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Places">
+              <PropertyRef Name="PlaceId" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_Events_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.User" Multiplicity="1" />
+          <End Role="Events" Type="MvcBeepoyModel.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tags_EventsTags_FK1">
+          <End Role="Tags" Type="MvcBeepoyModel.Tag" Multiplicity="1" />
+          <End Role="EventsTags" Type="MvcBeepoyModel.EventsTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="EventsTags">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Places_TrackUsersPlaces_FK1">
+          <End Role="Places" Type="MvcBeepoyModel.Place" Multiplicity="1" />
+          <End Role="TrackUserPlaces" Type="MvcBeepoyModel.TrackUserPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Places">
+              <PropertyRef Name="PlaceId" />
+            </Principal>
+            <Dependent Role="TrackUserPlaces">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_Places_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.User" Multiplicity="1" />
+          <End Role="Places" Type="MvcBeepoyModel.Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Places">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_TrackUsersEvents_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.User" Multiplicity="1" />
+          <End Role="TrackUserEvents" Type="MvcBeepoyModel.TrackUserEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TrackUserEvents">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_TrackUsersPlaces_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.User" Multiplicity="1" />
+          <End Role="TrackUserPlaces" Type="MvcBeepoyModel.TrackUserPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TrackUserPlaces">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TrackUserUsers_Users_FK">
+          <End Role="Users" Type="MvcBeepoyModel.User" Multiplicity="1" />
+          <End Role="TrackUserUsers" Type="MvcBeepoyModel.TrackUserUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TrackUserUsers">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TrackUserUsers_Users_FK1">
+          <End Role="Users" Type="MvcBeepoyModel.User" Multiplicity="1" />
+          <End Role="TrackUserUsers" Type="MvcBeepoyModel.TrackUserUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TrackUserUsers">
+              <PropertyRef Name="UserIdTracked" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MvcBeepoyModelStoreContainer" CdmEntityContainer="MvcBeepoyEntities">
+          <EntitySetMapping Name="Beeps"><EntityTypeMapping TypeName="MvcBeepoyModel.Beep"><MappingFragment StoreEntitySet="Beeps">
+            <ScalarProperty Name="BeepId" ColumnName="BeepId" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="EventId" ColumnName="EventId" />
+            <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+            <ScalarProperty Name="BeepIdFather" ColumnName="BeepIdFather" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BeepsTags"><EntityTypeMapping TypeName="MvcBeepoyModel.BeepsTag"><MappingFragment StoreEntitySet="BeepsTags">
+            <ScalarProperty Name="BeepId" ColumnName="BeepId" />
+            <ScalarProperty Name="TagId" ColumnName="TagId" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Events"><EntityTypeMapping TypeName="MvcBeepoyModel.Event"><MappingFragment StoreEntitySet="Events">
+            <ScalarProperty Name="EventId" ColumnName="EventId" />
+            <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EventsTags"><EntityTypeMapping TypeName="MvcBeepoyModel.EventsTag"><MappingFragment StoreEntitySet="EventsTags">
+            <ScalarProperty Name="TagId" ColumnName="TagId" />
+            <ScalarProperty Name="EventId" ColumnName="EventId" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Places"><EntityTypeMapping TypeName="MvcBeepoyModel.Place"><MappingFragment StoreEntitySet="Places">
+            <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+            <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Tags"><EntityTypeMapping TypeName="MvcBeepoyModel.Tag"><MappingFragment StoreEntitySet="Tags">
+            <ScalarProperty Name="TagId" ColumnName="TagId" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TrackUserEvents"><EntityTypeMapping TypeName="MvcBeepoyModel.TrackUserEvent"><MappingFragment StoreEntitySet="TrackUserEvents">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="EventId" ColumnName="EventId" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TrackUserPlaces"><EntityTypeMapping TypeName="MvcBeepoyModel.TrackUserPlace"><MappingFragment StoreEntitySet="TrackUserPlaces">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TrackUserUsers"><EntityTypeMapping TypeName="MvcBeepoyModel.TrackUserUser"><MappingFragment StoreEntitySet="TrackUserUsers">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserIdTracked" ColumnName="UserIdTracked" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="MvcBeepoyModel.User"><MappingFragment StoreEntitySet="Users">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+            <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="BeepoyModel">
+        <EntityTypeShape EntityType="MvcBeepoyModel.Beep" Width="1.5" PointX="5.25" PointY="11.375" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.BeepsTag" Width="1.5" PointX="10.5" PointY="12.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.Event" Width="1.5" PointX="8.25" PointY="11.625" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.EventsTag" Width="1.5" PointX="10.5" PointY="9.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.Place" Width="1.5" PointX="3" PointY="15.125" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.Tag" Width="1.5" PointX="8.25" PointY="8.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.TrackUserEvent" Width="1.5" PointX="13.5" PointY="10.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.TrackUserPlace" Width="1.5" PointX="5.25" PointY="16.125" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.TrackUserUser" Width="1.5" PointX="3" PointY="19" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.User" Width="1.5" PointX="0.75" PointY="8.125" Height="3.3263964843750031" IsExpanded="true" />
+        <AssociationConnector Association="MvcBeepoyModel.Beeps_BeepsTags_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="14.953797200520832" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="14.953797200520832" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="14.953797200520832" />
+          <ConnectorPoint PointX="11.25" PointY="14.953797200520832" />
+          <ConnectorPoint PointX="11.25" PointY="14.297587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Events_Beeps_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.25" PointY="13.192047526041666" />
+          <ConnectorPoint PointX="6.75" PointY="13.192047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.FK_Beeps_Beeps" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.7819230769230767" PointY="15.085999348958332" />
+          <ConnectorPoint PointX="5.7819230769230767" PointY="15.335999348958332" />
+          <ConnectorPoint PointX="6.2284615384615378" PointY="15.335999348958332" />
+          <ConnectorPoint PointX="6.2284615384615378" PointY="15.085999348958332" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Places_Beeps_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="15.125" />
+          <ConnectorPoint PointX="3.75" PointY="13.230499674479166" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="13.230499674479166" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="13.230499674479166" />
+          <ConnectorPoint PointX="5.25" PointY="13.230499674479166" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Users_Beeps_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.7499995000000013" />
+          <ConnectorPoint PointX="6" PointY="9.7499995000000013" />
+          <ConnectorPoint PointX="6" PointY="11.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Tags_BeepsTags_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="10.297587890625" />
+          <ConnectorPoint PointX="10.125" PointY="10.672587890625" />
+          <ConnectorPoint PointX="10.125" PointY="13.2112939453125" />
+          <ConnectorPoint PointX="10.5" PointY="13.2112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Events_EventsTags_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="11.687306692307692" />
+          <ConnectorPoint PointX="10.06607443490112" PointY="11.371232257406572" />
+          <ConnectorPoint PointX="10.183925565098878" PointY="11.253381127208815" />
+          <ConnectorPoint PointX="10.3125" PointY="11.124806692307693" />
+          <ConnectorPoint PointX="10.3125" PointY="11.485087890625" />
+          <ConnectorPoint PointX="10.5" PointY="11.297587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Events_TrackUsersEvents_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="13.5" PointY="11.906155846153848" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Places_Events_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.699249674479166" />
+          <ConnectorPoint PointX="9" PointY="15.699249674479166" />
+          <ConnectorPoint PointX="9" PointY="14.759095052083332" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Users_Events_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.9062477499999986" />
+          <ConnectorPoint PointX="8" PointY="8.9062477499999986" />
+          <ConnectorPoint PointX="8" PointY="10.547587890625" />
+          <ConnectorPoint PointX="9" PointY="10.547587890625" />
+          <ConnectorPoint PointX="9" PointY="11.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Tags_EventsTags_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="9.680041445312499" />
+          <ConnectorPoint PointX="10.5" PointY="9.680041445312499" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Places_TrackUsersPlaces_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="17.192047526041666" />
+          <ConnectorPoint PointX="5.25" PointY="17.192047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Users_Places_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="11.451396484375003" />
+          <ConnectorPoint PointX="1.5" PointY="16.692047526041666" />
+          <ConnectorPoint PointX="1.7916666666666663" PointY="16.692047526041666" />
+          <ConnectorPoint PointX="1.9583333333333328" PointY="16.692047526041666" />
+          <ConnectorPoint PointX="3" PointY="16.692047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Users_TrackUsersEvents_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="8.125" />
+          <ConnectorPoint PointX="1.5" PointY="7.875" />
+          <ConnectorPoint PointX="13.125" PointY="7.875" />
+          <ConnectorPoint PointX="13.125" PointY="11.109325923076924" />
+          <ConnectorPoint PointX="13.5" PointY="11.109325923076924" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.Users_TrackUsersPlaces_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.2499999999999996" PointY="11.451396484375003" />
+          <ConnectorPoint PointX="2.625" PointY="11.826396484375003" />
+          <ConnectorPoint PointX="4.875" PointY="11.826396484375003" />
+          <ConnectorPoint PointX="4.875" PointY="15.748847153846153" />
+          <ConnectorPoint PointX="5.2511528461538459" PointY="16.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.TrackUserUsers_Users_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.0937475" PointY="11.451396484375003" />
+          <ConnectorPoint PointX="1.0937475" PointY="20.086293945312498" />
+          <ConnectorPoint PointX="3" PointY="20.086293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="MvcBeepoyModel.TrackUserUsers_Users_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.8749999999999996" PointY="11.451396484375003" />
+          <ConnectorPoint PointX="1.8749999999999996" PointY="19.511894472656248" />
+          <ConnectorPoint PointX="3" PointY="19.511894472656248" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
