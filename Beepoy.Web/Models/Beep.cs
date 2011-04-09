@@ -18,6 +18,10 @@ namespace Beepoy.Web.Models
         {
             this.BeepsTags = new HashSet<BeepsTag>();
             this.Beeps = new HashSet<Beep>();
+
+            this.EventId = -1;
+            this.PlaceId = -1;
+            this.BeepIdFather = -1;
         }
     
         // Primitive properties
