@@ -37,6 +37,5 @@ namespace Beepoy.Web.Models
         public virtual ICollection<TrackUserEvent> TrackUserEvents { get; set; }
         public virtual Place Place { get; set; }
         public virtual User User { get; set; }
-    
     }
 }

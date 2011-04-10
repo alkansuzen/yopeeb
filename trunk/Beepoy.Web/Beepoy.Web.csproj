@@ -132,6 +132,22 @@
     <Content Include="App_Data\MvcBeepoy_log.ldf">
       <DependentUpon>MvcBeepoy.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Layout01\css\default.css" />
+    <Content Include="Content\Layout01\css\menu.css" />
+    <Content Include="Content\Layout01\Images\backgrounds\top-bar.png" />
+    <Content Include="Content\Layout01\Images\botoes\nova-mensagem.png" />
+    <Content Include="Content\Layout01\Images\botoes\novo-marcador.png" />
+    <Content Include="Content\Layout01\Images\icones\add.gif" />
+    <Content Include="Content\Layout01\Images\icones\arrow-down.png" />
+    <Content Include="Content\Layout01\Images\icones\arrow-up.png" />
+    <Content Include="Content\Layout01\Images\icones\balao-111x16.png" />
+    <Content Include="Content\Layout01\Images\icones\pesquisa.png" />
+    <Content Include="Content\Layout01\Images\logos\beepoy-94x30.png" />
+    <Content Include="Content\Layout01\Images\marcadores\carro.gif" />
+    <Content Include="Content\Layout01\Images\marcadores\oferta.gif" />
+    <Content Include="Content\Layout01\Images\marcadores\oficina.gif" />
+    <Content Include="Content\Layout01\Images\usuario\user.gif" />
+    <Content Include="Content\Layout01\js\acoes.js" />
     <Content Include="EFCodeFirstReadMe.txt" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -209,10 +225,16 @@
       <LastGenOutput>BeepoyModel.cs</LastGenOutput>
     </None>
     <Content Include="Views\Beeps\Details.cshtml" />
-    <Content Include="Views\Beeps\Index.cshtml" />
+    <Content Include="Views\Events\Beeps.cshtml" />
+    <Content Include="Views\Places\Beeps.cshtml" />
+    <Content Include="Views\Users\Beeps.cshtml" />
+    <Content Include="Views\Beeps\Beeps.cshtml" />
+    <Content Include="Views\Places\Details.cshtml" />
+    <Content Include="Views\Shared\_ProfileMaps.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Users\" />
+    <Folder Include="Content\Images\" />
+    <Folder Include="Content\Layout01\Images\menu\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
