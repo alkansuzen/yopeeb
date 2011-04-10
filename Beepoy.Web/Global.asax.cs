@@ -27,6 +27,11 @@ namespace Beepoy.Web
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            routes.MapRoute(
+                "Users", // Route name
+                "{eventName}/{action}", // URL with parameters
+                new { controller = "Events", action = "Beeps", id = UrlParameter.Optional } // Parameter defaults
+            );
         }
 
         protected void Application_Start()
@@ -35,6 +40,19 @@ namespace Beepoy.Web
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+        }
+
+        //TODO: Melhorar Gamb
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception lastError = Server.GetLastError();
+
+            if (lastError is HttpException)
+            {
+                Server.ClearError();
+                Response.Flush();
+                Response.End();
+            }
         }
     }
 }
