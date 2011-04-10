@@ -60,15 +60,17 @@ namespace Beepoy.Web.Controllers
             //db.Beeps.Add(beep);
             //db.SaveChanges();
 
-            TrackUserUser t = new TrackUserUser()
-            {
-                User = db.Users.Find(1),
-                UserTracked = db.Users.Find(4),
-                DateInsert = DateTime.Now,
-                DateUpdate = DateTime.Now
-            };
-            db.TrackUserUsers.Add(t);
-            db.SaveChanges();
+            //TrackUserUser t = new TrackUserUser()
+            //{
+            //    User = db.Users.Find(1),
+            //    UserTracked = db.Users.Find(4),
+            //    DateInsert = DateTime.Now,
+            //    DateUpdate = DateTime.Now
+            //};
+            //db.TrackUserUsers.Add(t);
+            //db.SaveChanges();
+
+            
 
             return View();
         }

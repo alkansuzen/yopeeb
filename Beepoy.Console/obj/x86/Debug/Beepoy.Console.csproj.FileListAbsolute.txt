@@ -17,3 +17,8 @@ C:\Beepoy.Solution\Beepoy.Console\bin\Debug\Beepoy.Console.pdb
 C:\Beepoy.Solution\Beepoy.Console\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Beepoy.Solution\Beepoy.Console\obj\x86\Debug\Beepoy.Console.exe
 C:\Beepoy.Solution\Beepoy.Console\obj\x86\Debug\Beepoy.Console.pdb
+C:\Projetos\Beepoy\Beepoy.Console\bin\Debug\Beepoy.Console.exe
+C:\Projetos\Beepoy\Beepoy.Console\bin\Debug\Beepoy.Console.pdb
+C:\Projetos\Beepoy\Beepoy.Console\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projetos\Beepoy\Beepoy.Console\obj\x86\Debug\Beepoy.Console.exe
+C:\Projetos\Beepoy\Beepoy.Console\obj\x86\Debug\Beepoy.Console.pdb

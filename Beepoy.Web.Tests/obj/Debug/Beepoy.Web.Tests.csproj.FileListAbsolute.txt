@@ -18,3 +18,13 @@ C:\Beepoy.Solution\Beepoy.Web.Tests\bin\Debug\EntityFramework.dll
 C:\Beepoy.Solution\Beepoy.Web.Tests\bin\Debug\Beepoy.Web.pdb
 C:\Beepoy.Solution\Beepoy.Web.Tests\bin\Debug\EntityFramework.xml
 C:\Beepoy.Solution\Beepoy.Web.Tests\obj\Debug\Beepoy.Web.Tests.pdb
+C:\Projetos\Beepoy\Beepoy.Web.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Projetos\Beepoy\Beepoy.Web.Tests\obj\Debug\Beepoy.Web.Tests.dll
+C:\Projetos\Beepoy\Beepoy.Web.Tests\bin\Debug\Beepoy.Web.Tests.dll.config
+C:\Projetos\Beepoy\Beepoy.Web.Tests\bin\Debug\Beepoy.Web.Tests.dll
+C:\Projetos\Beepoy\Beepoy.Web.Tests\bin\Debug\Beepoy.Web.Tests.pdb
+C:\Projetos\Beepoy\Beepoy.Web.Tests\bin\Debug\Beepoy.Web.dll
+C:\Projetos\Beepoy\Beepoy.Web.Tests\bin\Debug\EntityFramework.dll
+C:\Projetos\Beepoy\Beepoy.Web.Tests\bin\Debug\Beepoy.Web.pdb
+C:\Projetos\Beepoy\Beepoy.Web.Tests\bin\Debug\EntityFramework.xml
+C:\Projetos\Beepoy\Beepoy.Web.Tests\obj\Debug\Beepoy.Web.Tests.pdb

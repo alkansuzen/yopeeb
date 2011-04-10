@@ -15,17 +15,7 @@ namespace Beepoy.Web.Tests.Controllers
         [TestMethod]
         public void TestMethod1()
         {
-
-            BeepsController beep = new BeepsController();
-
-            beep.db.
             
-
-
-            
-
-
-
         }
     }
 }
