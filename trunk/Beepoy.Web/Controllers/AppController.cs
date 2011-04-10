@@ -14,19 +14,17 @@ namespace Beepoy.Web.Controllers
         //DataBase connection
         private MvcBeepoyEntities db = new MvcBeepoyEntities();
 
-        public MvcBeepoyEntities Db{ 
-                 get{
-                    return db;
-                 }
-        }
+        protected int PageSize { get { return 10; } }
+
+        public MvcBeepoyEntities Db { get { return db; } }
 
         //
         // GET: /App/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
     }
 }
