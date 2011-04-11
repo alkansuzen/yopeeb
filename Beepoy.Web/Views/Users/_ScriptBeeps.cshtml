@@ -1,0 +1,21 @@
+﻿<script type="text/javascript">
+
+
+    jQuery(document).ready(function ($) {
+     
+        setInterval(getNewLatestReport, 5000);
+
+   
+        function getNewLatestReport() {
+        $.ajax({
+            url: "Users/Following",
+            success: function(data){
+                if (/*check for duplicates here*/) {
+                    $("#reports").prepend(data);
+                }
+            }
+            });
+        }
+
+    });
+</script>

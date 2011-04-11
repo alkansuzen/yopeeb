@@ -43,18 +43,55 @@ namespace Beepoy.Web.Models
         public virtual ICollection<TrackUserUser> TrackUserUsers { get; set; }
         public virtual ICollection<TrackUserUser> TrackUserUsersTracked { get; set; }
 
-
-        public List<Beep> FollowingBeeps()
+        public List<Beep> FollowingBeeps( Func<Beep, bool> filter, int take = 10)
         {
-            return FollowingBeeps(this.UserId);
-
+            return FollowingBeeps(this.UserId, filter, take);
         }
-
-        public List<Beep> FollowingBeeps(long userId)
+        public  List<Beep> FollowingBeeps( long UserId,Func<Beep, bool> filter, int take = 10)
         {
             var context = new MvcBeepoyEntities();
 
-              IQueryable pegaBeeps = context.Users.Where(u => u.UserId == userId).
+            var pegaBeeps = (from users in context.Users
+                             join tracks in context.TrackUserEvents
+                                  on users.UserId equals tracks.UserId
+                             join beeps in context.Beeps
+                                  on tracks.EventId equals beeps.EventId
+                             where UserId == users.UserId
+                             select beeps)
+                             .Union(
+                             from users in context.Users
+                             join places in context.TrackUserPlaces
+                                  on users.UserId equals places.UserId
+                             join beeps in context.Beeps
+                                  on places.PlaceId equals beeps.PlaceId
+                             where UserId == users.UserId
+                             select beeps)
+                             .Union(
+                             from users in context.Users
+                             join trackUser in context.TrackUserUsers
+                                  on users.UserId equals trackUser.UserIdTracked
+                             join beeps in context.Beeps
+                                  on trackUser.UserIdTracked equals beeps.UserId
+                             where UserId == users.UserId
+                             select beeps)
+                             .Union(
+                             from users in context.Users
+                             join places in context.TrackUserPlaces
+                                  on users.UserId equals places.UserId
+                             join events in context.Events
+                                  on places.PlaceId equals events.PlaceId
+                             join beeps in context.Beeps
+                                  on events.EventId equals beeps.EventId
+                             where UserId == users.UserId
+                             select beeps)
+                             .Distinct()
+                             .OrderByDescending(b => b.DateInsert)
+                             .Take(take)
+                             .Where(filter);
+                             
+                             
+            //Deprecated
+            /*  IQueryable pegaBeeps = context.Users.Where(u => u.UserId == userId).
                                        Join(context.TrackUserEvents,
                                              outer => outer.UserId,
                                              inner => inner.UserId,
@@ -84,11 +121,9 @@ namespace Beepoy.Web.Models
                                             outer => outer.UserTrackedId,
                                             inner => inner.UserId,
                                             (evento, beep) =>  beep )
-                                  ).Distinct().OrderByDescending(b => b.DateInsert);
+                                  ).Distinct().OrderByDescending(b => b.DateInsert);*/
 
             return pegaBeeps.Cast<Beep>().ToList();
         }
-
-
     }
 }
