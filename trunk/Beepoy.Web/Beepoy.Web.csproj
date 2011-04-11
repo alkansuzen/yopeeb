@@ -231,6 +231,7 @@
     <Content Include="Views\Beeps\Beeps.cshtml" />
     <Content Include="Views\Places\Details.cshtml" />
     <Content Include="Views\Shared\_ProfileMaps.cshtml" />
+    <Content Include="Views\Users\BeepsTracked.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />

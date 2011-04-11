@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>8077baba-c4c4-4b60-b975-bd2e31709fd1</ProjectGuid>
+    <ProjectGuid>{B79401AF-0CF3-4BAE-B492-7350C4095D5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Beepoy.SocialMedia.Twitter</RootNamespace>
@@ -38,9 +38,15 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TweetSharp">
+      <HintPath>..\..\..\Users\V\Downloads\Twitter Made Easy\TwitterSample\TwitterSample\SocialMediaLibrary\bin\TweetSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="TweetSharp.Twitter">
+      <HintPath>..\..\..\Users\V\Downloads\Twitter Made Easy\TwitterSample\TwitterSample\SocialMediaLibrary\bin\TweetSharp.Twitter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="TwitterInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
