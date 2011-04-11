@@ -125,11 +125,18 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult BeepsTracked(int Page = 0, int UserId = 0)
         {
-            var beeps = Db.Users.Find(UserId).FollowingBeeps();
-
+            var beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert > DateTime.Now);
             //Get Beeps from UserId
             //var beeps = Db.Users.fo
             //    ;
+            return View(beeps);
+        }
+
+
+        public ActionResult FollowingFeeds(){
+
+            List<Beep> beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert > DateTime.Now);
+
             return View(beeps);
         }
     }
