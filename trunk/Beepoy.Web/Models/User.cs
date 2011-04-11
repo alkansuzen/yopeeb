@@ -42,6 +42,6 @@ namespace Beepoy.Web.Models
         public virtual ICollection<TrackUserPlace> TrackUserPlaces { get; set; }
         public virtual ICollection<TrackUserUser> TrackUserUsers { get; set; }
         public virtual ICollection<TrackUserUser> TrackUserUsersTracked { get; set; }
-    
+
     }
 }
