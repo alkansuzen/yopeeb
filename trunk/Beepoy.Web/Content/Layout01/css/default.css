@@ -1,0 +1,426 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background:#ccc;
+	font:12px "Trebuchet MS", Arial, Verdana;
+	margin:0;
+	overflow:hidden;
+	}
+
+/* --------------------
+	Globais
+-------------------- */
+a {
+	}
+
+a:hover {
+	color:#FED100;
+	}
+
+.a-esquerda {
+	float:left;
+	}
+
+.a-direita {
+	float:right;
+	}
+
+.text-hidden {
+	content:"";
+	text-align:left;
+	text-indent:-5000px;
+	}
+
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+	}
+	
+/* -------------------
+	Botoes 
+---------------------- */ 
+.button {
+	border:0;
+	content:"";
+	cursor:pointer;
+	text-align:left;
+	text-indent:-5000px;
+	}
+			
+/* --------------------
+	Top Bar
+-------------------- */
+#top-bar {
+	background:url("../images/backgrounds/top-bar.png") repeat-x scroll 0 0 transparent;
+	height:48px;
+	left:0;
+	position:fixed;
+	top:0;
+	width:100%;
+	}
+
+	/* Logo */
+	#top-bar h6{
+		background:url("../images/logos/beepoy-94x30.png") no-repeat scroll 0 0 transparent;
+		float:left;
+		height:30px;
+		margin:6px 14px 0 20px;
+		padding:0;
+		position:relative;
+		width:94px;
+		}
+	
+	/* Campos de formulário */
+	#top-bar ul.form {
+		float:left;
+		margin:10px 15px 0;
+		}
+	
+	#top-bar ul.form li {
+		float:left;
+		margin-right:5px;
+		position:relative;
+		}
+		
+		#top-bar ul.form li.small {
+			margin-top:2px;
+			}
+	
+		#top-bar ul.form label {
+			color:#CECECE;
+			cursor:text;
+			height:13px;
+			left:0;
+			padding:6px;
+			position:absolute;
+			width:134px;
+			}
+			
+			#top-bar ul.form label em{
+				color:#acacac;
+				}
+			
+		#top-bar ul.form input[type="text"] {
+			background:#666;
+			border:2px solid #000;
+			border-left:0;
+			border-right:0;
+			color:#fff;
+			padding:4px 2px;
+			}
+		
+		#top-bar ul.form .pesquisar {
+			background:url("../images/icones/pesquisa.png") no-repeat scroll left top transparent;
+			display:block;
+			height:23px;
+			margin-top:2px;
+			width:28px;
+			}
+		
+			#top-bar ul.form .pesquisar:hover {
+				background-position:left bottom;
+				}
+
+/* Resposta da pesquisa */
+li#search-bar {
+	display:none;
+	padding:0 0 0 28px;
+	position:absolute !important;
+	top:47px;
+	width:560px;
+	}
+
+	li#search-bar *{
+		z-index:12;
+		}
+
+	li#search-bar .tags {
+		float:left;
+		position:relative;
+		}
+
+	li#search-bar div.ghost-back {
+		background:none repeat scroll 0 0 #787878;
+		height:42px;
+		left:0;
+		opacity:0.9;
+		position:absolute;
+		top:0;
+		width:590px;
+		z-index:10;
+		}
+	
+	/* Tags */
+	li#search-bar .tags {
+		margin-top:8px;
+		margin-left:10px;
+		}
+	
+	li#search-bar .tags a {
+		background-color:#f0f0f0;
+		color:#565656;
+		display:block;
+		float:left;
+		font-size:10px;
+		margin-right:8px;
+		padding:1px 5px 1px 18px;
+		}
+		
+		/* Imagens das tags */
+		li#search-bar .tags a.oficina {
+			background:#f0f0f0 url(../images/marcadores/oficina.gif) no-repeat 1px center;
+			}
+			
+		li#search-bar .tags a.carro {
+			background:#f0f0f0 url(../images/marcadores/carro.gif) no-repeat 1px center;
+			padding-left:24px;
+			}
+			
+		li#search-bar .tags a.oferta {
+			background:#f0f0f0 url(../images/marcadores/oferta.gif) no-repeat 1px center;
+			}
+		
+	li#search-bar p {
+		color:#fff;
+		float:left;
+		font-size:10px;
+		position:relative;
+		}
+
+		li#search-bar p strong {
+			font-size:11px;
+			}
+		
+	
+	/* Add Tag */
+	#search-bar .add-tag {
+		background:transparent url("../images/icones/add.gif") no-repeat left center;
+		color:#FED100;
+		text-decoration:none;
+		padding-left:15px;
+		display:block;
+		right:10px;
+		padding:12px 5px 12px 18px;
+		position:absolute;
+		top:0;
+		}
+
+	li#search-bar a.close {
+		background:none repeat scroll 0 0 #787878;
+		color:#fff;
+		display:block;
+		font-size:13px;
+		left:0;
+		padding:10px 6px;
+		position:absolute;
+		text-decoration:none;
+		top:0;
+		}
+
+/* --------------------
+	Menu
+--------------------- */
+#menu {
+	float:right;
+	margin-right:2%;
+	}
+
+	#menu li {
+		color:acacac;
+		float:left;
+		margin-right:2px;
+		position:relative;
+		}
+	
+		#menu li a {
+			color:#acacac;
+			display:block;
+			font-size:13px;
+			padding:13px;
+			text-decoration:none;
+			}
+		
+			#menu li a:hover {
+				background:#000;
+				color:#FED100;
+				}
+
+		/* Usuário */
+		#menu li.user {
+			width:175px;
+			}
+		
+		#menu li.user a {
+			font-size:11px;
+			height:48px;
+			padding:0 5px;
+			width:auto;
+			}
+		
+			#menu li.user a span, #menu li.user a img {
+				float:left;
+				}
+
+			#menu li.user a span {
+				background:url(../images/icones/arrow-down.png) no-repeat right 2px;
+				margin-left:5px;
+				margin-top:15px;
+				padding:0 19px 0 0;
+				}
+		
+			/* Submenu */
+			#menu li.user ul{
+				background:#000;
+				display:none;
+				position:absolute;
+				left:0;
+				top:48px;
+				width:175px;
+				}
+			
+				#menu li.user ul li{
+					clear:both;
+					}
+				
+					#menu li.user ul li a{
+						display:block;
+						height:auto;
+						padding:10px;
+						width:155px;
+						}
+						
+						#menu li.user ul li a:hover{
+							background:#373737;
+							color:#FED100;
+							}
+		
+		
+
+/* ----------------------
+	Bottom Bar
+----------------------  */
+#bottom-bar {
+	background:url("../images/backgrounds/top-bar.png") repeat-x scroll 0 0 transparent;
+	bottom:0;
+	height:48px;
+	left:0;
+	position:fixed;
+	width:100%;
+	}
+
+	#bottom-bar .points {
+		float:left;
+		margin-left:1%;
+		}
+	
+		#bottom-bar .points li {
+			float:left;
+			}
+		
+			#bottom-bar .points li button {
+				cursor:move;
+				cursor:-moz-grabbing;
+				margin-top:-20px;
+				padding-top:40px;
+				}
+		
+		/* Botões */
+		#bottom-bar button {
+			border:0;
+			color:#D7D7D7;
+			font-size:12px;
+			}
+		
+		button.new-point {
+			background:url("../images/botoes/novo-marcador.png") no-repeat scroll center top transparent;
+			}
+		
+		button.new-message {
+			background:url("../images/botoes/nova-mensagem.png") no-repeat scroll center top transparent;
+			}
+
+/* Tags */
+#bottom-bar .tags {
+	float:left;
+	margin-left:30px;
+	width:40%;
+	}
+
+	#bottom-bar .tags li{
+		margin-top:5px;
+		}
+
+	#bottom-bar .tags li.title{
+		color:#FED100;
+		float:left;
+		height:29px;
+		margin-right:10px;
+		padding-top:10px;
+		}
+		
+		#bottom-bar .tags li a{
+			color:#fff;
+			display:block;
+			float:left;
+			font-style:italic;
+			text-decoration:none;
+			margin:0 8px;
+			}
+
+/*  */
+#bottom-bar .listagem {
+	float:right;
+	margin-right:2%;
+	}
+
+	#bottom-bar .listagem li {
+		color:acacac;
+		float:left;
+		margin-right:2px;
+		position:relative;
+		}
+	
+		#bottom-bar .listagem li a {
+			color:#acacac;
+			display:block;
+			font-size:13px;
+			padding:13px;
+			text-decoration:none;
+			}
+		
+			#bottom-bar .listagem li a:hover {
+				background:#000;
+				color:#fff;
+				}
+			
+			/* Submenu */
+			#bottom-bar .listagem li.user {
+				width:357px;
+				}
+			
+			#bottom-bar .listagem li.user ul{
+				background:#000;
+				display:none;
+				position:absolute;
+				right:0;
+				bottom:44px;
+				width:357px;
+				}
+			
+				#bottom-bar .listagem li.user ul li{
+					clear:both;
+					}
+				
+					#bottom-bar .listagem li.user ul li a{
+						display:block;
+						height:auto;
+						padding:10px;
+						width:337px;
+						}
+						
+						#bottom-bar .listagem li.user ul li a:hover{
+							background:#373737;
+							color:#fff;
+							}

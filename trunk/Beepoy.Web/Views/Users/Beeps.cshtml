@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Beepoy.Web.Models.Beep>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Beeps</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th></th>
+            <th>
+                Text
+            </th>
+            <th>
+                UserId
+            </th>
+            <th>
+                EventId
+            </th>
+            <th>
+                PlaceId
+            </th>
+            <th>
+                BeepIdFather
+            </th>
+            <th>
+                DateInsert
+            </th>
+            <th>
+                DateUpdate
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.BeepId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.BeepId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.BeepId })
+            </td>
+            <td>
+                @item.Text
+            </td>
+            <td>
+                @item.UserId
+            </td>
+            <td>
+                @item.EventId
+            </td>
+            <td>
+                @item.PlaceId
+            </td>
+            <td>
+                @item.BeepIdFather
+            </td>
+            <td>
+                @String.Format("{0:g}", item.DateInsert)
+            </td>
+            <td>
+                @String.Format("{0:g}", item.DateUpdate)
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+#menu {
+	background:url(/Content/Layout01/images/menu/background.jpg) repeat-x 0 0;
+	height:35px;
+	}
+
+#menu ul {
+	
+	}
+
+	#menu ul li {
+		float:left;
+		}
+	
+		#menu ul li a {
+			display:block;
+			}
