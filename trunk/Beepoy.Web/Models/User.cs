@@ -44,13 +44,13 @@ namespace Beepoy.Web.Models
         public virtual ICollection<TrackUserUser> TrackUserUsersTracked { get; set; }
 
 
-        public List<Beep> FollowingBeeps(User user)
+        public List<Beep> FollowingBeeps()
         {
-            return FollowingBeeps((int) user.UserId);
+            return FollowingBeeps(this.UserId);
 
         }
 
-        public List<Beep> FollowingBeeps(int userId)
+        public List<Beep> FollowingBeeps(long userId)
         {
             var context = new MvcBeepoyEntities();
 
@@ -84,10 +84,9 @@ namespace Beepoy.Web.Models
                                             outer => outer.UserTrackedId,
                                             inner => inner.UserId,
                                             (evento, beep) =>  beep )
-                                  ).Distinct();
+                                  ).Distinct().OrderByDescending(b => b.DateInsert);
 
             return pegaBeeps.Cast<Beep>().ToList();
-
         }
 
 
