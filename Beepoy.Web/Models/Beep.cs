@@ -11,8 +11,10 @@ namespace Beepoy.Web.Models
 {
     using System;
     using System.Collections.Generic;
+using System.Data.Entity;
+    using System.Linq;
     
-    public partial class Beep
+    public partial class Beep 
     {
         public Beep()
         {
@@ -23,6 +25,8 @@ namespace Beepoy.Web.Models
             this.PlaceId = -1;
             this.BeepIdFather = -1;
         }
+
+        
     
         // Primitive properties
     
@@ -34,7 +38,8 @@ namespace Beepoy.Web.Models
         public long BeepIdFather { get; set; }
         public System.DateTime DateInsert { get; set; }
         public System.DateTime DateUpdate { get; set; }
-    
+      
+            
         // Navigation properties
     
         public virtual ICollection<BeepsTag> BeepsTags { get; set; }
@@ -43,6 +48,14 @@ namespace Beepoy.Web.Models
         public virtual Beep BeepFather { get; set; }
         public virtual Place Place { get; set; }
         public virtual User User { get; set; }
-    
+        public virtual DbSet<Beep> DbBeeps { get; set; }
+
+        public ICollection<Beep> camilo()
+        {
+            return (ICollection<Beep>) from obj in DbBeeps select obj;
+        }
+       
     }
+
+ 
 }
