@@ -126,12 +126,15 @@ namespace Beepoy.Web.Controllers
         public ActionResult BeepsTracked(int Page = 0, int UserId = 0)
         {
             //Get Beeps from UserId
-            var beeps = Db.Beeps
+            var beeps = Db.Beeps.Select;//.Include(b => b.).Where(u => u.User)
+                
+                //.Join("TrackUserUser{InnerJoin}.B{OuterJoin}").Include("TrackUserPlaces")
+                //.Where(b => b.UserId == UserId)
                 //.Where(b => (b.PlaceId == ))
-                .OrderByDescending(b => b.DateInsert)
-                .Skip(Page)
-                .Take(this.PageSize);
-
+                //.OrderByDescending(b => b.DateInsert)
+                //.Skip(Page)
+                //.Take(this.PageSize);
+                ;
             return View(beeps);
         }
     }
