@@ -125,7 +125,21 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult BeepsTracked(int Page = 0, int UserId = 0)
         {
-            var beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert > DateTime.Now);
+
+            List<Beep> beeps;
+
+            if (this.HttpContext.Session["lastQuery"] == null)
+            {
+                beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
+            }
+            else
+            {
+                DateTime lastResult = (DateTime) this.HttpContext.Session["lastQuery"];
+            
+                beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert > lastResult);
+            }
+
+            this.HttpContext.Session.Add("lastQuery", DateTime.Now);
             //Get Beeps from UserId
             //var beeps = Db.Users.fo
             //    ;
@@ -135,7 +149,26 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult FollowingFeeds(){
 
-            List<Beep> beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert > DateTime.Now);
+            List<Beep> beeps;
+
+            if (this.Request.IsAjaxRequest())
+            {
+                if (this.HttpContext.Session["lastQuery"] == null)
+                {
+                    beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
+                }
+                else
+                {
+                    DateTime lastResult = (DateTime)this.HttpContext.Session["lastQuery"];
+                    beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert > lastResult);
+                }
+            }
+            else
+            {
+                beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
+            }
+
+            this.HttpContext.Session.Add("lastQuery", DateTime.Now);
 
             return View(beeps);
         }

@@ -42,16 +42,19 @@ namespace Beepoy.Web.Controllers
         // POST: /Beeps/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Beep beep)
         {
             try
             {
                 // TODO: Add insert logic here
+                Db.Beeps.Add(beep);
+                Db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch( Exception e)
             {
+                Console.WriteLine(e.Message.ToString());
                 return View();
             }
         }

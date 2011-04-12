@@ -9,11 +9,16 @@
 <html>
 <head>
     <title>FollowingFeeds</title>
+    @{
+        
+        Html.Partial("_ScriptBeeps");
+    }
 </head>
 <body>
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+    <div class="feeds">
     <table>
         <tr>
             <th></th>

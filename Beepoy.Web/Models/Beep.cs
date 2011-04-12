@@ -20,10 +20,11 @@ using System.Data.Entity;
         {
             this.BeepsTags = new HashSet<BeepsTag>();
             this.Beeps = new HashSet<Beep>();
-
             this.EventId = -1;
             this.PlaceId = -1;
             this.BeepIdFather = -1;
+            this.DateUpdate = DateTime.Now;
+            this.DateInsert = DateTime.Now;
         }
 
         
