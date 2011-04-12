@@ -43,7 +43,7 @@ namespace Beepoy.Web.Models
         public virtual ICollection<TrackUserUser> TrackUserUsers { get; set; }
         public virtual ICollection<TrackUserUser> TrackUserUsersTracked { get; set; }
 
-        public List<Beep> FollowingBeeps( Func<Beep, bool> filter, int take = 10)
+        public List<Beep> FollowingBeeps( Func<Beep, bool> filter , int take = 10)
         {
             return FollowingBeeps(this.UserId, filter, take);
         }
