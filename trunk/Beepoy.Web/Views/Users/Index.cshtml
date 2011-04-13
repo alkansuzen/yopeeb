@@ -1,0 +1,16 @@
+﻿@model Beepoy.Web.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Html.RenderPartial("_ScriptBeeps");
+}
+
+<h2>Index</h2>
+
+<table class="feeds">
+
+@Html.Action("FollowingFeeds");
+
+</table>
