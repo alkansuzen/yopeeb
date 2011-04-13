@@ -113,12 +113,11 @@ namespace Beepoy.Web.Controllers
         public ActionResult Beeps(int Page = 0, int PlaceId = 0)
         {
             //Get Beeps from PlaceId
-            var beeps = Db.Beeps
-                .Where(b => (b.PlaceId == PlaceId))
+            var beeps = Db.Beeps.ByPlace(PlaceId)
                 .OrderByDescending(b => b.DateInsert)
                 .Skip(Page)
                 .Take(this.PageSize);
-
+           
             return View(beeps);
         }
 

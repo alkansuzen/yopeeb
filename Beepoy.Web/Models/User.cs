@@ -11,7 +11,7 @@ namespace Beepoy.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
+    
     public partial class User
     {
         public User()
@@ -23,6 +23,7 @@ namespace Beepoy.Web.Models
             this.TrackUserPlaces = new HashSet<TrackUserPlace>();
             this.TrackUserUsers = new HashSet<TrackUserUser>();
             this.TrackUserUsersTracked = new HashSet<TrackUserUser>();
+            this.BeepsUsers = new HashSet<BeepsUser>();
         }
     
         // Primitive properties
@@ -32,6 +33,7 @@ namespace Beepoy.Web.Models
         public string Password { get; set; }
         public System.DateTime DateInsert { get; set; }
         public System.DateTime DateUpdate { get; set; }
+        public string IdName { get; set; }
     
         // Navigation properties
     
@@ -42,88 +44,7 @@ namespace Beepoy.Web.Models
         public virtual ICollection<TrackUserPlace> TrackUserPlaces { get; set; }
         public virtual ICollection<TrackUserUser> TrackUserUsers { get; set; }
         public virtual ICollection<TrackUserUser> TrackUserUsersTracked { get; set; }
-
-        public List<Beep> FollowingBeeps( Func<Beep, bool> filter , int take = 10)
-        {
-            return FollowingBeeps(this.UserId, filter, take);
-        }
-        public  List<Beep> FollowingBeeps( long UserId,Func<Beep, bool> filter, int take = 10)
-        {
-            var context = new MvcBeepoyEntities();
-
-            var pegaBeeps = (from users in context.Users
-                             join tracks in context.TrackUserEvents
-                                  on users.UserId equals tracks.UserId
-                             join beeps in context.Beeps
-                                  on tracks.EventId equals beeps.EventId
-                             where UserId == users.UserId
-                             select beeps)
-                             .Union(
-                             from users in context.Users
-                             join places in context.TrackUserPlaces
-                                  on users.UserId equals places.UserId
-                             join beeps in context.Beeps
-                                  on places.PlaceId equals beeps.PlaceId
-                             where UserId == users.UserId
-                             select beeps)
-                             .Union(
-                             from users in context.Users
-                             join trackUser in context.TrackUserUsers
-                                  on users.UserId equals trackUser.UserIdTracked
-                             join beeps in context.Beeps
-                                  on trackUser.UserIdTracked equals beeps.UserId
-                             where UserId == users.UserId
-                             select beeps)
-                             .Union(
-                             from users in context.Users
-                             join places in context.TrackUserPlaces
-                                  on users.UserId equals places.UserId
-                             join events in context.Events
-                                  on places.PlaceId equals events.PlaceId
-                             join beeps in context.Beeps
-                                  on events.EventId equals beeps.EventId
-                             where UserId == users.UserId
-                             select beeps)
-                             .Distinct()
-                             .OrderByDescending(b => b.DateInsert)
-                             .Take(take)
-                             .Where(filter);
-                             
-                             
-            //Deprecated
-            /*  IQueryable pegaBeeps = context.Users.Where(u => u.UserId == userId).
-                                       Join(context.TrackUserEvents,
-                                             outer => outer.UserId,
-                                             inner => inner.UserId,
-                                             (user, track) => new { EventId = track.EventId })
-                                      .Join(context.Beeps,
-                                            outer => outer.EventId,
-                                            inner => inner.EventId,
-                                            (evento, beep) => beep)
-                                  .Union(
-                                      context.Users.Where(u => u.UserId == userId).
-                                      Join(context.TrackUserPlaces,
-                                             outer => outer.UserId,
-                                             inner => inner.UserId,
-                                             (user, track) => new { PlaceId = track.PlaceId })
-                                      .Join(context.Beeps,
-                                            outer => outer.PlaceId,
-                                            inner => inner.PlaceId,
-                                            (evento, beep) =>  beep )
-                                  )
-                                  .Union(
-                                      context.Users.Where(u => u.UserId == userId).
-                                      Join(context.TrackUserUsers,
-                                             outer => outer.UserId,
-                                             inner => inner.UserId,
-                                             (user, track) => new { UserTrackedId = track.UserIdTracked })
-                                      .Join(context.Beeps,
-                                            outer => outer.UserTrackedId,
-                                            inner => inner.UserId,
-                                            (evento, beep) =>  beep )
-                                  ).Distinct().OrderByDescending(b => b.DateInsert);*/
-
-            return pegaBeeps.Cast<Beep>().ToList();
-        }
+        public virtual ICollection<BeepsUser> BeepsUsers { get; set; }
+    
     }
 }
