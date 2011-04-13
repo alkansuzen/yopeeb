@@ -51,12 +51,24 @@ using System.Data.Entity;
         public virtual User User { get; set; }
         public virtual DbSet<Beep> DbBeeps { get; set; }
 
-        public ICollection<Beep> camilo()
+        public IEnumerable<string> GetTagsFromText()
         {
-            return (ICollection<Beep>) from obj in DbBeeps select obj;
+            return this.Text.Split(' ').Where(t => t.ToString().IndexOf('#') == 0);
         }
-       
-    }
 
- 
+        public IEnumerable<string> GetPlacesFromText()
+        {
+            return this.Text.Split(' ').Where(t => t.ToString().IndexOf('$') == 0);
+        }
+
+        public IEnumerable<string> GetEventsFromText()
+        {
+            return this.Text.Split(' ').Where(t => t.ToString().IndexOf('&') == 0);
+        }
+
+        public IEnumerable<string> GetUsersFromText()
+        {
+            return this.Text.Split(' ').Where(t => t.ToString().IndexOf('@') == 0);
+        }
+    }
 }
