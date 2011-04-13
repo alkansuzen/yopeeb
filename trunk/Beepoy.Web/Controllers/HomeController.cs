@@ -7,7 +7,7 @@ using Beepoy.Web.Models;
 
 namespace Beepoy.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AppController
     {
         MvcBeepoyEntities db = new MvcBeepoyEntities();
 
@@ -74,6 +74,20 @@ namespace Beepoy.Web.Controllers
 
             return View();
         }
+
+        public ActionResult Login()
+        {
+            SessionUser = Db.Users.Find(1);
+
+            return new RedirectResult("/Users");
+        }
+
+        public ActionResult Logout()
+        {
+            this.HttpContext.Session.Clear();
+
+            return new RedirectResult("/Home");
+         }
 
         public ActionResult About()
         {
