@@ -12,33 +12,19 @@ namespace Beepoy.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Event
+    public partial class BeepsUser
     {
-        public Event()
-        {
-            this.EventsTags = new HashSet<EventsTag>();
-            this.TrackUserEvents = new HashSet<TrackUserEvent>();
-            this.BeepsEvents = new HashSet<BeepsEvent>();
-        }
-    
         // Primitive properties
     
-        public long EventId { get; set; }
-        public long PlaceId { get; set; }
+        public long BeepId { get; set; }
         public long UserId { get; set; }
         public System.DateTime DateInsert { get; set; }
         public System.DateTime DateUpdate { get; set; }
-        public string IdName { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
     
         // Navigation properties
     
-        public virtual ICollection<EventsTag> EventsTags { get; set; }
-        public virtual ICollection<TrackUserEvent> TrackUserEvents { get; set; }
-        public virtual Place Place { get; set; }
+        public virtual Beep Beep { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<BeepsEvent> BeepsEvents { get; set; }
     
     }
 }

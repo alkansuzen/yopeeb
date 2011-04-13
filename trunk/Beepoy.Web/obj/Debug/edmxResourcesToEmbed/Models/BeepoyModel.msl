@@ -7,8 +7,6 @@
           <ScalarProperty Name="BeepId" ColumnName="BeepId" />
           <ScalarProperty Name="Text" ColumnName="Text" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="EventId" ColumnName="EventId" />
-          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
           <ScalarProperty Name="BeepIdFather" ColumnName="BeepIdFather" />
           <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
           <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
@@ -28,9 +26,11 @@
     <EntitySetMapping Name="Events">
       <EntityTypeMapping TypeName="MvcBeepoyModel.Event">
         <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IdName" ColumnName="IdName" />
           <ScalarProperty Name="EventId" ColumnName="EventId" />
           <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
-          <ScalarProperty Name="Text" ColumnName="Text" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
           <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
@@ -50,6 +50,8 @@
     <EntitySetMapping Name="Places">
       <EntityTypeMapping TypeName="MvcBeepoyModel.Place">
         <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IdName" ColumnName="IdName" />
           <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Latitude" ColumnName="Latitude" />
@@ -103,11 +105,53 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="MvcBeepoyModel.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IdName" ColumnName="IdName" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
           <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeepsEvents">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.BeepsEvent">
+        <MappingFragment StoreEntitySet="BeepsEvents">
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="BeepId" ColumnName="BeepId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeepsPlaces">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.BeepsPlace">
+        <MappingFragment StoreEntitySet="BeepsPlaces">
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="BeepId" ColumnName="BeepId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeepsUsers">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.BeepsUser">
+        <MappingFragment StoreEntitySet="BeepsUsers">
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BeepId" ColumnName="BeepId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MvcBeepoyModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

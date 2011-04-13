@@ -29,8 +29,9 @@ namespace Beepoy.Web.Models
         public DbSet<TrackUserPlace> TrackUserPlaces { get; set; }
         public DbSet<TrackUserUser> TrackUserUsers { get; set; }
         public DbSet<User> Users { get; set; }
-
-       
-
+        public DbSet<BeepsEvent> BeepsEvents { get; set; }
+        public DbSet<BeepsPlace> BeepsPlaces { get; set; }
+        public DbSet<BeepsUser> BeepsUsers { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

@@ -111,8 +111,7 @@ namespace Beepoy.Web.Controllers
         public ActionResult Beeps(int Page = 0, int EventId = 0)
         {
             //Get Beeps from EventId
-            var beeps = Db.Beeps
-                .Where(b => (b.EventId == EventId))
+            var beeps = Db.Beeps.ByEvent(EventId)
                 .OrderByDescending(b => b.DateInsert)
                 .Skip(Page)
                 .Take(this.PageSize);
