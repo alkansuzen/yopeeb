@@ -5,17 +5,21 @@
      
         setInterval(getNewLatestReport, 5000);
 
-   
+
         function getNewLatestReport() {
-        $.ajax({
-            url: "Users/Following",
-            success: function(data){
-                if (/*check for duplicates here*/) {
-                    $("#reports").prepend(data);
+
+            console.log('Atualizando')
+                   
+
+            $.ajax({
+                url: "Users/FollowingFeeds",
+                success: function(data){
+                
+                        $(".feeds").prepend(data);
+                
                 }
+                });
             }
-            });
-        }
 
     });
 </script>

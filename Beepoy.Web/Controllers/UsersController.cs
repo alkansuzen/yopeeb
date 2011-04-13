@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Beepoy.Web.Models;
+using Beepoy.Web.Filters;
 
 namespace Beepoy.Web.Controllers
 {
+
+    [Auth]
     public class UsersController : AppController
     {
         //
@@ -120,33 +123,10 @@ namespace Beepoy.Web.Controllers
             return View(beeps);
         }
 
-        //
-        // GET: /Users/BeepsTracked
-
-        public ActionResult BeepsTracked(int Page = 0, int UserId = 0)
-        {
-
-            List<Beep> beeps;
-
-            if (this.HttpContext.Session["lastQuery"] == null)
-            {
-                beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
-            }
-            else
-            {
-                DateTime lastResult = (DateTime) this.HttpContext.Session["lastQuery"];
-            
-                beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert > lastResult);
-            }
-
-            this.HttpContext.Session.Add("lastQuery", DateTime.Now);
-            //Get Beeps from UserId
-            //var beeps = Db.Users.fo
-            //    ;
-            return View(beeps);
-        }
 
 
+        //Todo:  Precisa arrumar o layout para exibir os beeps seguidos
+        
         public ActionResult FollowingFeeds(){
 
             List<Beep> beeps;
@@ -155,12 +135,12 @@ namespace Beepoy.Web.Controllers
             {
                 if (this.HttpContext.Session["lastQuery"] == null)
                 {
-                    beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
+                    beeps = Db.Users.Find(SessionUser).FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
                 }
                 else
                 {
                     DateTime lastResult = (DateTime)this.HttpContext.Session["lastQuery"];
-                    beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert > lastResult);
+                    beeps = Db.Users.Find(SessionUser).FollowingBeeps(beep => beep.DateInsert > lastResult);
                 }
             }
             else
@@ -170,7 +150,7 @@ namespace Beepoy.Web.Controllers
 
             this.HttpContext.Session.Add("lastQuery", DateTime.Now);
 
-            return View(beeps);
+            return PartialView(beeps);
         }
     }
 }
