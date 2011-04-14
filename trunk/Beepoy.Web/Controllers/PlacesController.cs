@@ -41,11 +41,14 @@ namespace Beepoy.Web.Controllers
         // POST: /Places/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Place place)
         {
             try
             {
                 // TODO: Add insert logic here
+
+                Db.Places.Add(place);
+                Db.SaveChanges();
 
                 return RedirectToAction("Index");
             }

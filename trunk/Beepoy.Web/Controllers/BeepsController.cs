@@ -27,6 +27,13 @@ namespace Beepoy.Web.Controllers
         {
             var beep = Db.Beeps.Find(id);
 
+            IEnumerable<string> s = null;
+
+            //s = beep.GetTagsFromText();
+            //s = beep.GetPlacesFromText();
+            //s = beep.GetEventsFromText();
+            //s = beep.GetUsersFromText();
+
             return View(beep);
         }
 
