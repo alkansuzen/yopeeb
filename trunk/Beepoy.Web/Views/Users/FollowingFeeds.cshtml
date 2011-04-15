@@ -1,19 +1,17 @@
 ﻿@model IEnumerable<Beepoy.Web.Models.Beep>
 
-
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BeepId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BeepId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BeepId })
+        </td>
         <td>
             @item.Text
         </td>
         <td>
             @item.UserId
-        </td>
-        <td>
-            @item.EventId
-        </td>
-        <td>
-            @item.PlaceId
         </td>
         <td>
             @item.BeepIdFather

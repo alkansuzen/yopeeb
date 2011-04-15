@@ -9,7 +9,7 @@ using Beepoy.Web.Filters;
 namespace Beepoy.Web.Controllers
 {
 
-    [Auth]
+   
     public class UsersController : AppController
     {
         //
