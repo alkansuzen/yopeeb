@@ -11,22 +11,8 @@
 </head>
 
 <body>
-    <div class="page">
 
-        <div id="header">
-            <div id="logindisplay">
-                @Html.Partial("_LogOnPartial")
-            </div>
-
-            <div id="menucontainer">
-
-                <ul id="menu">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                </ul>
-
-            </div>
-
+      
 <div id="top-bar">
 	<h6 class="text-hidden"><a href="/" title="Beepoy, rede social de geolocalização">Beepoy</a></h6>
     
@@ -82,15 +68,8 @@
     </ul>
 </div>
 
-
-
-
-
-        </div>
-
-        <div id="main">
+  <div id="main">
             @RenderBody()
-        </div>
-    </div>
+  <div> 
 </body>
 </html>
