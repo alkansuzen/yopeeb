@@ -4,9 +4,10 @@
     <title>@ViewBag.Title</title>
     <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
 
+   
     <!-- Estilos -->
     <link href="@Url.Content("~/Content/Layout01/css/default.css")" rel="stylesheet" type="text/css" />
-
+    @RenderSection("head", required: false) 
 </head>
 
 <body>
