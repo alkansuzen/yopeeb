@@ -12,15 +12,19 @@ namespace Beepoy.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class BeepsMultimedia
     {
         // Primitive properties
     
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public long BeepId { get; set; }
+        public string Url { get; set; }
+        public string FileType { get; set; }
+        public System.DateTime DateInsert { get; set; }
+        public System.DateTime DateUpdate { get; set; }
+    
+        // Navigation properties
+    
+        public virtual Beep Beep { get; set; }
     
     }
 }

@@ -31,6 +31,9 @@ namespace Beepoy.Web.Models
         public string IdName { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+        public string ImageUrl { get; set; }
     
         // Navigation properties
     
