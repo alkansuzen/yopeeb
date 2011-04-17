@@ -34,6 +34,7 @@ namespace Beepoy.Web.Models
         public System.DateTime DateInsert { get; set; }
         public System.DateTime DateUpdate { get; set; }
         public string IdName { get; set; }
+        public string ImageUrl { get; set; }
     
         // Navigation properties
     

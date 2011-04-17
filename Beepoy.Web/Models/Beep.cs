@@ -11,7 +11,7 @@ namespace Beepoy.Web.Models
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Beep
     {
         public Beep()
@@ -41,6 +41,7 @@ namespace Beepoy.Web.Models
         public virtual ICollection<BeepsEvent> BeepsEvents { get; set; }
         public virtual ICollection<BeepsPlace> BeepsPlaces { get; set; }
         public virtual ICollection<BeepsUser> BeepsUsers { get; set; }
+        public virtual BeepsMultimedia BeepsMultimedia { get; set; }
     
     }
 }
