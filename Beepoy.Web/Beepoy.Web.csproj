@@ -80,6 +80,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Library\Coordinates.cs" />
+    <Compile Include="Library\DateTimeRange.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Beep.cs">
       <DependentUpon>BeepoyModel.tt</DependentUpon>
@@ -182,6 +184,8 @@
     <Content Include="obj\Debug\TempPE\Models.DataClasses2.designer.cs.dll" />
     <Content Include="obj\Debug\TempPE\Models.Model1.Designer.cs.dll" />
     <Content Include="obj\Debug\TempPE\Models.Models.Designer.cs.dll" />
+    <Content Include="Scripts\map\action.js" />
+    <Content Include="Scripts\map\geo.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -260,7 +264,6 @@
     <Content Include="Views\Events\Beeps.cshtml" />
     <Content Include="Views\Places\Beeps.cshtml" />
     <Content Include="Views\Users\Beeps.cshtml" />
-    <Content Include="Views\Beeps\Beeps.cshtml" />
     <Content Include="Views\Places\Details.cshtml" />
     <Content Include="Views\Shared\_ProfileMaps.cshtml" />
     <Content Include="Views\Users\BeepsTracked.cshtml" />
@@ -278,6 +281,10 @@
     <None Include="obj\Debug\edmxResourcesToEmbed\Models\Models.msl" />
     <None Include="obj\Debug\edmxResourcesToEmbed\Models\Models.ssdl" />
     <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Places\Create.cshtml" />
+    <Content Include="Views\Beeps\List.cshtml" />
+    <Content Include="Views\Beeps\ListByCoordsAndDateTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />
@@ -300,7 +307,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3725</DevelopmentServerPort>
+          <DevelopmentServerPort>3680</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
