@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Beepoy.Web.Models;
+using Beepoy.Web.Library;
 
 namespace Beepoy.Web.Controllers
 {
@@ -121,7 +122,7 @@ namespace Beepoy.Web.Controllers
         //
         // GET: /Beeps/Beeps
 
-        public ActionResult Beeps(int Page = 0, int BeepIdFather = 0)
+        public ActionResult List(int Page = 0, int BeepIdFather = 0)
         {
             //Get Beeps from BeepIdFather
             var beeps = Db.Beeps
@@ -132,5 +133,24 @@ namespace Beepoy.Web.Controllers
 
             return View(beeps);
         }
+
+        //
+        // GET: /Beeps/Beeps
+        [HttpPost]
+        public ActionResult ListByCoordsAndDateTime(Coordinates coords, DateTimeRange dateTimeRange)
+        {
+            //Get Beeps from Place Coordinates
+            //var beeps = Db.Beeps.ByDateTimeRange(dateTimeRange);//.ByCoordinates(coords);
+            var beeps = Db.Beeps.ByCoordinates(Db, coords);
+
+            return View(beeps);
+        }
+
+        //[HttpPost]
+        //public string ListByCoordsAndDateTime(Coordinates coordinates, DateTimeRange dateTimeRange)
+        //{
+        //    string s = coordinates.LatF.ToString() + dateTimeRange.DateTimeF.ToString();
+        //    return s;
+        //}
     }
 }

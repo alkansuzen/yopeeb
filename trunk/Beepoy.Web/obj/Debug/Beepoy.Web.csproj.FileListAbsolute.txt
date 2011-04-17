@@ -14,8 +14,6 @@ C:\Beepoy.Solution\Beepoy.Web\obj\Debug\Beepoy.Web.dll
 C:\Beepoy.Solution\Beepoy.Web\obj\Debug\Beepoy.Web.pdb
 C:\Projetos\Beepoy\Beepoy.Web\bin\Beepoy.Web.dll
 C:\Projetos\Beepoy\Beepoy.Web\bin\Beepoy.Web.pdb
-C:\Projetos\Beepoy\Beepoy.Web\bin\EntityFramework.dll
-C:\Projetos\Beepoy\Beepoy.Web\bin\EntityFramework.xml
 C:\Projetos\Beepoy\Beepoy.Web\obj\Debug\ResolveAssemblyReference.cache
 C:\Projetos\Beepoy\Beepoy.Web\obj\Debug\Beepoy.Web.dll
 C:\Projetos\Beepoy\Beepoy.Web\obj\Debug\Beepoy.Web.pdb
