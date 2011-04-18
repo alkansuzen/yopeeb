@@ -4,16 +4,32 @@
   using System.Web.Routing;
 namespace Beepoy.Web.Filters
 {
-        public class Auth : ActionFilterAttribute
+        public class AuthorizeFilter : ActionFilterAttribute
         {
             public override void OnActionExecuting(ActionExecutingContext filterContext)
             {
-                
-                if ( filterContext.HttpContext.Session["User"] == null){
+                //String Url = "/Home/Login";
+                 var Url = new UrlHelper( filterContext.RequestContext);
 
-                    filterContext.HttpContext.Response.Redirect("Home/Login");
-                }             
-                
+                if (filterContext.HttpContext.Session["User"] == null)
+                {
+                    if (filterContext.RequestContext.HttpContext.Request.IsAjaxRequest())
+                    {
+                        filterContext.HttpContext.Response.StatusCode = 401;                        
+                        base.OnActionExecuting(filterContext);
+                    }
+                    else
+                    {              
+                        filterContext.Result = new RedirectResult( 
+                                       Url.Action("Login", "Home", 
+                                              new RouteValueDictionary(
+                                                  new { ReturnPage = filterContext.HttpContext.Request.Url.ToString() })));     
+                    }
+                }
+                else
+                {
+                    base.OnActionExecuting(filterContext);
+                }               
             }
 
             public override void OnActionExecuted(ActionExecutedContext filterContext)

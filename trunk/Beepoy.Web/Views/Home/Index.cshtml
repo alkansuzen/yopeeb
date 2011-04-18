@@ -3,12 +3,40 @@
     ViewBag.Title = "Home Page";
  }
 
-
 @section head {
    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
    <script type="text/javascript" src="http://code.google.com/apis/gears/gears_init.js"></script>
    <script type="text/javascript" src="@Url.Content("~/Scripts/map/action.js")"></script>
    <script type="text/javascript" src="@Url.Content("~/Scripts/map/geo.js")"></script>
+
+     <script type="text/javascript">
+       jQuery(document).ready(function ($) {
+           console.log('entrou');
+           $.ajax({
+               url: "http://localhost:3680/Beeps/ListByCoordsAndDateTime",
+               type: "POST",
+               //contentType: 'application/json; charset=utf-8',
+               //dataType: 'json',
+               data: { LatI: '0', LatF: '1,5', LngI: '0', LngF: '1,5', DateTimeI: '2011-01-01 10:07', DateTimeF: '2011-12-31 10:37' },
+               success: function (data) {
+                   console.log('success');
+                   console.log(data);
+                   $("#timeLine").html(data);
+               },
+               beforeSend: function (xmlHttpRequest, settings) {
+                   console.log('beforeSend');
+                   console.log(xmlHttpRequest)
+               },
+               error: function (xmlHttpRequest, status, throwError) {
+                   console.log('error');
+                   console.log(throwError);
+                   console.log(xmlHttpRequest.Status);
+               }
+           });
+       });
+</script>
+
+
 }
 
 <div id="beeps" style="border-style:solid; width:300px; height:500px; position:absolute; left:510px; top:100px">
@@ -21,29 +49,4 @@
 </div>
 
 
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        console.log('entrou');
-        $.ajax({
-            url: "http://localhost:3680/Beeps/ListByCoordsAndDateTime",
-            type: "POST",
-            //contentType: 'application/json; charset=utf-8',
-            //dataType: 'json',
-            data: { LatI: '0', LatF: '1,5', LngI: '0', LngF: '1,5', DateTimeI: '2011-01-01 10:07', DateTimeF: '2011-12-31 10:37' },
-            success: function (data) {
-                console.log('success');
-                console.log(data);
-                $("#timeLine").html(data);
-            },
-            beforeSend: function (xmlHttpRequest, settings) {
-                console.log('beforeSend');
-                console.log(xmlHttpRequest)
-            },
-            error: function (xmlHttpRequest, status, throwError) {
-                console.log('error');
-                console.log(throwError);
-                console.log(xmlHttpRequest.Status);
-            }
-        });
-    });
-</script>
+

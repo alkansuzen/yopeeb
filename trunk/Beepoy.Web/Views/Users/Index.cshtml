@@ -4,6 +4,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+}
+
+
+@section head{        
     Html.RenderPartial("_ScriptBeeps");
 }
 <style type="text/css">
@@ -55,8 +59,13 @@
         </div>
         <div class="beep-feed">
             <table class="feeds">
-            @Html.Action("FollowingFeeds", "Users")
-
+            @{ try{
+                @Html.Action("FollowingList", "Users")
+              
+                }catch(Exception e){
+                  @Html.Display("Erro usuário não logado");  
+              }
+            }
             </table>
         </div>
     </div>

@@ -3,23 +3,7 @@
 
     jQuery(document).ready(function ($) {
      
-        setInterval(getNewLatestReport, 5000);
 
-
-        function getNewLatestReport() {
-
-            console.log('Atualizando')
-                   
-
-            $.ajax({
-                url: "Users/FollowingFeeds",
-                success: function(data){
-                
-                        $(".feeds").prepend(data);
-                
-                }
-                });
-            }
 
     });
 </script>

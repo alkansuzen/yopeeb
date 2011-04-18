@@ -14,7 +14,7 @@ namespace Beepoy.Web.Controllers
     {
         //
         // GET: /Users/
-
+        [AuthorizeFilter]
         public ActionResult Index()
         {
             return View();
@@ -127,30 +127,32 @@ namespace Beepoy.Web.Controllers
 
         //Todo:  Precisa arrumar o layout para exibir os beeps seguidos
         
-        public ActionResult FollowingFeeds(){
+        [AuthorizeFilter]
+        public ActionResult Streams(){
 
             List<Beep> beeps;
 
-            if (this.Request.IsAjaxRequest())
-            {
-                if (this.HttpContext.Session["lastQuery"] == null)
+            
+                if (this.Request.IsAjaxRequest())
                 {
-                    beeps = Db.Users.Find(SessionUser).FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
+                    if (this.HttpContext.Session["lastQuery"] == null)
+                    {
+                        beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
+                    }
+                    else
+                    {
+                        DateTime lastResult = (DateTime)this.HttpContext.Session["lastQuery"];
+                        beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert > lastResult);
+                    }
                 }
                 else
                 {
-                    DateTime lastResult = (DateTime)this.HttpContext.Session["lastQuery"];
-                    beeps = Db.Users.Find(SessionUser).FollowingBeeps(beep => beep.DateInsert > lastResult);
+                    beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
                 }
-            }
-            else
-            {
-                beeps = Db.Users.Find(1).FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
-            }
 
-            this.HttpContext.Session.Add("lastQuery", DateTime.Now);
-
-            return PartialView(beeps);
+                 this.HttpContext.Session.Add("lastQuery", DateTime.Now);
+            
+                return PartialView(beeps);
         }
     }
 }
