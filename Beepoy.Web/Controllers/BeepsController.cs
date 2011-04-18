@@ -16,7 +16,11 @@ namespace Beepoy.Web.Controllers
         public ActionResult Index(int Page = 0, int UserId = 0)
         {
             //Get Beeps from UserId
-            var beeps = Db.Beeps.Where(p => (p.UserId == UserId)).OrderBy(b => b.DateInsert).Skip(Page).Take(this.PageSize);
+            var beeps = Db.Beeps
+                        .Where(p => (p.UserId == UserId))
+                        .OrderBy(b => b.DateInsert)
+                        .Skip(Page)
+                        .Take(this.PageSize);
 
             return View(beeps);
         }

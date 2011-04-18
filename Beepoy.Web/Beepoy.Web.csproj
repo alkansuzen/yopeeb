@@ -102,6 +102,7 @@
       <DependentUpon>BeepoyModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\BeepsEvent.cs" />
+    <Compile Include="Models\BeepsMultimedia.cs" />
     <Compile Include="Models\BeepsPlace.cs" />
     <Compile Include="Models\BeepsTag.cs">
       <DependentUpon>BeepoyModel.tt</DependentUpon>
@@ -111,6 +112,7 @@
     <Compile Include="Models\Custom\BeepsTag.cs" />
     <Compile Include="Models\Custom\Event.cs" />
     <Compile Include="Models\Custom\EventsTag.cs" />
+    <Compile Include="Models\Custom\Model.cs" />
     <Compile Include="Models\Custom\Place.cs" />
     <Compile Include="Models\Custom\Tag.cs" />
     <Compile Include="Models\Custom\TrackUserEvent.cs" />
@@ -124,10 +126,10 @@
       <DependentUpon>BeepoyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Extension\Beep.cs" />
+    <Compile Include="Models\Extension\User.cs" />
     <Compile Include="Models\Place.cs">
       <DependentUpon>BeepoyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\Tag.cs">
       <DependentUpon>BeepoyModel.tt</DependentUpon>
     </Compile>
@@ -269,8 +271,7 @@
     <Content Include="Views\Users\BeepsTracked.cshtml" />
     <Content Include="Views\Users\_ScriptBeeps.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Beeps\Create.cshtml" />
-    <Content Include="Views\Users\FollowingFeeds.cshtml" />
+    <Content Include="Views\Users\Streams.cshtml" />
     <None Include="obj\Debug\build.force" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -285,6 +286,9 @@
     <Content Include="Views\Places\Create.cshtml" />
     <Content Include="Views\Beeps\List.cshtml" />
     <Content Include="Views\Beeps\ListByCoordsAndDateTime.cshtml" />
+    <Content Include="Views\Beeps\Beeps.cshtml" />
+    <Content Include="Views\Users\FollowingFeeds.cshtml" />
+    <Content Include="Views\Beeps\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />

@@ -75,11 +75,12 @@ namespace Beepoy.Web.Controllers
             return View();
         }
 
-        public ActionResult Login()
+        public ActionResult Login( string ReturnPage = "/Users")
         {
             SessionUser = Db.Users.Find(1);
-
-            return new RedirectResult("/Users");
+            
+          
+            return new RedirectResult(ReturnPage);
         }
 
         public ActionResult Logout()
