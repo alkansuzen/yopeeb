@@ -54,7 +54,7 @@ namespace Beepoy.Web.Controllers
         // POST: /Beeps/Create
 
         [HttpPost]
-        public ActionResult Create(Beep beep)
+        public String Create(Beep beep)
         {
             try
             {
@@ -62,12 +62,12 @@ namespace Beepoy.Web.Controllers
                 Db.Beeps.Add(beep);
                 Db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return "Sucess";
             }
             catch( Exception e)
             {
                 Console.WriteLine(e.Message.ToString());
-                return View();
+                return e.Message + e.StackTrace + e.InnerException.Message;
             }
         }
         

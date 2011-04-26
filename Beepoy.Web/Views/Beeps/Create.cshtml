@@ -1,13 +1,22 @@
 ﻿@model Beepoy.Web.Models.Beep
 
-<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@{
+    Html.EnableUnobtrusiveJavaScript(true);
+}
 
-@using (Ajax.BeginForm( new AjaxOptions{) {
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+
+@using (Ajax.BeginForm("create", "beeps", null, new AjaxOptions { UpdateTargetId = "result", LoadingElementId = "loading" }, null))
+{
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Beep</legend>
+        <div id="loading" style="display:hidden">Loading...</div>
+        <div id="result"></div>
+
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Text)
@@ -24,29 +33,12 @@
             @Html.EditorFor(model => model.UserId)
             @Html.ValidationMessageFor(model => model.UserId)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BeepIdFather)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.BeepIdFather)
-            @Html.ValidationMessageFor(model => model.BeepIdFather)
-        </div>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.DateInsert)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.DateInsert)
             @Html.ValidationMessageFor(model => model.DateInsert)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateUpdate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DateUpdate)
-            @Html.ValidationMessageFor(model => model.DateUpdate)
         </div>
 
         <p>

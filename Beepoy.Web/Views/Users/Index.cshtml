@@ -8,7 +8,7 @@
 
 
 @section head{        
-    Html.RenderPartial("_ScriptBeeps");
+    @{ Html.RenderPartial("_ScriptBeeps");}
 }
 <style type="text/css">
 	.container{
@@ -56,6 +56,7 @@
 <div class="container">
     <div class="area-esquerda">
         <div class="beep-box">
+          @Html.Action("create", "beeps")
         </div>
         <div class="beep-feed">
             <table class="feeds">

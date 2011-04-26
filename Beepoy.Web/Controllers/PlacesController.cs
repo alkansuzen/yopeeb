@@ -115,6 +115,10 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult Beeps(int Page = 0, int PlaceId = 0)
         {
+
+            //var teste = Db.Beeps.ByPlace(1).Where(a => a.DateInsert == DateTime.Now);
+
+
             //Get Beeps from PlaceId
             var beeps = Db.Beeps.ByPlace(Db, PlaceId)
                 .OrderByDescending(b => b.DateInsert)
