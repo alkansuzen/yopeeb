@@ -21,6 +21,11 @@ namespace Beepoy.Web.Models
             this.BeepsEvents = new HashSet<BeepsEvent>();
             this.BeepsPlaces = new HashSet<BeepsPlace>();
             this.BeepsUsers = new HashSet<BeepsUser>();
+
+            this.BeepIdFather = -1;
+            this.DateInsert = DateTime.Now;
+            this.DateUpdate = DateTime.Now;
+
         }
     
         // Primitive properties
