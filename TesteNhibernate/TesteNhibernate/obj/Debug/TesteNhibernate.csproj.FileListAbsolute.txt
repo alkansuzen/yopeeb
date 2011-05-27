@@ -1,0 +1,14 @@
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\TesteNhibernate.dll
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\TesteNhibernate.pdb
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\Castle.Core.dll
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\FluentNHibernate.dll
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\Iesi.Collections.dll
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\NHibernate.ByteCode.Castle.dll
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\NHibernate.dll
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\Castle.Core.xml
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\FluentNHibernate.pdb
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\Iesi.Collections.pdb
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\bin\NHibernate.ByteCode.Castle.xml
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\obj\Debug\TesteNhibernate.dll
+c:\documents and settings\camilo.caetano\meus documentos\visual studio 2010\Projects\TesteNhibernate\TesteNhibernate\obj\Debug\TesteNhibernate.pdb
