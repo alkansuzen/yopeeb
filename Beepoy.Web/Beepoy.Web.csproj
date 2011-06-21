@@ -34,11 +34,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\TesteNhibernate\TesteNhibernate\bin\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.4.1.10311.0\lib\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\TesteNhibernate\TesteNhibernate\bin\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\TesteNhibernate\TesteNhibernate\bin\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate">
+      <HintPath>..\TesteNhibernate\TesteNhibernate\bin\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\TesteNhibernate\TesteNhibernate\bin\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
@@ -101,13 +116,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BeepoyModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\BeepsEvent.cs" />
-    <Compile Include="Models\BeepsMultimedia.cs" />
-    <Compile Include="Models\BeepsPlace.cs" />
+    <Compile Include="Models\BeepsEvent.cs">
+      <DependentUpon>BeepoyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BeepsPlace.cs">
+      <DependentUpon>BeepoyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BeepsTag.cs">
       <DependentUpon>BeepoyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BeepsUser.cs" />
+    <Compile Include="Models\BeepsUser.cs">
+      <DependentUpon>BeepoyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Custom\Beep.cs" />
     <Compile Include="Models\Custom\BeepsTag.cs" />
     <Compile Include="Models\Custom\Event.cs" />
@@ -126,7 +146,6 @@
       <DependentUpon>BeepoyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Extension\Beep.cs" />
-    <Compile Include="Models\Extension\User.cs" />
     <Compile Include="Models\Place.cs">
       <DependentUpon>BeepoyModel.tt</DependentUpon>
     </Compile>
@@ -156,6 +175,7 @@
     <Content Include="bin\Beepoy.Web.pdb" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.xml" />
+    <Content Include="Content\base.css" />
     <Content Include="Content\Layout01\css\default.css" />
     <Content Include="Content\Layout01\css\menu.css" />
     <Content Include="Content\Layout01\Images\backgrounds\top-bar.png" />
@@ -271,7 +291,6 @@
     <Content Include="Views\Users\BeepsTracked.cshtml" />
     <Content Include="Views\Users\_ScriptBeeps.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Users\Streams.cshtml" />
     <None Include="obj\Debug\build.force" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -289,6 +308,8 @@
     <Content Include="Views\Beeps\Beeps.cshtml" />
     <Content Include="Views\Users\FollowingFeeds.cshtml" />
     <Content Include="Views\Beeps\Create.cshtml" />
+    <Content Include="Views\Shared\_Home.cshtml" />
+    <Content Include="Views\Users\Streams.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />
