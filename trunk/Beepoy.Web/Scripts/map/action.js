@@ -64,7 +64,7 @@ $(function(){
 });
 
 function resizeMap(){
-	$("#map").css({"height":$(window).height()-96, "margin-top":"48px"})
+	//$("#map").css({"height":$(window).height()-96, "margin-top":"48px"})
 }
 	
 
