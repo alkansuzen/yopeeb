@@ -21,11 +21,6 @@ namespace Beepoy.Web.Models
             this.BeepsEvents = new HashSet<BeepsEvent>();
             this.BeepsPlaces = new HashSet<BeepsPlace>();
             this.BeepsUsers = new HashSet<BeepsUser>();
-
-            this.BeepIdFather = -1;
-            this.DateInsert = DateTime.Now;
-            this.DateUpdate = DateTime.Now;
-
         }
     
         // Primitive properties
@@ -41,12 +36,10 @@ namespace Beepoy.Web.Models
     
         public virtual ICollection<BeepsTag> BeepsTags { get; set; }
         public virtual ICollection<Beep> Beeps { get; set; }
-        public virtual Beep BeepFather { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<BeepsEvent> BeepsEvents { get; set; }
         public virtual ICollection<BeepsPlace> BeepsPlaces { get; set; }
         public virtual ICollection<BeepsUser> BeepsUsers { get; set; }
-        public virtual BeepsMultimedia BeepsMultimedia { get; set; }
     
     }
 }
