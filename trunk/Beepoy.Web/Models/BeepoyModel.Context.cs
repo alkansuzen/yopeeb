@@ -32,6 +32,5 @@ namespace Beepoy.Web.Models
         public DbSet<BeepsEvent> BeepsEvents { get; set; }
         public DbSet<BeepsPlace> BeepsPlaces { get; set; }
         public DbSet<BeepsUser> BeepsUsers { get; set; }
-        public DbSet<BeepsMultimedia> BeepsMultimedias { get; set; }
     }
 }

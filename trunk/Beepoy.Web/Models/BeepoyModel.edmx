@@ -8,7 +8,6 @@
         <EntityContainer Name="MvcBeepoyModelStoreContainer">
           <EntitySet Name="Beeps" EntityType="MvcBeepoyModel.Store.Beeps" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="BeepsEvents" EntityType="MvcBeepoyModel.Store.BeepsEvents" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BeepsMultimedias" EntityType="MvcBeepoyModel.Store.BeepsMultimedias" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="BeepsPlaces" EntityType="MvcBeepoyModel.Store.BeepsPlaces" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="BeepsTags" EntityType="MvcBeepoyModel.Store.BeepsTags" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="BeepsUsers" EntityType="MvcBeepoyModel.Store.BeepsUsers" store:Type="Tables" Schema="dbo" />
@@ -20,7 +19,7 @@
           <EntitySet Name="TrackUserPlaces" EntityType="MvcBeepoyModel.Store.TrackUserPlaces" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TrackUserUsers" EntityType="MvcBeepoyModel.Store.TrackUserUsers" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Users" EntityType="MvcBeepoyModel.Store.Users" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="Beeps_BeepsTags_FK1" Association="MvcBeepoyModel.Store.Beeps_BeepsTags_FK1">
+          <AssociationSet Name="Beeps_BeepsTags_FK" Association="MvcBeepoyModel.Store.Beeps_BeepsTags_FK">
             <End Role="Beeps" EntitySet="Beeps" />
             <End Role="BeepsTags" EntitySet="BeepsTags" />
           </AssociationSet>
@@ -31,14 +30,6 @@
           <AssociationSet Name="Events_TrackUsersEvents_FK1" Association="MvcBeepoyModel.Store.Events_TrackUsersEvents_FK1">
             <End Role="Events" EntitySet="Events" />
             <End Role="TrackUserEvents" EntitySet="TrackUserEvents" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Beeps_Beeps" Association="MvcBeepoyModel.Store.FK_Beeps_Beeps">
-            <End Role="Beeps" EntitySet="Beeps" />
-            <End Role="Beeps1" EntitySet="Beeps" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Beeps_BeepsMultimedias" Association="MvcBeepoyModel.Store.FK_Beeps_BeepsMultimedias">
-            <End Role="BeepsMultimedias" EntitySet="BeepsMultimedias" />
-            <End Role="Beeps" EntitySet="Beeps" />
           </AssociationSet>
           <AssociationSet Name="FK_BeepsEvents_Beeps" Association="MvcBeepoyModel.Store.FK_BeepsEvents_Beeps">
             <End Role="Beeps" EntitySet="Beeps" />
@@ -127,16 +118,6 @@
           </Key>
           <Property Name="BeepId" Type="bigint" Nullable="false" />
           <Property Name="EventId" Type="bigint" Nullable="false" />
-          <Property Name="DateInsert" Type="datetime" Nullable="false" />
-          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BeepsMultimedias">
-          <Key>
-            <PropertyRef Name="BeepId" />
-          </Key>
-          <Property Name="BeepId" Type="bigint" Nullable="false" />
-          <Property Name="Url" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="FileType" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="DateInsert" Type="datetime" Nullable="false" />
           <Property Name="DateUpdate" Type="datetime" Nullable="false" />
         </EntityType>
@@ -262,7 +243,7 @@
           <Property Name="DateInsert" Type="datetime" Nullable="false" />
           <Property Name="DateUpdate" Type="datetime" Nullable="false" />
         </EntityType>
-        <Association Name="Beeps_BeepsTags_FK1">
+        <Association Name="Beeps_BeepsTags_FK">
           <End Role="Beeps" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="1" />
           <End Role="BeepsTags" Type="MvcBeepoyModel.Store.BeepsTags" Multiplicity="*" />
           <ReferentialConstraint>
@@ -295,30 +276,6 @@
             </Principal>
             <Dependent Role="TrackUserEvents">
               <PropertyRef Name="EventId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Beeps_Beeps">
-          <End Role="Beeps" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="1" />
-          <End Role="Beeps1" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Beeps">
-              <PropertyRef Name="BeepId" />
-            </Principal>
-            <Dependent Role="Beeps1">
-              <PropertyRef Name="BeepIdFather" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Beeps_BeepsMultimedias">
-          <End Role="BeepsMultimedias" Type="MvcBeepoyModel.Store.BeepsMultimedias" Multiplicity="1" />
-          <End Role="Beeps" Type="MvcBeepoyModel.Store.Beeps" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="BeepsMultimedias">
-              <PropertyRef Name="BeepId" />
-            </Principal>
-            <Dependent Role="Beeps">
-              <PropertyRef Name="BeepId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -526,6 +483,381 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_Beeps_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BeepId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Beeps_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="InOut" />
+          <Parameter Name="Text" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+          <Parameter Name="BeepIdFather" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Beeps_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BeepId" Type="bigint" Mode="In" />
+          <Parameter Name="Text" Type="varchar" Mode="InOut" />
+          <Parameter Name="UserId" Type="bigint" Mode="InOut" />
+          <Parameter Name="EventId" Type="bigint" Mode="InOut" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="InOut" />
+          <Parameter Name="TimeId" Type="bigint" Mode="InOut" />
+          <Parameter Name="BeepIdFather" Type="bigint" Mode="InOut" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_Beeps_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_Beeps_SELECTBY_EventId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Beeps_SELECTBY_PlaceId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Beeps_SELECTBY_TimeId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Beeps_SELECTBY_UserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Beeps_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BeepId" Type="bigint" Mode="In" />
+          <Parameter Name="Text" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+          <Parameter Name="BeepIdFather" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_BeepsTags_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BeepId" Type="bigint" Mode="In" />
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_BeepsTags_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BeepId" Type="bigint" Mode="In" />
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_BeepsTags_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BeepId" Type="bigint" Mode="In" />
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_BeepsTags_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_BeepsTags_SELECTBY_BeepId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BeepId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_BeepsTags_SELECTBY_TagId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_BeepsTags_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BeepId" Type="bigint" Mode="In" />
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Events_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Events_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="InOut" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="Text" Type="varchar" Mode="In" />
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Events_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="InOut" />
+          <Parameter Name="Text" Type="varchar" Mode="InOut" />
+          <Parameter Name="TimeId" Type="bigint" Mode="InOut" />
+          <Parameter Name="UserId" Type="bigint" Mode="InOut" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_Events_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_Events_SELECTBY_PlaceId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Events_SELECTBY_TimeId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Events_SELECTBY_UserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Events_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="Text" Type="varchar" Mode="In" />
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_EventsTags_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_EventsTags_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_EventsTags_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_EventsTags_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_EventsTags_SELECTBY_EventId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_EventsTags_SELECTBY_TagId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_EventsTags_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Places_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Places_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="InOut" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Latitude" Type="float" Mode="In" />
+          <Parameter Name="Longitude" Type="float" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Places_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="InOut" />
+          <Parameter Name="Latitude" Type="float" Mode="InOut" />
+          <Parameter Name="Longitude" Type="float" Mode="InOut" />
+          <Parameter Name="UserId" Type="bigint" Mode="InOut" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_Places_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_Places_SELECTBY_UserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Places_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Latitude" Type="float" Mode="In" />
+          <Parameter Name="Longitude" Type="float" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Tags_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Tags_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="InOut" />
+          <Parameter Name="Text" Type="varchar" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Tags_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="Text" Type="varchar" Mode="InOut" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_Tags_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_Tags_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="bigint" Mode="In" />
+          <Parameter Name="Text" Type="varchar" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Times_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Times_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="InOut" />
+          <Parameter Name="Value" Type="datetime" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Times_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+          <Parameter Name="Value" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_Times_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_Times_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TimeId" Type="bigint" Mode="In" />
+          <Parameter Name="Value" Type="datetime" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersEvents_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersEvents_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersEvents_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_TrackUsersEvents_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_TrackUsersEvents_SELECTBY_EventId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersEvents_SELECTBY_UserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersEvents_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="EventId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersPlaces_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersPlaces_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersPlaces_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_TrackUsersPlaces_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_TrackUsersPlaces_SELECTBY_PlaceId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersPlaces_SELECTBY_UserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersPlaces_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="PlaceId" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersUsers_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersUsers_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="Tracked" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersUsers_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="Tracked" Type="bigint" Mode="InOut" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_TrackUsersUsers_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_TrackUsersUsers_SELECTBY_UserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_TrackUsersUsers_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="Tracked" Type="bigint" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Users_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="STP_Users_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="InOut" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="STP_Users_LOAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="InOut" />
+          <Parameter Name="Password" Type="varchar" Mode="InOut" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="InOut" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="InOut" />
+          <Parameter Name="status" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="STP_Users_SELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="STP_Users_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="DateInsert" Type="datetime" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -628,11 +960,6 @@
             <End Role="User" EntitySet="Users" />
             <End Role="BeepsUser" EntitySet="BeepsUsers" />
           </AssociationSet>
-          <EntitySet Name="BeepsMultimedias" EntityType="MvcBeepoyModel.BeepsMultimedia" />
-          <AssociationSet Name="FK_Beeps_BeepsMultimedias" Association="MvcBeepoyModel.FK_Beeps_BeepsMultimedias">
-            <End Role="BeepsMultimedia" EntitySet="BeepsMultimedias" />
-            <End Role="Beep" EntitySet="Beeps" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Beep">
           <Key>
@@ -646,12 +973,10 @@
           <Property Name="DateUpdate" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="BeepsTags" Relationship="MvcBeepoyModel.Beeps_BeepsTags_FK1" FromRole="Beeps" ToRole="BeepsTags" />
           <NavigationProperty Name="Beeps" Relationship="MvcBeepoyModel.FK_Beeps_Beeps" FromRole="Beeps" ToRole="Beeps1" />
-          <NavigationProperty Name="BeepFather" Relationship="MvcBeepoyModel.FK_Beeps_Beeps" FromRole="Beeps1" ToRole="Beeps" />
           <NavigationProperty Name="User" Relationship="MvcBeepoyModel.Users_Beeps_FK1" FromRole="Beeps" ToRole="Users" />
           <NavigationProperty Name="BeepsEvents" Relationship="MvcBeepoyModel.FK_BeepsEvents_Beeps" FromRole="Beep" ToRole="BeepsEvent" />
           <NavigationProperty Name="BeepsPlaces" Relationship="MvcBeepoyModel.FK_BeepsPlaces_Beeps" FromRole="Beep" ToRole="BeepsPlace" />
           <NavigationProperty Name="BeepsUsers" Relationship="MvcBeepoyModel.FK_BeepsUsers_Beeps" FromRole="Beep" ToRole="BeepsUser" />
-          <NavigationProperty Name="BeepsMultimedia" Relationship="MvcBeepoyModel.FK_Beeps_BeepsMultimedias" FromRole="Beep" ToRole="BeepsMultimedia" />
         </EntityType>
         <EntityType Name="BeepsTag">
           <Key>
@@ -1072,29 +1397,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="BeepsMultimedia">
-          <Key>
-            <PropertyRef Name="BeepId" />
-          </Key>
-          <Property Type="Int64" Name="BeepId" Nullable="false" />
-          <Property Type="String" Name="Url" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="FileType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="DateInsert" Nullable="false" />
-          <Property Type="DateTime" Name="DateUpdate" Nullable="false" />
-          <NavigationProperty Name="Beep" Relationship="MvcBeepoyModel.FK_Beeps_BeepsMultimedias" FromRole="BeepsMultimedia" ToRole="Beep" />
-        </EntityType>
-        <Association Name="FK_Beeps_BeepsMultimedias">
-          <End Type="MvcBeepoyModel.BeepsMultimedia" Role="BeepsMultimedia" Multiplicity="1" />
-          <End Type="MvcBeepoyModel.Beep" Role="Beep" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="BeepsMultimedia">
-              <PropertyRef Name="BeepId" />
-            </Principal>
-            <Dependent Role="Beep">
-              <PropertyRef Name="BeepId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1209,17 +1511,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BeepsMultimedias">
-            <EntityTypeMapping TypeName="MvcBeepoyModel.BeepsMultimedia">
-              <MappingFragment StoreEntitySet="BeepsMultimedias">
-                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
-                <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
-                <ScalarProperty Name="FileType" ColumnName="FileType" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="BeepId" ColumnName="BeepId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1241,8 +1532,8 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="BeepoyModel" ZoomLevel="82">
-        <EntityTypeShape EntityType="MvcBeepoyModel.Beep" Width="1.5" PointX="5.25" PointY="11.375" Height="3.7109993489583317" IsExpanded="true" />
+      <Diagram Name="BeepoyModel" ZoomLevel="47">
+        <EntityTypeShape EntityType="MvcBeepoyModel.Beep" Width="1.5" PointX="5.25" PointY="11.375" Height="3.3263964843749996" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.BeepsTag" Width="1.5" PointX="10.5" PointY="12.125" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.Event" Width="1.5" PointX="8.25" PointY="11.625" Height="3.1340950520833317" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.EventsTag" Width="1.5" PointX="10.5" PointY="9.125" Height="2.1725878906249996" IsExpanded="true" />
@@ -1253,12 +1544,12 @@
         <EntityTypeShape EntityType="MvcBeepoyModel.TrackUserUser" Width="1.5" PointX="3" PointY="19" Height="2.172587890624996" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.User" Width="1.5" PointX="0.75" PointY="8.125" Height="3.3263964843750031" IsExpanded="true" />
         <AssociationConnector Association="MvcBeepoyModel.Beeps_BeepsTags_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="11.422053181606703" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="11.422053181606703" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="11.422053181606703" />
-          <ConnectorPoint PointX="9.9319201773676546" PointY="11.422053181606701" />
-          <ConnectorPoint PointX="10.458868042351629" PointY="11.422053181606703" />
-          <ConnectorPoint PointX="11.25" PointY="11.422053181606703" />
+          <ConnectorPoint PointX="6.75" PointY="11.412810360580473" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="11.412810360580473" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="11.412810360580473" />
+          <ConnectorPoint PointX="9.941162998393887" PointY="11.412810360580471" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="11.412810360580473" />
+          <ConnectorPoint PointX="11.25" PointY="11.412810360580473" />
           <ConnectorPoint PointX="11.25" PointY="12.125" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Events_Beeps_FK1" ManuallyRouted="false">
@@ -1268,10 +1559,10 @@
           <ConnectorPoint PointX="6.75" PointY="13.3250634765625" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_Beeps_Beeps" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.7819230769230767" PointY="15.085999348958334" />
-          <ConnectorPoint PointX="5.7819230769230767" PointY="15.585999348958332" />
-          <ConnectorPoint PointX="6.2284615384615378" PointY="15.585999348958332" />
-          <ConnectorPoint PointX="6.2284615384615378" PointY="15.085999348958334" />
+          <ConnectorPoint PointX="5.7819230769230767" PointY="14.701396484375" />
+          <ConnectorPoint PointX="5.7819230769230767" PointY="14.951396484375" />
+          <ConnectorPoint PointX="6.2284615384615378" PointY="14.951396484375" />
+          <ConnectorPoint PointX="6.2284615384615378" PointY="14.701396484375" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Places_Beeps_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="3.75" PointY="15.125" />
@@ -1281,10 +1572,8 @@
           <ConnectorPoint PointX="5.25" PointY="13.239410807291666" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Users_Beeps_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="11.622322532552083" />
-          <ConnectorPoint PointX="4.041666666666667" PointY="11.622322532552083" />
-          <ConnectorPoint PointX="4.208333333333333" PointY="11.622322532552083" />
-          <ConnectorPoint PointX="5.25" PointY="11.622322532552083" />
+          <ConnectorPoint PointX="2.25" PointY="11.670397890625006" />
+          <ConnectorPoint PointX="5.25" PointY="11.670397890625006" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Tags_BeepsTags_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="9.75" PointY="10.297587890625" />
@@ -1294,43 +1583,37 @@
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Events_EventsTags_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="9.75" PointY="11.687306692307692" />
-          <ConnectorPoint PointX="10.06607443490112" PointY="11.37123225740657" />
-          <ConnectorPoint PointX="10.183925565098878" PointY="11.253381127208813" />
-          <ConnectorPoint PointX="10.1875" PointY="11.249806692307693" />
-          <ConnectorPoint PointX="10.1875" PointY="11.610087890625" />
-          <ConnectorPoint PointX="10.19107443490112" PointY="11.606513455723878" />
-          <ConnectorPoint PointX="10.308925565098878" PointY="11.488662325526121" />
+          <ConnectorPoint PointX="10.06607443490112" PointY="11.371232257406572" />
+          <ConnectorPoint PointX="10.183925565098878" PointY="11.253381127208815" />
+          <ConnectorPoint PointX="10.19107443490112" PointY="11.246232257406572" />
+          <ConnectorPoint PointX="10.308925565098878" PointY="11.128381127208815" />
+          <ConnectorPoint PointX="10.3125" PointY="11.124806692307693" />
+          <ConnectorPoint PointX="10.3125" PointY="11.485087890625" />
           <ConnectorPoint PointX="10.5" PointY="11.297587890625" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Events_TrackUsersEvents_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="11.935980580998347" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="11.935980580998347" />
-          <ConnectorPoint PointX="10.208333333333334" PointY="11.935980580998347" />
-          <ConnectorPoint PointX="11.166666666666666" PointY="11.935980580998347" />
-          <ConnectorPoint PointX="11.333333333333334" PointY="11.935980580998347" />
-          <ConnectorPoint PointX="12.203777604166666" PointY="11.935980580998347" />
-          <ConnectorPoint PointX="12.370444270833334" PointY="11.935980580998347" />
-          <ConnectorPoint PointX="13.5" PointY="11.935980580998347" />
+          <ConnectorPoint PointX="9.75" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="12.135416666666666" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="13.5" PointY="11.906155846153848" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Places_Events_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="5.6985897435897437" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="5.86525641025641" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="6.1451282051282048" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="6.3117948717948709" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="7.947916666666667" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="8.1145833333333339" PointY="15.275774069162383" />
-          <ConnectorPoint PointX="8.25" PointY="15.275774069162383" />
+          <ConnectorPoint PointX="4.5" PointY="15.494650065104167" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="15.494650065104167" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="15.494650065104167" />
+          <ConnectorPoint PointX="7.947916666666667" PointY="15.494650065104167" />
+          <ConnectorPoint PointX="8.1145833333333339" PointY="15.494650065104167" />
+          <ConnectorPoint PointX="8.25" PointY="15.494650065104167" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Users_Events_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="9.6706726419270836" />
-          <ConnectorPoint PointX="4.041666666666667" PointY="9.6706726419270836" />
-          <ConnectorPoint PointX="4.208333333333333" PointY="9.6706726419270836" />
-          <ConnectorPoint PointX="5.916666666666667" PointY="9.6706726419270836" />
-          <ConnectorPoint PointX="6.083333333333333" PointY="9.6706726419270836" />
-          <ConnectorPoint PointX="8" PointY="9.6706726419270836" />
+          <ConnectorPoint PointX="2.25" PointY="9.7187504999999987" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="9.7187504999999987" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="9.7187504999999987" />
+          <ConnectorPoint PointX="8" PointY="9.7187504999999987" />
           <ConnectorPoint PointX="8" PointY="10.547587890625" />
           <ConnectorPoint PointX="9" PointY="10.547587890625" />
           <ConnectorPoint PointX="9" PointY="11.625" />
@@ -1353,27 +1636,23 @@
           <ConnectorPoint PointX="3" PointY="16.980499674479169" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Users_TrackUsersEvents_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.2968742500000001" PointY="8.125" />
-          <ConnectorPoint PointX="1.2968742500000001" PointY="7.875" />
-          <ConnectorPoint PointX="1.7213562916666667" PointY="7.8749999999999991" />
-          <ConnectorPoint PointX="1.8880229583333332" PointY="7.875" />
-          <ConnectorPoint PointX="4.041666666666667" PointY="7.8749999999999991" />
-          <ConnectorPoint PointX="4.208333333333333" PointY="7.875" />
+          <ConnectorPoint PointX="1.2773453125" PointY="8.125" />
+          <ConnectorPoint PointX="1.2773453125" PointY="7.875" />
+          <ConnectorPoint PointX="1.7115918229166669" PointY="7.8749999999999991" />
+          <ConnectorPoint PointX="1.8782584895833334" PointY="7.875" />
           <ConnectorPoint PointX="5.916666666666667" PointY="7.8749999999999991" />
           <ConnectorPoint PointX="6.083333333333333" PointY="7.875" />
           <ConnectorPoint PointX="10.25" PointY="7.875" />
-          <ConnectorPoint PointX="10.25" PointY="11.684316250662322" />
-          <ConnectorPoint PointX="11.166666666666666" PointY="11.684316250662322" />
-          <ConnectorPoint PointX="11.333333333333334" PointY="11.684316250662322" />
-          <ConnectorPoint PointX="12.203777604166666" PointY="11.684316250662322" />
-          <ConnectorPoint PointX="12.370444270833334" PointY="11.684316250662322" />
-          <ConnectorPoint PointX="13.5" PointY="11.684316250662322" />
+          <ConnectorPoint PointX="10.25" PointY="11.637607310126372" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="11.637607310126372" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="11.637607310126372" />
+          <ConnectorPoint PointX="12.135416666666666" PointY="11.637607310126372" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="11.637607310126372" />
+          <ConnectorPoint PointX="13.5" PointY="11.637607310126372" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Users_TrackUsersPlaces_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.2499999999999996" PointY="12.02830078125" />
           <ConnectorPoint PointX="2.625" PointY="12.40330078125" />
-          <ConnectorPoint PointX="4.041666666666667" PointY="12.40330078125" />
-          <ConnectorPoint PointX="4.208333333333333" PointY="12.40330078125" />
           <ConnectorPoint PointX="4.875" PointY="12.40330078125" />
           <ConnectorPoint PointX="4.875" PointY="15.748847153846153" />
           <ConnectorPoint PointX="5.2511528461538459" PointY="16.125" />
@@ -1392,23 +1671,27 @@
         <EntityTypeShape EntityType="MvcBeepoyModel.BeepsPlace" Width="1.5" PointX="7.875" PointY="15.875" Height="1.9210009765625031" />
         <EntityTypeShape EntityType="MvcBeepoyModel.BeepsUser" Width="1.5" PointX="10.875" PointY="5.625" Height="1.921000976562496" />
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsEvents_Beeps" >
-          <ConnectorPoint PointX="6.75" PointY="11.453305681606704" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="11.453305681606704" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="11.453305681606704" />
-          <ConnectorPoint PointX="9.9006676773676539" PointY="11.453305681606702" />
-          <ConnectorPoint PointX="10.427615542351628" PointY="11.453305681606704" />
-          <ConnectorPoint PointX="12.2871109375" PointY="11.453305681606704" />
-          <ConnectorPoint PointX="12.2871109375" PointY="15.25" />
+          <ConnectorPoint PointX="6.75" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="9.8326565258611" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="9.9993231925277684" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.521316833113255" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="12.21875" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="12.21875" PointY="15.25" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsPlaces_Beeps" >
-          <ConnectorPoint PointX="6.75" PointY="11.484558181606705" />
-          <ConnectorPoint PointX="8.03125" PointY="11.484558181606705" />
+          <ConnectorPoint PointX="6.75" PointY="11.498316096846864" />
+          <ConnectorPoint PointX="8.03125" PointY="11.498316096846864" />
           <ConnectorPoint PointX="8.03125" PointY="15.875" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsUsers_Beeps" >
           <ConnectorPoint PointX="6" PointY="11.375" />
-          <ConnectorPoint PointX="6" PointY="6.4240942089843749" />
-          <ConnectorPoint PointX="10.875" PointY="6.4240942089843749" />
+          <ConnectorPoint PointX="6" PointY="6.3421574163818359" />
+          <ConnectorPoint PointX="10.875" PointY="6.3421574163818359" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsEvents_Events" >
           <ConnectorPoint PointX="9.75" PointY="15.485301106770832" />
@@ -1421,21 +1704,11 @@
           <ConnectorPoint PointX="7.875" PointY="15.968749999999998" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsUsers_Users" >
-          <ConnectorPoint PointX="1.804689625" PointY="8.125" />
-          <ConnectorPoint PointX="1.804689625" PointY="7.142093549804688" />
-          <ConnectorPoint PointX="4.041666666666667" PointY="7.1420935498046871" />
-          <ConnectorPoint PointX="4.208333333333333" PointY="7.142093549804688" />
-          <ConnectorPoint PointX="5.916666666666667" PointY="7.1420935498046871" />
-          <ConnectorPoint PointX="6.083333333333333" PointY="7.142093549804688" />
-          <ConnectorPoint PointX="10.875" PointY="7.142093549804688" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="MvcBeepoyModel.BeepsMultimedia" Width="1.5" PointX="3.375" PointY="0.875" Height="2.1725878906250031" />
-        <AssociationConnector Association="MvcBeepoyModel.FK_Beeps_BeepsMultimedias" >
-          <ConnectorPoint PointX="4.125" PointY="3.0475878906250031" />
-          <ConnectorPoint PointX="4.125" PointY="13.744650065104166" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="13.744650065104166" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="13.744650065104166" />
-          <ConnectorPoint PointX="5.25" PointY="13.744650065104166" />
+          <ConnectorPoint PointX="1.7949251562500002" PointY="8.125" />
+          <ConnectorPoint PointX="1.7949251562500002" PointY="7.1218198327636726" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="7.1218198327636717" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="7.1218198327636726" />
+          <ConnectorPoint PointX="10.875" PointY="7.1218198327636726" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

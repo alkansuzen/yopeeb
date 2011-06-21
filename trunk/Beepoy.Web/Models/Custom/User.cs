@@ -21,7 +21,8 @@ namespace Beepoy.Web.Models
         }
         public List<Beep> FollowingBeeps(long UserId, Func<Beep, bool> filter, int take = 10)
         {
-            var getBeeps = (from users in Context.Users
+            var getBeeps = (
+                            from users in Context.Users
                             join tracks in Context.TrackUserEvents
                                   on users.UserId equals tracks.UserId
                             join beepsEvents in Context.BeepsEvents
@@ -43,12 +44,13 @@ namespace Beepoy.Web.Models
                             .Union(
                             from users in Context.Users
                             join trackUser in Context.TrackUserUsers
-                                 on users.UserId equals trackUser.UserIdTracked
+                                 on users.UserId equals trackUser.UserId
                             join beeps in Context.Beeps
                                  on trackUser.UserIdTracked equals beeps.UserId
                             where UserId == users.UserId
                             select beeps)
                             .Union(
+                            /*Beeps dos eventos dos lugares que usuário segue */
                             from users in Context.Users
                             join places in Context.TrackUserPlaces
                                  on users.UserId equals places.UserId
@@ -60,6 +62,11 @@ namespace Beepoy.Web.Models
                                  on beepsEvents.BeepId equals beeps.BeepId
                             where UserId == users.UserId
                             select beeps)
+                            .Union(from users in Context.Users
+                                   join beeps in Context.Beeps
+                                     on users.UserId equals beeps.UserId
+                            select beeps)
+
                             .Distinct()
                             .OrderByDescending(b => b.DateInsert)
                             .Take(take)
