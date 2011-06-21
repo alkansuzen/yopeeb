@@ -15,15 +15,18 @@ namespace Beepoy.Web.Controllers
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 
-            //User user = new User()
-            //{
-            //    UserName = "Rodrigo",
-            //    Password = "senha",
-            //    DateInsert = DateTime.Now,
-            //    DateUpdate = DateTime.Now
-            //};
-            //db.Users.Add(user);
-            //db.SaveChanges();
+            User user = new User()
+            {
+                UserName = "Rodrigo24",
+                Password = "senha",
+                IdName = "teste",
+                ImageUrl = "http://images",
+                DateInsert = DateTime.Now,
+                DateUpdate = DateTime.Now
+
+            };
+            db.Users.Add(user);
+            db.SaveChanges();
 
             //Place place = new Place()
             //{
@@ -48,17 +51,17 @@ namespace Beepoy.Web.Controllers
             //db.Events.Add(event1);
             //db.SaveChanges();
 
-            //Beep beep = new Beep()
-            //{
-            //    Text = "O quê? Onde? Quando?",
-            //    Event = db.Events.Find(3),
-            //    User = db.Users.Find(1),
-            //    BeepFather = db.Beeps.Find(6),
-            //    DateInsert = DateTime.Now,
-            //    DateUpdate = DateTime.Now
-            //};
-            //db.Beeps.Add(beep);
-            //db.SaveChanges();
+            Beep beep = new Beep()
+            {
+                Text = "O quê? Onde? Quando?",
+               
+                User = db.Users.Find(1),
+                BeepIdFather = 6,
+                DateInsert = DateTime.Now,
+                DateUpdate = DateTime.Now
+            };
+            db.Beeps.Add(beep);
+            db.SaveChanges();
 
             //TrackUserUser t = new TrackUserUser()
             //{
@@ -82,6 +85,16 @@ namespace Beepoy.Web.Controllers
           
             return new RedirectResult(ReturnPage);
         }
+
+
+        public ActionResult LoginId( int id)
+        {
+            SessionUser = Db.Users.Find(id);
+
+
+            return new RedirectResult("/Home");
+        }
+
 
         public ActionResult Logout()
         {
