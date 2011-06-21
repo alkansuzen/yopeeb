@@ -147,7 +147,7 @@ namespace Beepoy.Web.Controllers
                 }
                 else
                 {
-                    beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
+                    beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < DateTime.Now,6);
                 }
 
                  this.HttpContext.Session.Add("lastQuery", DateTime.Now);

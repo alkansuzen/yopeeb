@@ -59,6 +59,12 @@ namespace Beepoy.Web.Controllers
             try
             {
                 // TODO: Add insert logic here
+                beep.User =  Db.Users.Find(SessionUser.UserId);
+                beep.BeepIdFather = -1;
+                beep.DateInsert = DateTime.Now;
+                beep.DateUpdate = DateTime.Now;
+                
+
                 Db.Beeps.Add(beep);
                 Db.SaveChanges();
 
