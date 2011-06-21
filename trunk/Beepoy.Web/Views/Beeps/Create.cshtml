@@ -1,53 +1,66 @@
 ﻿@model Beepoy.Web.Models.Beep
 
 @{
+    
     Html.EnableUnobtrusiveJavaScript(true);
-}
+
+   }
 
 <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
 
+        $("#loading").hide()
+    
+        $(".share-lock span").click(function () {
+            $("form").submit();
+        });
+    
+    });
+</script>
 
 @using (Ajax.BeginForm("create", "beeps", null, new AjaxOptions { UpdateTargetId = "result", LoadingElementId = "loading" }, null))
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Beep</legend>
-        <div id="loading" style="display:hidden">Loading...</div>
-        <div id="result"></div>
+                	<div class="share-itens">
+                    <div id="loading">Loading...</div>
+                    <div id="result"></div>    
+                    @Html.ValidationMessageFor(model => model.Text)    
+                	<span class="share-title">Share: </span>
+                    
+                    <a href="#" class="share-status"> Status </a>
 
+                    <a href="#" class="share-photo"> Photo </a>
+                    
+                    <a href="#" class="share-link"> Link </a>
+                    
+                    <a href="#" class="share-video"> Video </a>
+                    
+                    <div class="share-box">
+                        <div class="share-arrow"></div>
+                       	@Html.TextAreaFor(model => model.Text)
+                    </div>
+                    
+                    <div class="share-line">
+                    
+                    	<span class="share-title">Where?</span>
+                    
+                    	<a class="share-where" href="#"> Ibirapuera</a>
+                        
+                        <a class="share-lock" href="#"><span>Beep</span></a>
+                    
+                    </div>
+                    
+                    <div class="share-line">
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Text)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Text)
-            @Html.ValidationMessageFor(model => model.Text)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserId)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserId)
-            @Html.ValidationMessageFor(model => model.UserId)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateInsert)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DateInsert)
-            @Html.ValidationMessageFor(model => model.DateInsert)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+                    
+                    	<span class="share-title">When?</span>
+                                        
+                    	<a class="share-when" href="#"> Hoje - 21:20</a>
+                    
+                    </div>
+   					
+                 </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
