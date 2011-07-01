@@ -1,0 +1,95 @@
+#timeline_holder {
+    background: url(/static/theme/image/bluemetal.png);
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.response_count, .plurk_box .caption {
+    background: #eee;
+    color:#444;
+}
+
+.day_bg .div_inner{
+    background: url(/static/theme/image/marine-arrowline.png) no-repeat;
+}
+
+#bottom_line {
+    background-image: url(/static/theme/image/marine-timestamp-line.png);
+    border-top: 1px solid #a4a4a4;
+}
+
+#filter_tab a {
+	border-color:#000!important;
+}
+
+.day_bg .div_inner {
+    border-top:none;
+    border-right: 1px solid #a4a4a4;
+    border-left: 1px solid #a4a4a4;
+    width:24px;
+    position:relative;
+}
+
+.day_start .div_bottom, .response_count, .day_start .bottom_start{
+    color: #444!important;
+}
+
+.bottom_start, .bottom_end {
+    color: #a4a4a4;
+}
+
+.div_inner, #timeline_holder {
+    color: #000;
+}
+
+.block_bg .div_one_line {
+    border-left: none;
+}
+
+#display_options, .display_menu {
+    border: 1px solid #555;
+    border-bottom-color:#333;
+    border-right-color:#333;
+    color: #fff;
+    background: #333 url(/static/theme/image/graymetal.png);
+}
+
+.display_on {
+    color: #fff !important;
+    background-color: #222!important;
+}
+
+.display_menu .on{
+    color: #fff !important;
+    background-color: #222!important;
+}
+
+.bottom_line_bg {
+    background-color: #e8eced;
+    color: #444;
+}
+
+.selected {
+    font-weight: bold;
+    color: #fff!important;
+    background-color: #111!important;
+}
+
+.plurk_cnt, .dots .inner, .plurk_box .mini_form {
+    border-right: 1px solid #a4a4a4;
+    border-bottom: 1px solid #a4a4a4;
+}
+
+.plurk_box .caption, .plurk_box .list{
+    border-right: 1px solid #a4a4a4; 
+}
+
+.evening, .night, .day, .morning {
+    border-color:#a4a4a4;
+    background-color:#fff;
+}
+
+#time_show span {
+    color:#999;
+}
+

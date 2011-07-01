@@ -123,6 +123,11 @@ namespace Beepoy.Web.Controllers
             return View(beeps);
         }
 
+        public ActionResult Timeline()
+        {
+
+            return View();
+        }
 
 
         //Todo:  Precisa arrumar o layout para exibir os beeps seguidos

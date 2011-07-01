@@ -1,0 +1,87 @@
+body, html{
+    background:#0c0c0c url(/static/theme/image/dark-bg.gif) repeat-x;
+    font-family:Arial, Verdana;
+    color: white;
+}
+
+#timeline_holder {
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+#more_options #more_options_holder, #top_bar #edit_link:hover, #reply #reply_box, #reply h2{
+    color:#444;
+    background: #eee;
+}
+
+#more_options_link{
+    background:#dfdfdf;
+    color:#444!important;
+    padding-left:0;
+    border:1px solid #000;
+    border-top-color: #eee;
+    border-left-color: #eee;
+}
+
+#more_options .on {
+  border:1px solid #000;
+  border-bottom-color: #eee;
+  border-right-color: #eee;
+}
+
+#dashboard_holder a, #footer a, #top_login a, #errors a, .error a, #top_bar .content{
+	color:#dfdfdf;
+}
+
+#top_bar a {
+	color:#dfdfdf;
+}
+
+#top_bar .item, #top_bar .on img{
+    border: none;
+}
+
+#reply .char_updater{
+    color:#666;
+}
+
+#more_options td {
+    background:none;
+}
+
+#footer {
+    color: #666;
+}
+
+.char_updater {
+    color:#777;
+}
+
+#plurk_responses ul.responses .message, #plurk_responses ul.responses li img.avatar {
+    border-color:#eee;
+}
+
+#vertical_div {
+    background:none;
+    border-bottom:1px solid #86afc1;
+}
+
+textarea#input_permalink {
+    border: 1px solid #c0c0c0;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+textarea#input_big, textarea#input_permalink, #more_options .auto_ta, #more_options select, .clipboard {
+    border: 1px solid #000;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+}
+
+.dash-segment img.profile-pic, #dash-friends-pics a, #dash-fans-pics a, #emoticon_selecter{    
+    border-color: #777;
+}
+
+.dash-segment{
+	background:none;
+}
