@@ -1,4 +1,27 @@
-﻿	<div class="timeline-wrap">
+﻿
+ <script type="text/javascript" charset="utf-8">
+     $(document).ready(function () {
+         var clientX = 0;
+         $('#timeline_holder')
+				.bind('dragstart', function (event) {
+				    clientX = event.clientX;
+				})
+				.bind('drag', function (event) {
+				    var left = event.clientX - clientX;
+				    clientX = event.clientX;
+				    $("#timeline_holder .move").each(function () {
+				        $(this).css({
+				            left: $(this).position().left + left
+				        });
+				    });
+				});
+     });
+</script>
+
+
+
+
+	<div class="timeline-wrap">
 							
 										<div id="timeline_holder">
 										<div id="timeline_cnt">

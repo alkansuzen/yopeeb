@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Beepoy.Web.Models;
 using Beepoy.Web.Library;
+using Beepoy.Web.Filters;
 
 namespace Beepoy.Web.Controllers
 {
@@ -47,28 +48,42 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult Create()
         {
+
+            ViewBag.PlaceId = new SelectList(Db.Places, "PlaceID", "Name");
             return View();
         } 
 
         //
         // POST: /Beeps/Create
-
+        [AuthorizeFilter]
         [HttpPost]
-        public String Create(Beep beep)
+        public String Create(Beep beep, Place place)
         {
             try
             {
                 // TODO: Add insert logic here
-                beep.User =  Db.Users.Find(SessionUser.UserId);
-                beep.BeepIdFather = -1;
-                beep.DateInsert = DateTime.Now;
-                beep.DateUpdate = DateTime.Now;
-                
+               
+                    beep.User = Db.Users.Find(SessionUser.UserId);
+                    beep.BeepIdFather = -1;
+                    beep.DateInsert = DateTime.Now;
+                    beep.DateUpdate = DateTime.Now;
+                    
+                    
+                    BeepsPlace bp = new BeepsPlace
+                    {
+                        PlaceId = place.PlaceId,
+                        Beep  = beep,
+                        DateInsert = DateTime.Now,
+                        DateUpdate = DateTime.Now
+                    };
 
-                Db.Beeps.Add(beep);
-                Db.SaveChanges();
+                    Db.Beeps.Add(beep);
+                    Db.BeepsPlaces.Add(bp);
 
-                return "Sucess";
+                    Db.SaveChanges();
+
+                    return "Sucess";
+               
             }
             catch( Exception e)
             {

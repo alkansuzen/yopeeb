@@ -28,6 +28,9 @@
                     <div id="loading">Loading...</div>
                     <div id="result"></div>    
                     @Html.ValidationMessageFor(model => model.Text)    
+
+                    @Html.DropDownList("PlaceId", String.Empty);
+
                 	<span class="share-title">Share: </span>
                     
                     <a href="#" class="share-status"> Status </a>

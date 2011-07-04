@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beepoy.Web.Tests", "Beepoy.Web.Tests\Beepoy.Web.Tests.csproj", "{81F0E720-2FC1-4B08-86F7-824914B3B426}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beepoy.SocialMedia.Twitter", "Beepoy.SocialMedia.Twitter\Beepoy.SocialMedia.Twitter.csproj", "{B79401AF-0CF3-4BAE-B492-7350C4095D5F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DD999A5-7399-4251-ADBE-ACF2C701FA6C} = {7DD999A5-7399-4251-ADBE-ACF2C701FA6C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
