@@ -13,7 +13,12 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
+
+
+            if (SessionUser != null)
+                return new RedirectResult("/Users");
+
+          /*  ViewBag.Message = "Welcome to ASP.NET MVC!";
 
             User user = new User()
             {
@@ -73,7 +78,7 @@ namespace Beepoy.Web.Controllers
             //db.TrackUserUsers.Add(t);
             //db.SaveChanges();
 
-            
+            */
 
             return View();
         }

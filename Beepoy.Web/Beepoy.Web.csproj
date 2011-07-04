@@ -192,6 +192,8 @@
     <Content Include="Content\Layout01\Images\marcadores\oficina.gif" />
     <Content Include="Content\Layout01\Images\usuario\user.gif" />
     <Content Include="Content\Layout01\js\acoes.js" />
+    <Content Include="Content\timeline.css" />
+    <Content Include="Content\timeline.style.css" />
     <Content Include="EFCodeFirstReadMe.txt" />
     <Content Include="Global.asax" />
     <Content Include="obj\Debug\Beepoy.Web.csproj.FileListAbsolute.txt" />
@@ -310,6 +312,7 @@
     <Content Include="Views\Beeps\Create.cshtml" />
     <Content Include="Views\Shared\_Home.cshtml" />
     <Content Include="Views\Users\Streams.cshtml" />
+    <Content Include="Views\Users\Timeline.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />
