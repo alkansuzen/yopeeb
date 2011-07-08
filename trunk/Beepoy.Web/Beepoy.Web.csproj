@@ -209,7 +209,7 @@
     <Content Include="obj\Debug\TempPE\Models.Model1.Designer.cs.dll" />
     <Content Include="obj\Debug\TempPE\Models.Models.Designer.cs.dll" />
     <Content Include="Scripts\map\action.js" />
-    <Content Include="Scripts\map\geo.js" />
+    <Content Include="Scripts\map\jquery.geolocation.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -51,7 +51,7 @@ $(function(){
 	})
 	
 	// Ajuste de altura do mapa
-	resizeMap()
+	//resizeMap()
 	
 	// Ajuste para redimencionar a tela
 	$(window).resize(function() {
@@ -78,27 +78,33 @@ function resizeMap(){
 	var infowindow;
 	var local;
 	var geocoder;
-	function initialize(){
-				geocoder = new google.maps.Geocoder();
-				local = new google.maps.LatLng(-34.397, 150.644);
-				infowindow = new google.maps.InfoWindow();
-				infowindow.setContent("Localizamos você aqui")
-				infowindow.setPosition(local)
-			var myOptions = {
-				zoom: 8,
-				center: local,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			}
-			map = new google.maps.Map(document.getElementById("map"), myOptions);
-			console.log(map)
-			infowindow.open(map)
-	}
-	if (geo_position_js.init()) {
-			geo_position_js.getCurrentPosition(geo_success, geo_error);
-	}	
-	
+	function initialize() {
+	    geocoder = new google.maps.Geocoder();
+	    local = new google.maps.LatLng(-34.397, 150.644);
+	    infowindow = new google.maps.InfoWindow();
+	    infowindow.setContent("Localizamos você aqui")
+	    infowindow.setPosition(local)
+	    var myOptions = {
+	        zoom: 8,
+	        center: local,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	    }
+	    map = new google.maps.Map(document.getElementById("map"), myOptions);
+	    console.log(map)
+	    infowindow.open(map)
+
+	    $.geolocation.find(function (location) {
+	        if (location) {
+	            geo_success(location);
+	        } else {
+	            geo_error('erro');
+	        }
+
+	    });
+
+	}          	
 	function geo_success( p){
-			local =  new google.maps.LatLng(p.coords.latitude, p.coords.longitude)
+			local =  new google.maps.LatLng(p.latitude, p.longitude)
 			map.setCenter(local)
 			map.setZoom(15)
 			infowindow.setPosition(local)

@@ -521,7 +521,7 @@ h1.indent {
 	left: 10px;
 	top: 36px;
 	width: 646px;
-	height: 188px;
+	
 	z-index: 1;
 	float: left;
 	overflow: hidden;
@@ -529,7 +529,8 @@ h1.indent {
 
 #timeline .wrap {
 	background: #DFDFDF;
-	height: 141px;
+	height: 170px;
+
 }
 
 #menu-l #menu-perfil {
