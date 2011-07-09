@@ -38,11 +38,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TweetSharp">
-      <HintPath>..\..\..\Users\V\Downloads\Twitter Made Easy\TwitterSample\TwitterSample\SocialMediaLibrary\bin\TweetSharp.dll</HintPath>
+    <Reference Include="TweetSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\TweetSharp.dll</HintPath>
     </Reference>
-    <Reference Include="TweetSharp.Twitter">
-      <HintPath>..\..\..\Users\V\Downloads\Twitter Made Easy\TwitterSample\TwitterSample\SocialMediaLibrary\bin\TweetSharp.Twitter.dll</HintPath>
+    <Reference Include="TweetSharp.Twitter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\TweetSharp.Twitter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
