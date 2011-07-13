@@ -9,6 +9,8 @@ namespace Beepoy.Console
     {
         static void Main(string[] args)
         {
+            //Beepoy.SocialMedia.Twitter.TwitterInfo.Hello();
+            Beepoy.SocialMedia.Twitter.Authentication.Login();
         }
     }
 }
