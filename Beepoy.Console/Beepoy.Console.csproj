@@ -47,10 +47,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Beepoy.SocialMedia.Twitter\Beepoy.SocialMedia.Twitter.csproj">
+      <Project>{B79401AF-0CF3-4BAE-B492-7350C4095D5F}</Project>
+      <Name>Beepoy.SocialMedia.Twitter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Beepoy.Web\Beepoy.Web.csproj">
       <Project>{7DD999A5-7399-4251-ADBE-ACF2C701FA6C}</Project>
       <Name>Beepoy.Web</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
