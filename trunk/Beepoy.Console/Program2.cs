@@ -15,6 +15,9 @@ namespace Beepoy.ConsoleApp
             twitterClientInfo.ConsumerKey = ConsumerKey; //Read ConsumerKey out of the app.config
             twitterClientInfo.ConsumerSecret = ConsumerSecret; //Read the ConsumerSecret out the app.config
 
+            string token = AccessToken;
+            string tokenSecret = AccessTokenSecret;
+
             TwitterService twitterService = new TwitterService(twitterClientInfo);
 
             if (string.IsNullOrEmpty(AccessToken) || string.IsNullOrEmpty(AccessTokenSecret))
@@ -35,14 +38,15 @@ namespace Beepoy.ConsoleApp
 
                 OAuthAccessToken accessToken = twitterService.GetAccessToken(requestToken, pin);
 
-                string token = accessToken.Token;
-                string tokenSecret = accessToken.TokenSecret;
+                token = accessToken.Token;
+                tokenSecret = accessToken.TokenSecret;
 
                 Console.WriteLine("AccessToken: " + token);
                 Console.WriteLine("AccessTokenSecret: " + tokenSecret);
             }
 
-            twitterService.AuthenticateWith(AccessToken, AccessTokenSecret);
+            //twitterService.AuthenticateWith(AccessToken, AccessTokenSecret);
+            twitterService.AuthenticateWith(token, tokenSecret);
 
             twitterService.SendTweet("tweet or beep ?");
             twitterService.SendTweet("beep or tweet ?");
