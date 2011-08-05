@@ -179,7 +179,7 @@ namespace Beepoy.Web.Controllers
             return new RedirectResult(authUrl);
         }
 
-        public ActionResult Authentication(string oauth_token, string oauth_verifier)
+        public ActionResult /*string*/ Authentication(string oauth_token, string oauth_verifier)
         {
             //OAuthAccessToken accessToken = twitterService.GetAccessToken(requestToken, oauth_verifier);
             OAuthAccessToken accessToken = twitterService.GetAccessToken(requestToken);
@@ -187,22 +187,41 @@ namespace Beepoy.Web.Controllers
             twitterService.AuthenticateWith(accessToken.Token, accessToken.TokenSecret);
 
             //TwitterStatus twitterStatus = twitterService.SendTweet("tweet or beep ?");
-
             //if (twitterService.Response.InnerException != null)
             //    return "erro";
             //return "ok";
 
-            //Beepoy.Web.Models.User user = Db.Users.First(usr => usr.IdName == twitterService.GetUserProfile().Name);
-            //if (user == null)
-            //{
-            //    Beepoy.Web.Models.User user = new Models.User
-            //    {
-            //        UserName 
-            //    }
-            //    Db.Users.Add(
-            //    }
-            //SessionUser = 
+            TwitterUser twitterUser = twitterService.GetUserProfile();
 
+            try
+            {
+                SessionUser = Db.Users.First(usr => usr.IdName == twitterUser.ScreenName);
+            }
+            catch
+            {
+                Beepoy.Web.Models.User usr = new Beepoy.Web.Models.User
+                {
+                    UserName = twitterUser.Name
+                    ,
+                    IdName = twitterUser.ScreenName
+                    ,
+                    ImageUrl = twitterUser.ProfileImageUrl
+                    ,
+                    DateInsert = DateTime.Now
+                    ,
+                    DateUpdate = DateTime.Now
+                    ,
+                    Password = ""
+                    
+                };
+
+                Db.Users.Add(usr);
+                Db.SaveChanges();
+
+                SessionUser = usr;
+            }
+
+            //return SessionUser.UserName;
             return new RedirectResult("/");
             //return View();
         }
