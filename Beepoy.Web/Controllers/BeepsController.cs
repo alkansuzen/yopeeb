@@ -82,6 +82,8 @@ namespace Beepoy.Web.Controllers
 
                     Db.SaveChanges();
 
+                    twitterService.SendTweet(beep.Text);
+
                     return "Sucess";
                
             }

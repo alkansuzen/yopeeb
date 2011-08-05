@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using Beepoy.Web.Models;
 using Beepoy.Web.Filters;
+using System.Configuration;
+using TweetSharp;
+using TweetSharp.Model;
 
 namespace Beepoy.Web.Controllers
 {
@@ -158,6 +161,56 @@ namespace Beepoy.Web.Controllers
                  this.HttpContext.Session.Add("lastQuery", DateTime.Now);
             
                 return PartialView(beeps);
+        }
+
+        public ActionResult Authorization()
+        {
+            twitterService = new TwitterService(
+                ConfigurationManager.AppSettings["ConsumerKey"] 
+                , ConfigurationManager.AppSettings["ConsumerSecret"] 
+                , ConfigurationManager.AppSettings["AccessToken"]
+                , "");
+
+            //Now we need the Token and TokenSecret
+            //Firstly we need the RequestToken and the AuthorisationUrl
+            requestToken = twitterService.GetRequestToken();
+            string authUrl = twitterService.GetAuthorizationUri(requestToken).AbsoluteUri;
+
+            return new RedirectResult(authUrl);
+        }
+
+        public ActionResult Authentication(string oauth_token, string oauth_verifier)
+        {
+            //OAuthAccessToken accessToken = twitterService.GetAccessToken(requestToken, oauth_verifier);
+            OAuthAccessToken accessToken = twitterService.GetAccessToken(requestToken);
+
+            twitterService.AuthenticateWith(accessToken.Token, accessToken.TokenSecret);
+
+            //TwitterStatus twitterStatus = twitterService.SendTweet("tweet or beep ?");
+
+            //if (twitterService.Response.InnerException != null)
+            //    return "erro";
+            //return "ok";
+
+            //Beepoy.Web.Models.User user = Db.Users.First(usr => usr.IdName == twitterService.GetUserProfile().Name);
+            //if (user == null)
+            //{
+            //    Beepoy.Web.Models.User user = new Models.User
+            //    {
+            //        UserName 
+            //    }
+            //    Db.Users.Add(
+            //    }
+            //SessionUser = 
+
+            return new RedirectResult("/");
+            //return View();
+        }
+
+        public string Tweet()
+        {
+            TwitterStatus twitterStatus = twitterService.SendTweet("beep or tweet?");
+            return twitterStatus.Text;
         }
     }
 }
