@@ -134,33 +134,36 @@ namespace Beepoy.Web.Controllers
 
 
         //Todo:  Precisa arrumar o layout para exibir os beeps seguidos
-        
+
         [AuthorizeFilter]
-        public ActionResult Streams(){
+        public ActionResult Streams()
+        {
 
             List<Beep> beeps;
 
-            
-                if (this.Request.IsAjaxRequest())
+            DateTime lastQueryDate = DateTime.Now;
+
+            if (this.Request.IsAjaxRequest())
+            {
+                if (this.HttpContext.Session["lastQuery"] == null)
                 {
-                    if (this.HttpContext.Session["lastQuery"] == null)
-                    {
-                        beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
-                    }
-                    else
-                    {
-                        DateTime lastResult = (DateTime)this.HttpContext.Session["lastQuery"];
-                        beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert > lastResult);
-                    }
+                    beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < lastQueryDate);
                 }
                 else
                 {
-                    beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < DateTime.Now,6);
+                    DateTime lastResult = (DateTime)this.HttpContext.Session["lastQuery"];
+                    beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert > lastResult);
                 }
+            }
+            else
+            {
+                beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < lastQueryDate, 6);
+                //return PartialView("");
+            }
 
-                 this.HttpContext.Session.Add("lastQuery", DateTime.Now);
-            
-                return PartialView(beeps);
+            this.HttpContext.Session.Add("lastQuery", lastQueryDate);
+
+            return PartialView(beeps);
         }
 
         public ActionResult Authorization()
@@ -197,22 +200,16 @@ namespace Beepoy.Web.Controllers
             {
                 SessionUser = Db.Users.First(usr => usr.IdName == twitterUser.ScreenName);
             }
-            catch
+            catch(System.InvalidOperationException exc)
             {
                 Beepoy.Web.Models.User usr = new Beepoy.Web.Models.User
                 {
                     UserName = twitterUser.Name
-                    ,
-                    IdName = twitterUser.ScreenName
-                    ,
-                    ImageUrl = twitterUser.ProfileImageUrl
-                    ,
-                    DateInsert = DateTime.Now
-                    ,
-                    DateUpdate = DateTime.Now
-                    ,
-                    Password = ""
-                    
+                    , IdName = twitterUser.ScreenName
+                    , ImageUrl = twitterUser.ProfileImageUrl
+                    , DateInsert = DateTime.Now
+                    , DateUpdate = DateTime.Now
+                    , Password = ""
                 };
 
                 Db.Users.Add(usr);
@@ -224,6 +221,13 @@ namespace Beepoy.Web.Controllers
             //return SessionUser.UserName;
             return new RedirectResult("/");
             //return View();
+        }
+
+        public ActionResult Logout()
+        {
+            twitterService.EndSession();
+
+            return new RedirectResult("/");
         }
 
         public string Tweet()

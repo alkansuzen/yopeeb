@@ -220,6 +220,7 @@
     <Content Include="obj\Debug\TempPE\Models.DataClasses2.designer.cs.dll" />
     <Content Include="obj\Debug\TempPE\Models.Model1.Designer.cs.dll" />
     <Content Include="obj\Debug\TempPE\Models.Models.Designer.cs.dll" />
+    <Content Include="Scripts\jquery.ui.datepicker-en-GB.js" />
     <Content Include="Scripts\map\action.js" />
     <Content Include="Scripts\map\jquery.geolocation.js" />
     <Content Include="Web.config" />
@@ -348,12 +349,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3680</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://beepoy.com</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

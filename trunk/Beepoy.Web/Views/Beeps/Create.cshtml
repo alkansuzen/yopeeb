@@ -5,10 +5,11 @@
     Html.EnableUnobtrusiveJavaScript(true);
 
    }
-
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/base/jquery-ui.css")" />
 <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
 <script type="text/javascript">
     jQuery(function ($) {
 
@@ -17,8 +18,14 @@
         $(".share-lock span").click(function () {
             $("form").submit();
         });
-    
+
+        $("#datepicker").datepicker({
+            showOn: "button",
+            buttonImage: "http://beepoy.com/Content/Images/share-when.png",
+            buttonImageOnly: true
+        });
     });
+
 </script>
 
 @using (Ajax.BeginForm("create", "beeps", null, new AjaxOptions { UpdateTargetId = "result", LoadingElementId = "loading" }, null))
@@ -50,18 +57,20 @@
                     
                     	<span class="share-title">Where?</span>
                     
-                    	<a class="share-where" href="#"> Ibirapuera</a>
+                    	<a class="share-where" href=""> Ibirapuera</a>
                         
                         <a class="share-lock" href="#"><span>Beep</span></a>
                     
                     </div>
-                    
+
                     <div class="share-line">
 
                     
                     	<span class="share-title">When?</span>
-                                        
-                    	<a class="share-when" href="#"> Hoje - 21:20</a>
+
+                    	<a class="share-when" href="#"> </a> 
+                        
+                        <input type="text" id="datepicker">
                     
                     </div>
    					
