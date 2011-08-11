@@ -20,6 +20,8 @@ namespace Beepoy.Web.Controllers
         [AuthorizeFilter]
         public ActionResult Index()
         {
+            ViewBag.SessionUser = SessionUser;
+
             return View();
         }
 
@@ -168,7 +170,7 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult Authorization()
         {
-            twitterService = new TwitterService(
+            TwitterService = new TwitterService(
                 ConfigurationManager.AppSettings["ConsumerKey"] 
                 , ConfigurationManager.AppSettings["ConsumerSecret"] 
                 , ConfigurationManager.AppSettings["AccessToken"]
@@ -176,8 +178,8 @@ namespace Beepoy.Web.Controllers
 
             //Now we need the Token and TokenSecret
             //Firstly we need the RequestToken and the AuthorisationUrl
-            requestToken = twitterService.GetRequestToken();
-            string authUrl = twitterService.GetAuthorizationUri(requestToken).AbsoluteUri;
+            RequestToken = TwitterService.GetRequestToken();
+            string authUrl = TwitterService.GetAuthorizationUri(RequestToken).AbsoluteUri;
 
             return new RedirectResult(authUrl);
         }
@@ -185,16 +187,16 @@ namespace Beepoy.Web.Controllers
         public ActionResult /*string*/ Authentication(string oauth_token, string oauth_verifier)
         {
             //OAuthAccessToken accessToken = twitterService.GetAccessToken(requestToken, oauth_verifier);
-            OAuthAccessToken accessToken = twitterService.GetAccessToken(requestToken);
+            OAuthAccessToken accessToken = TwitterService.GetAccessToken(RequestToken);
 
-            twitterService.AuthenticateWith(accessToken.Token, accessToken.TokenSecret);
+            TwitterService.AuthenticateWith(accessToken.Token, accessToken.TokenSecret);
 
             //TwitterStatus twitterStatus = twitterService.SendTweet("tweet or beep ?");
             //if (twitterService.Response.InnerException != null)
             //    return "erro";
             //return "ok";
 
-            TwitterUser twitterUser = twitterService.GetUserProfile();
+            TwitterUser twitterUser = TwitterService.GetUserProfile();
 
             try
             {
@@ -225,14 +227,21 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult Logout()
         {
-            twitterService.EndSession();
+            TwitterService.EndSession();
+            Session.Clear();
+            Session.Abandon();
 
             return new RedirectResult("/");
         }
 
+        public string UserLog()
+        {
+            return SessionUser.UserName;
+        }
+
         public string Tweet()
         {
-            TwitterStatus twitterStatus = twitterService.SendTweet("beep or tweet?");
+            TwitterStatus twitterStatus = TwitterService.SendTweet("beep or tweet?");
             return twitterStatus.Text;
         }
     }
