@@ -38,7 +38,7 @@ namespace Beepoy.Web.Controllers
 
         }
 
-        public TwitterService twitterService
+        public TwitterService TwitterService
         {
             get
             {
@@ -52,7 +52,7 @@ namespace Beepoy.Web.Controllers
             }
         }
 
-        public OAuthRequestToken requestToken
+        public OAuthRequestToken RequestToken
         {
             get
             {
