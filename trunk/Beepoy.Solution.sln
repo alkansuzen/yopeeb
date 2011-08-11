@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beepoy.SocialMedia.Twitter"
 		{7DD999A5-7399-4251-ADBE-ACF2C701FA6C} = {7DD999A5-7399-4251-ADBE-ACF2C701FA6C}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beepoy.SocialMedia.Foursquare", "Beepoy.SocialMedia.Foursquare\Beepoy.SocialMedia.Foursquare.csproj", "{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,16 @@ Global
 		{B79401AF-0CF3-4BAE-B492-7350C4095D5F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B79401AF-0CF3-4BAE-B492-7350C4095D5F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B79401AF-0CF3-4BAE-B492-7350C4095D5F}.Release|x86.ActiveCfg = Release|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{352B5558-BFC4-4888-ABCC-92DB2F5D85F8}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
