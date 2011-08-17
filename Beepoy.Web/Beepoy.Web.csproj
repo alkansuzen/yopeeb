@@ -183,10 +183,6 @@
     <Content Include="App_Data\MvcBeepoy_log.ldf">
       <DependentUpon>MvcBeepoy.mdf</DependentUpon>
     </Content>
-    <Content Include="bin\Beepoy.Web.dll" />
-    <Content Include="bin\Beepoy.Web.pdb" />
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.xml" />
     <Content Include="Content\base.css" />
     <Content Include="Content\Layout01\css\default.css" />
     <Content Include="Content\Layout01\css\menu.css" />
@@ -208,18 +204,6 @@
     <Content Include="Content\timeline.style.css" />
     <Content Include="EFCodeFirstReadMe.txt" />
     <Content Include="Global.asax" />
-    <Content Include="obj\Debug\Beepoy.Web.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Beepoy.Web.dll" />
-    <Content Include="obj\Debug\Beepoy.Web.pdb" />
-    <Content Include="obj\Debug\TempPE\Models.BeepoyDbContext.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.BeepoyModel.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.BeepoyModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.BeepoyModel.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.DataClasses.designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.DataClasses1.designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.DataClasses2.designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.Model1.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.Models.Designer.cs.dll" />
     <Content Include="Scripts\jquery.ui.datepicker-en-GB.js" />
     <Content Include="Scripts\map\action.js" />
     <Content Include="Scripts\map\jquery.geolocation.js" />
@@ -306,16 +290,6 @@
     <Content Include="Views\Users\BeepsTracked.cshtml" />
     <Content Include="Views\Users\_ScriptBeeps.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <None Include="obj\Debug\build.force" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\edmxResourcesToEmbed\Models\BeepoyModel.csdl" />
-    <None Include="obj\Debug\edmxResourcesToEmbed\Models\BeepoyModel.msl" />
-    <None Include="obj\Debug\edmxResourcesToEmbed\Models\BeepoyModel.ssdl" />
-    <None Include="obj\Debug\edmxResourcesToEmbed\Models\Models.csdl" />
-    <None Include="obj\Debug\edmxResourcesToEmbed\Models\Models.msl" />
-    <None Include="obj\Debug\edmxResourcesToEmbed\Models\Models.ssdl" />
-    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
     <Content Include="Views\Events\Create.cshtml" />
     <Content Include="Views\Places\Create.cshtml" />
     <Content Include="Views\Beeps\List.cshtml" />
