@@ -1,0 +1,123 @@
+/* Metal Power Plurk Theme v1.0 */
+/* by Gino Carteciano of plurk.bigbaddie.com */
+/* Plurk profile: http://www.plurk.com/user/baddie */
+
+body, html {
+background: #000000;
+}
+
+#plurk-dashboard {
+background: #000000;
+background: url(http://i125.photobucket.com/albums/p72/baddiebucket/plurk/plurk_metalpower_dashback.jpg) no-repeat;
+background-position: top center;
+border: none;
+color: #cccccc;
+font-family: Verdana;
+font-size: 8pt;
+-moz-border-radius: 15px;
+-khtml-border-radius: 15px;
+-webkit-border-radius: 15px;
+}
+
+#timeline_holder {
+background: #000000;
+background: url(http://i125.photobucket.com/albums/p72/baddiebucket/plurk/plurk_metalpower_timeback.jpg) no-repeat;
+background-position: top center;
+border-color: #000000;
+}
+
+#plurk_form {
+color: #cccccc;
+font-family: Verdana;
+}
+
+#top_bar a, #top_login a, #dashboard_holder a, #footer a {
+color: #cccccc;
+}
+
+#bottom_line, .day_bg, .div_inner {
+color: #FFFFFF;
+font-family: Verdana;
+}
+
+.day_bg .div_inner{
+background-image: url(http://i125.photobucket.com/albums/p72/baddiebucket/plurk/suestorm.png);
+background-repeat: repeat;
+border: none;
+}
+
+#bottom_line {
+background-image: url(http://i125.photobucket.com/albums/p72/baddiebucket/plurk/plurk_metalpower_bottomback.jpg);
+background-repeat: repeat-x;
+border: solid #000000 1px;
+}
+
+.plurk_cnt {
+border: 1px solid #cccccc;
+background-color: #fffffff;
+-moz-border-radius: 5px;
+-khtml-border-radius: 5px;
+-webkit-border-radius: 5px;
+}
+
+.response_count {
+text-align: center;
+-moz-border-radius: 5px;
+-khtml-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+padding: 1px;
+}
+
+.segment-content {
+padding: 5px;
+margin: 5px;
+}
+
+.qualifier, .m_qualifier, .dots .inner, #more_options_holder, #emoticon_selecter, #updater {
+-moz-border-radius: 5px;
+-khtml-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+#dash-stats table td {
+color: #cccccc;
+}
+
+#dash-stats h2, #dash-friends h2, #dash-fans h2 {
+color: #cccccc;
+}
+
+#dashboard_holder {
+background: transparent url() no-repeat left bottom;
+}
+
+#updater {
+color: #ffffff;
+background: url(http://i125.photobucket.com/albums/p72/baddiebucket/plurk/suestorm.png) repeat;
+border: none;
+}
+
+#filter_tab .off_tab {
+background: #000000;
+color: #cccccc;
+border: none;
+-moz-border-radius: 0px 0px 5px 5px;
+-khtml-border-radius: 0px 0px 5px 5px;
+-webkit-border-radius: 0px 0px 5px 5px;
+}
+
+#filter_tab .filter_selected {
+background: #333333;
+color: #cccccc;
+border: none;
+-moz-border-radius: 0px 0px 5px 5px;
+-khtml-border-radius: 0px 0px 5px 5px;
+-webkit-border-radius: 0px 0px 5px 5px;
+}
+
+#dynamic_logo img{
+height:0px;
+width:0px;
+}

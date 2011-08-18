@@ -1,0 +1,78 @@
+﻿@model Beepoy.Web.Models.Beep
+
+@{
+    
+    Html.EnableUnobtrusiveJavaScript(true);
+
+   }
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/base/jquery-ui.css")" />
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+
+        $("#loading").hide()
+    
+        $(".share-lock span").click(function () {
+            $("form").submit();
+        });
+
+        $("#datepicker").datepicker({
+            showOn: "button",
+            buttonImage: "http://beepoy.com/Content/Images/share-when.png",
+            buttonImageOnly: true
+        });
+    });
+
+</script>
+
+@using (Ajax.BeginForm("create", "beeps", null, new AjaxOptions { UpdateTargetId = "result", LoadingElementId = "loading" }, null))
+{
+    @Html.ValidationSummary(true)
+                	<div class="share-itens">
+                    <div id="loading">Loading...</div>
+                    <div id="result"></div>    
+                    @Html.ValidationMessageFor(model => model.Text)    
+
+                    @Html.DropDownList("PlaceId", String.Empty);
+
+                	<span class="share-title">Share: </span>
+                    
+                    <a href="#" class="share-status"> Status </a>
+
+                    <a href="#" class="share-photo"> Photo </a>
+                    
+                    <a href="#" class="share-link"> Link </a>
+                    
+                    <a href="#" class="share-video"> Video </a>
+                    
+                    <div class="share-box">
+                        <div class="share-arrow"></div>
+                       	@Html.TextAreaFor(model => model.Text)
+                    </div>
+                    
+                    <div class="share-line">
+                    
+                    	<span class="share-title">Where?</span>
+                    
+                    	<a class="share-where" href=""> Select an location</a>
+                        
+                        <a class="share-lock" href="#"><span>Beep</span></a>
+                    
+                    </div>
+
+                    <div class="share-line">
+
+                    
+                    	<span class="share-title">When?</span>
+
+                    	<a class="share-when" href="#"> </a> 
+                        
+                        <input type="text" id="datepicker">
+                    
+                    </div>
+   					
+                 </div>
+}

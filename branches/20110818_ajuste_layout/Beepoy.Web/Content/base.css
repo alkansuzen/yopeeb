@@ -1,0 +1,962 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ 
+	margin: 0 auto;
+	padding: 0; 
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	background: #2B2B2B;
+	text-align: center; /* hack para o IE */ 
+	font: 11px Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+}
+
+#header-bg {
+	background: #1B1B1B;
+	height: 90px;
+	width: 100%;
+	position:absolute;
+	left: 0px;
+	z-index: 0;
+	
+}
+
+#header-bg-home {
+	background: url(Images/home-background.png);
+	height: 470px;
+	width: 100%;
+	position:absolute;
+	left: 0px;
+	z-index: 0;
+}
+
+
+#wrapper {
+	margin: 0 auto;
+	width: 960px;
+	height: 100%;
+	background: #2B;
+	display: block;
+	/*overflow: hidden;*/
+	position: relative;
+}
+
+#header {
+	position:relative;
+	left: 0px;
+	top: 0px;
+	width:960px;
+	height:90px;
+	z-index: 1;	
+
+}
+
+
+#content {
+	position:relative;
+	left: 10px;
+	top: 28px;
+	width: 646px;
+	height: 562px;
+	z-index: 1;
+	float: left;
+	overflow:hidden;
+}
+
+#footer {
+	position: relative;
+	top: 52px;
+	width: 100%;
+	height: 132px;
+	z-index: 1;
+	float: left;
+	z-index: 0px;
+	background: #202020 url(Images/footer-back.png);
+}
+
+#footer #footer-in {
+	width: 960px;
+	z-index: 1;
+	height: 132px;
+	margin: 0 auto;
+	position: relative;
+
+
+}
+
+#beepoy-brand {
+	position:absolute;
+	left:18px;
+	top:13px;
+	width:149px;
+	height:51px;
+	z-index:1;
+	background: url(Images/beepoy-brand.png);
+	cursor: pointer;
+	overflow: hidden;
+}
+
+#search {
+	position:absolute;
+	left:235px;
+	top:27px;
+	width:147px;
+	height:37px;
+	z-index:2;
+	color: #FFF;
+	font: bold 14px Arial, Helvetica, sans-serif;
+	background: url(Images/search-back.png);
+	
+}
+
+#search-where {
+	position:absolute;
+	left:390px;
+	top:27px;
+	width:174px;
+	height:37px;
+	z-index:1;
+	background: url(Images/search-where-back.png);
+}
+
+#top-menu {
+	position:absolute;
+	left:581px;
+	top:28px;
+	width:378px;
+	height:37px;
+	z-index:1;
+	background: url(Images/top-menu-back.png) no-repeat;
+	color: #FFF;
+	font: bold 13px Arial, Helvetica, sans-serif;
+	padding-top: 9px;
+	text-align: left;
+
+}
+
+#top-menu a:link, #top-menu a:visited{
+	color:#FFF;
+	text-decoration: none;
+	margin-left: 12px;
+}
+
+#top-menu a:hover{
+	color:#999;
+	text-decoration: none;
+}
+
+#top-back {
+	background: url(Images/back-content.png) no-repeat;
+	height: 29px;
+	width: 954px;
+	position: absolute;
+	top: 90px;
+	left: 0px;
+}
+
+
+#footer-dots {
+	position:absolute;
+	left:456px;
+	top:22px;
+	width:25px;
+	height:95px;
+	z-index:2;
+	background: url(Images/footer-dots.png);
+}
+#footer-brand {
+	position:absolute;
+	left:46px;
+	top:39px;
+	width:144px;
+	height:45px;
+	z-index:2;
+	background: url(Images/footer-brand.png);
+	cursor: pointer;
+}
+
+#footer-info {
+	position:absolute;
+	left:246px;
+	top:39px;
+	width:137px;
+	height:55px;
+	z-index:2;
+	font: bold 14px/23px Arial,Helvetica,sans-serif;
+	color: #FFF;
+	text-align: left;
+	
+}
+
+#footer-menu {
+	position:absolute;
+	left:550px;
+	top:62px;
+	width:321px;
+	height:11px;
+	z-index:2;
+	color: #FFF;
+	font: bold 14px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	text-align: left;
+}
+
+#footer-menu a:link, #footer-menu a:visited{
+	color:#FFF;
+	text-decoration: none;
+	margin-left: 12px;
+}
+
+#footer-menu a:hover {
+	color:#999;
+	text-decoration: none;
+}
+
+
+h1.indent {
+	text-indent: -9999px;	
+}
+
+.search-input {
+    border: medium none;
+    color: #333333;
+    font: bold 14px Arial,Helvetica,sans-serif;
+    margin-top: 10px;
+    width: 128px;
+	background-color: transparent;
+}
+
+.search-where {
+	width: 160px;
+}
+
+.search-submit {
+    background: url("Images/search-where-glass-back.png") no-repeat scroll 0 0 transparent;
+    border: none;
+    float: right;
+    height: 33px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 29px;;
+}
+
+.menu-avatar {
+	background: url(Images/top-menu-avatar.png) no-repeat;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+    right: 28px;
+    top: -3px;	
+}
+
+#menu-l {
+	position: relative;
+	top: 28px;
+	width: 298px;
+	height: 758px;
+	z-index: 1;
+	float: left;
+	text-align: left;
+	margin-bottom: 28px;
+}
+
+#menu-l #results {
+    float: left;
+    height: 78px;
+    width: 278px;
+	background: #DADADA;
+	color: #2b2b2b;
+	font: 18px Verdana, Geneva, sans-serif;
+	padding-top: 13px;
+	padding-left: 20px;
+	
+}
+
+#menu-l #results .found {
+	display: block;
+	margin-top: 11px;
+	font: 11px Verdana, Geneva, sans-serif;
+}
+
+#menu-l #beeps-submenu {
+	
+	float:left;
+	height: 45px;
+	width: 100%;
+	font: 14px Arial,Helvetica,sans-serif;
+	background-color:#FFF;
+	
+	
+}
+
+#menu-l #beeps-submenu .submenu-align {
+	float:left;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 22px;
+	border-bottom: #2b2b2b solid;
+	height: 25px;
+}
+
+#menu-l #beeps-submenu a:link, #menu-l #beeps-submenu a:visited {
+	color:#1B1B1B;
+	text-decoration: none;
+	margin-left: 16px;
+}
+
+#menu-l #beeps-submenu a:hover {
+	color: #999;
+    text-decoration: none;	
+}
+
+#menu-l #beeps-submenu a.selected {
+	font-weight: bold;
+}
+
+#menu-l #beeps-submenu a.firstitem {
+	margin-left: 0px;
+}
+
+#menu-l #list-itens {
+	float: right;
+	width: 318px;
+	height: 575px;
+	/*background-color: #FFF;*/
+	overflow: hidden;
+}
+
+ #menu-l #list-itens-perfil {
+    float: right;
+    height: 489px;
+    overflow: hidden;
+    width: 318px;
+}	 
+	 
+
+#menu-l #list-itens-perfil ul {
+    border-width: 1px 0;
+    float: left;
+    height: 489px;
+    list-style-type: none;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width: 100%;
+}
+
+#menu-l #list-itens-home ul {
+    border-width: 1px 0;
+    float: left;
+    height: 557px;
+    list-style-type: none;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width: 100%; 
+}
+
+
+
+#menu-l #list-itens-home {
+    float: right;
+    height: 557px;
+    overflow: hidden;
+    width: 318px;		
+}
+
+
+#menu-l #list-itens ul {
+    border-width: 1px 0;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	list-style-type:none;
+    overflow-x: hidden;
+    overflow-y: auto;	
+	height: 575px;
+}
+
+
+
+#menu-l #list-itens ul li, #menu-l #list-itens-perfil ul li, #menu-l #list-itens-home ul li{
+    border-bottom: 2px solid #FBEF7A;
+    display: block;
+	height: 113px;
+	position: relative;
+	background-color: #FFF;
+	margin-left: 20px;
+}
+
+#menu-l #list-itens ul li div.hover, #menu-l #list-itens-perfil ul li div.hover, #menu-l #list-itens-home ul li div.hover {
+    background: url("Images/menu-selected.png") repeat scroll 0 0 transparent;
+    height: 123px;
+    left: -12px;
+    overflow: auto;
+    position: absolute;
+    width: 310px;
+}
+
+#menu-l #list-itens ul li div.face, #menu-l #list-itens-perfil ul li div.face, #menu-l #list-itens-home ul li div.face {
+	position: absolute;
+	top: 12px;
+	width: 66px;
+	left: 15px;
+}
+
+#menu-l #list-itens ul li .img-face, #menu-l #list-itens-perfil ul li .img-face, #menu-l #list-itens-home ul li .img-face  {
+	border: #FFF solid 2px;
+}
+
+#menu-l #list-itens ul li .face-name, #menu-l #list-itens-perfil ul li .face-name, #menu-l #list-itens-home ul li .face-name {
+	font: bold 13px Verdana,Geneva,sans-serif;
+	color: #404040;
+	float: left;
+	margin-top: 5px;
+}
+
+#menu-l #list-itens ul li div.item-info, #menu-l #list-itens-perfil ul li div.item-info, #menu-l #list-itens-home ul li div.item-info {
+    left: 95px;
+    position: absolute;
+    top: 12px;
+    width: 185px;
+	overflow: hidden;
+}
+
+#menu-l #list-itens ul li h2, #menu-l #list-itens-perfil ul li h2, #menu-l #list-itens-home ul li h2 {
+	color: #2B2B2B;
+	font: bold 12px Verdana, Geneva, sans-serif; 
+}
+
+#menu-l #list-itens ul li span.item-text, #menu-l #list-itens-perfil ul li span.item-text, #menu-l #list-itens-home ul li span.item-text {
+	float: left;
+	margin-top: 4px;
+	line-height: 15px;=
+}
+
+#menu-l #list-itens ul li span.item-link, #menu-l #list-itens-perfil ul li span.item-link, #menu-l #list-itens-home ul li span.item-link {
+    display: block;
+    float: left;
+    margin-top: 15px;
+}
+
+#menu-l #list-itens ul li span.item-link a:link, #menu-l #list-itens-perfil ul li span.item-link a:link, #menu-l #list-itens-home ul li span.item-link a:link {
+    color: #F8950D;
+	text-decoration: underline;
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#menu-l #list-itens ul li span.item-link a.firstitem, #menu-l #list-itens-perfil ul li span.item-link a.firstitem, #menu-l #list-itens-home ul li span.item-link a.firstitem {
+	margin-left: 0px;
+}
+
+#menu-l #menu {
+    background: url("Images/menu-l-title-back.png") repeat scroll 0 0 transparent;
+    float: left;
+    height: 47px;
+    width: 298px;
+}
+
+#menu-l #menu .back-home, #content .menu-location, #timeline .menu-location, #menu-l #menu-perfil .back-home, #menu-l #beeps-menu .back-home{
+    float: left;
+    height: 22px;
+    margin-left: 20px;
+    margin-top: 14px;
+    width: 139px;
+}
+
+
+#menu-l #menu .back-home a:link, #menu-l #menu .back-home a:visited, #content .content-menu .menu-location a:link, #content .content-menu .menu-location a:visited, #timeline .menu-location a:link, #timeline .menu-location a:visited, #menu-l #menu-perfil .back-home a:link, #menu-l #menu-perfil .back-home a:visited, #menu-l #beeps-menu .back-home a:link, #menu-l #beeps-menu .back-home a:visited {
+    font: bold 17px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: #2b2b2b;
+}
+
+#menu-l #menu .back-home a:hover, #content .content-menu .menu-location a:hover, #timeline .menu-location a:hover, #menu-l #menu-perfil .back-home a:hover, #menu-l #beeps-menu .back-home a:hover {
+	color: #999;
+}
+
+#menu-l #menu .what, #content .menu-where, #timeline .menu-when, #menu-l #menu-perfil .what, #menu-l #beeps-menu .what {
+    float: left;
+    height: 33px;
+    width: 298px;
+	margin-left: 206px;
+	margin-top: -22px;
+}
+
+#menu-l #menu .what a:link, #menu-l #menu .what a:visited, #content .content-menu a:link, #content .content-menu a:visited, #timeline .menu-when a:link, #timeline .menu-when a:visited, #menu-l #menu-perfil .what a:link, #menu-l #menu-perfil .what a:visited, #menu-l #beeps-menu .what a:link, #menu-l #beeps-menu .what a:visited {
+    font: bold 17px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: #FFF;
+}
+
+#menu-l #menu .what a:hover, #content .content-menu a:hover, #timeline .menu-when a:hover, #menu-l #menu-perfil .what a:hover, #menu-l #beeps-menu .what a:hover{
+    font: bold 17px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: #999;
+}
+
+#content .content-menu, #timeline .timeline-menu  {
+	background: url(Images/content-title-back.png) no-repeat;
+	height: 47px;
+}
+
+#content .map {
+	background-color:#FFF;
+	height: 505px;
+	width: 100%;
+	padding-top: 10px;
+}
+
+#timeline {
+	position: relative;
+	left: 10px;
+	top: 36px;
+	width: 646px;
+	
+	z-index: 1;
+	float: left;
+	overflow: hidden;
+}
+
+#timeline .wrap {
+	background: #DFDFDF;
+	height: 170px;
+
+}
+
+#menu-l #menu-perfil {
+    background: url("Images/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
+    float: left;
+    height: 47px;
+    width: 298px;
+}
+
+#user {
+	background: none repeat scroll 0 0 #FFF;
+    color: #2B2B2B;
+    float: left;
+    font: 18px Verdana,Geneva,sans-serif;
+    height: 135px;
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 278px;	
+	overflow: hidden;
+}
+
+#user .user-face {
+	float: left;
+	position: relative;
+	
+}
+
+#user .user-img {
+	float: left;
+}
+
+#user .user-name {
+	float: left;
+	margin-left: 10px;
+	width: 190px;
+	overflow: hidden;
+}
+
+#user .user-nick {
+    float: left;
+    font: bold 14px Arial,Helvetica,sans-serif;
+    margin-left: 10px;
+    margin-top: 8px;
+    overflow: hidden;
+    width: 107px;
+	overflow: hidden;	
+	}
+
+#user .user-city {
+    float: left;
+    font: italic 14px Arial,Helvetica,sans-serif;
+    margin-left: 10px;
+    margin-top: 8px;
+    overflow: hidden;
+    width: 80px;
+	overflow: hidden;	
+}
+
+#user .user-description {
+    clear: both;
+    float: left;
+    font: italic 12px Arial,Helvetica,sans-serif;
+    margin-left: 7px;
+    margin-top: 15px;
+    overflow: hidden;
+    width: 248px;
+}
+
+#menu-l #beeps-menu {
+	background: url("Images/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
+    float: left;
+    height: 47px;
+    width: 298px;
+	margin-top: 20px;
+}
+
+
+#menu-l #menu-perfil span.what {
+	margin-left: 168px;
+}
+
+#menu-l #beeps-menu span.what {
+	margin-left: 93px;
+}
+
+#menu-l #beeps-menu span.what a:link{
+    font-size: 14px;
+    margin-left: 7px;
+}
+
+.item-link {
+    background-color: #E9E7E8;
+    float: left;
+    font-size: 85%;
+    margin-top: 6px;
+    padding: 2px;
+}
+
+.item-link-firstitem {
+	margin-left: 0px;
+	margin-right: 4px;
+}
+.text-mark {
+	background-color: #F3D71E;
+    padding: 4px;
+	font-size: 120%;
+}
+
+.valign {
+	vertical-align: middle;	
+}
+
+#content .map-perfil {
+	background-color:#FFF;
+	height: 280px;
+	width: 100%;
+	padding-top: 10px;
+}
+
+span.menu-where .add-place {
+	background: url(Images/add-place.png) no-repeat scroll left top transparent;
+	width: 130px;
+	float: left;
+	height: 26px;
+}
+
+#content div.content-menu span.menu-where a.add-place {
+	color: #FDD706;
+	text-decoration: underline;
+	margin-top: -5px;
+}
+
+span.menu-where .add-event {
+	background: url(Images/add-event.png) no-repeat scroll left top transparent;
+    float: left;
+    width: 156px;
+	height: 26px;
+	
+}
+
+#content div.content-menu span.menu-where a.add-event  {
+	color: #FDD706;
+	text-decoration: underline;
+	margin-top: -5px;
+	
+}
+
+.map-menu {
+	margin-top: 19px;	
+}
+
+
+#content #information {
+	background-color:#FFF;
+	height: 146px;
+	width: 100%;
+	padding-top: 10px;
+}
+
+
+#information .info-tracking {
+    float: left;
+    height: 137px;
+    margin-left: 10px;
+    width: 362px;
+}
+
+#information .event-title {
+	float: left;
+	clear: both;
+	width: 100%;
+}
+
+#information .info-tracking .info-tracking-box {
+    border-right: 3px solid #FDD705;
+    float: left;
+    height: 92px;
+    margin-left: 10px;
+    margin-top: 18px;
+    width: 106px;
+	text-align: left;
+	color: #1B1B1B;
+	font-size: 13px;
+}
+
+#information .info-tracking .lastitem {
+    border-right: none;
+
+}
+
+#information .info-title {
+    clear: right;
+    float: left;
+    font: bold 15px Arial,Helvetica,sans-serif;
+    text-align: left;
+    width: 100%;
+	 margin-left: 9px;
+}
+
+#information .box-faces {
+	margin-top:5px;
+	float:left;
+}
+
+#information .trackers {
+	width: 252px;
+}
+
+#share {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #FBEF7A;
+    float: left;
+    /*height: 152px;*/
+    width: 298px;
+
+}
+
+#share .share-itens {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#share .share-title{
+	font: bold 13px Verdana, Geneva, sans-serif;
+	float: left;
+}
+
+#share .share-status {
+    background: url("Images/share-status.png") no-repeat scroll left top;
+    height: 17px;
+    width: 53px;
+}
+
+#share .share-photo {
+    background: url("Images/share-photo.png") no-repeat scroll left top;
+    height: 17px;
+    width: 51px;
+}
+
+#share .share-link {
+    background: url("Images/share-link.png") no-repeat scroll left top;
+    height: 17px;
+    width: 42px;
+}
+
+#share .share-video {
+    background: url("Images/share-video.png") no-repeat scroll left top;
+    height: 17px;
+    width: 51px;	
+}
+
+#share .share-box {
+    float: left;
+    margin-left: 4px;
+    margin-top: 7px;
+}
+
+#share .share-box textarea{
+    height: 48px;
+    width: 265px;
+	
+}
+
+#share .share-box .share-arrow {
+    background: url("Images/share-arrow.png") no-repeat scroll left top transparent;
+    height: 12px;
+    position: relative;
+    right: 71px;
+    top: 4px;
+    width: 21px;
+}
+
+#share a:link, #share a:visited  {
+    margin-left: 8px;
+	color: #AC9100;	
+	text-decoration: none;
+	text-align: right;
+    float: left;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#share a:hover  {
+	color: #B2B2B2;	
+	text-decoration: none;
+}
+
+#share .share-line {
+	clear: both;
+    float: left;
+    font: bold 12px Arial,Helvetica,sans-serif;
+    margin-left: 6px;
+    margin-top: 5px;
+}
+
+#share a.share-where {
+    background: url(Images/share-where.png) no-repeat scroll left top transparent;
+    float: left;
+    height: 26px;
+    width: 84px;
+	color: #000;
+}
+
+#share a.share-when {
+    background: url(Images/share-when.png) no-repeat scroll left top transparent;
+    float: left;
+    height: 26px;
+    width: 104px;
+	color: #000;
+}
+
+#share a.share-where:hover, #share a.share-when:hover, #share a.share-lock span:hover {
+	text-decoration: underline;
+	color: #b2b2b2;
+}
+
+#share a.share-lock {
+    background: url("Images/share-lock.png") no-repeat scroll left top transparent;
+    color: #000000;
+    float: left;
+    height: 26px;
+    margin-left: 46px;
+    margin-top: 3px;
+    width: 74px;
+}
+
+#share a.share-lock span {
+	padding: 3px 5px 2px;
+	color: #FFF;
+	background-color: #FED806;
+		
+}
+
+#home-wrapper {
+	height: 1106px;
+}
+
+#brand {
+	position:absolute;
+	left:38px;
+	top:46px;
+	width:208px;
+	height:70px;
+}
+
+#home-text {
+    color: #FFF;
+    font: 24px/25px Arial,Helvetica,sans-serif;
+    height: 364px;
+    left: 21px;
+    position: absolute;
+    text-align: left;
+    top: 215px;
+    width: 436px;
+}
+
+#beepoy {
+	position:absolute;
+	left:0px;
+	top:642px;
+	width:961px;
+	height:512px;
+}
+
+.home-title {
+    color: #F7CB01;
+    display: block;
+    font: bold 36px Arial,Helvetica,sans-serif;
+    text-align: left;
+	margin-top: 10px;
+}
+
+#home-form {
+    background: url(Images/form-home-background.png) repeat scroll 0 0 transparent;
+    font: 17px Arial,Helvetica,sans-serif;
+	height: 350px;
+    left: 488px;
+    padding-left: 16px;
+    padding-top: 19px;
+    position: absolute;
+    text-align: left;
+    top: 215px;
+    width: 456px;
+}
+
+#home-form .home-button {
+    background: url("Images/home-button.png") repeat scroll 0 0 transparent;
+    float: left;
+    height: 57px;
+    width: 164px;
+	border: none;
+
+	
+}
+
+#home-form .input-text-home {
+    background: url(Images/form-input-home-background.png) repeat scroll 0 0 transparent;
+    border: medium none;
+    clear: both;
+    float: left;
+    height: 49px;
+    margin-bottom: 10px;
+    padding-left: 13px;
+    width: 378px;
+	font-size: 15px;
+}
+
+#home-form strong {
+	clear: both;
+	margin-bottom: 10px;
+	float: left;
+}
+
+#home-form strong a:link,  #home-form strong a:visited{
+	color: #000;
+	text-decoration: none;
+}
+
+#home-form strong a:hover{
+	color: #fff;	
+	text-decoration: underline;
+}
+
+#home-form .register-home {
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+	margin-top: 5px;
+}

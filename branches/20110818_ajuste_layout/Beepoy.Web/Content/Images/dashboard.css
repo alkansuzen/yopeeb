@@ -1,0 +1,57 @@
+.plurkaction, #toggle_tab li.tt_selected, #plurk-dashboard, #more_options_link{  
+    color:#444!important;
+    background: #eee;
+    border:1px solid #000;
+    border-top-color: #eee;
+    border-left-color: #eee;
+}    
+
+#more_options a {
+  padding: 2px 4px 2px 4px;
+}
+
+#more_options #more_options_holder, #top_bar #edit_link:hover, #reply #reply_box, #reply h2{
+    color:#444;
+    background: #eee;
+}
+
+#more_options_link{
+    background:#dfdfdf;
+    color:#444!important;
+    padding-left:0;
+    border:1px solid #000;
+    border-top-color: #eee;
+    border-left-color: #eee;
+}
+
+#more_options .on {
+  border:1px solid #000;
+  border-bottom-color: #eee;
+  border-right-color: #eee;
+}
+
+#more_options td {
+    background:none;
+}
+
+#plurk-dashboard a{
+    color:#222;
+    text-decoration:underline;   
+}
+
+#plurk-dashboard a:hover{
+    color:#666;   
+    text-decoration:underline; 
+}
+
+#plurk-dashboard h2{
+    text-transform:uppercase;
+    background:none;
+    color:#333;
+    font-weight:bold;
+    padding:0;
+}
+
+#dash-stats table td {
+    color:#86afc1;
+}

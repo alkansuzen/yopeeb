@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Beepoy.Web.Models.Beep>
+
+@{
+    
+    bool first = true;
+}
+
+<script type="text/javascript">
+    function UpdateBeepsList() {
+
+        $.ajax({
+            url: '/Users/Streams',
+            success: function (data) {
+                console.log("updateBeeps list success")
+//                console.log(data)
+                $(".streams").prepend(data)
+            }
+        });
+
+    }
+
+    setInterval(UpdateBeepsList, 600000);
+</script>
+
+
+
+@foreach (var item in Model) {
+    
+                 	<li>
+                    	
+                        <div 
+                             @{
+                                 if ( first){ 
+                             
+                               
+                               @: class="hover"
+                                    
+                              first = false;
+                              } 
+                                    
+                           }
+                        
+                        >
+ 
+                            
+                        </div>
+                    	
+                        <div class="face">
+                        
+                        	<img class="img-face" src="@Html.DisplayFor(modelItem => item.User.ImageUrl)" />
+                            
+                            <span class="face-name">@Html.DisplayFor(modelItem => item.User.IdName)</span>
+                        
+                        </div>
+                        
+                        <div class="item-info">
+
+                        
+                            <span class="item-text">
+                            
+                            	@Html.DisplayFor(modelItem => item.Text)
+                            
+                            </span>
+                            
+                            <span class="item-link item-link-firstitem">
+                            	
+                                <img src="Content/Images/status.png" class="valign" />
+                       			
+                                $Labone
+                        	
+                            </span>
+                            
+                            <span class="item-link">
+
+                            	
+                                <img src="Content/Images/watch.png" class="valign" />
+                       			
+                                  @Html.DisplayFor(modelItem => item.DateInsert)
+                        	
+                            </span>
+                        
+                        </div>
+                        
+                    
+                    </li> 
+    
+    
+
+}
+
