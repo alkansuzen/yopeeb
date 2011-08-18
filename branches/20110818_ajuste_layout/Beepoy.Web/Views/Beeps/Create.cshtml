@@ -15,13 +15,13 @@
 
         $("#loading").hide()
     
-        $(".share-lock span").click(function () {
+        $("a.share-beep").click(function () {
             $("form").submit();
         });
 
         $("#datepicker").datepicker({
             showOn: "button",
-            buttonImage: "http://beepoy.com/Content/Images/share-when.png",
+            buttonImage: "http://beepoy.com/Content/Images/icons/calendar.png",
             buttonImageOnly: true
         });
     });
@@ -36,7 +36,7 @@
                     <div id="result"></div>    
                     @Html.ValidationMessageFor(model => model.Text)    
 
-                    @Html.DropDownList("PlaceId", String.Empty);
+                    @Html.DropDownList("PlaceId", String.Empty)
 
                 	<span class="share-title">Share: </span>
                     
@@ -55,22 +55,13 @@
                     
                     <div class="share-line">
                     
-                    	<span class="share-title">Where?</span>
-                    
-                    	<a class="share-where" href=""> Select an location</a>
+                    	<a class="share-where" href="#"></a>
+
+                        <a class="share-when" href="#"><input type="text" id="datepicker" /></a>
                         
-                        <a class="share-lock" href="#"><span>Beep</span></a>
-                    
-                    </div>
-
-                    <div class="share-line">
-
-                    
-                    	<span class="share-title">When?</span>
-
-                    	<a class="share-when" href="#"> </a> 
-                        
-                        <input type="text" id="datepicker">
+                        <a class="share-lock" href="#"></a>
+    
+                        <a class="share-beep" href="#">Beep</a>
                     
                     </div>
    					
