@@ -1,55 +1,6 @@
 // JavaScript Document
 $(function(){
 	
-	//Efeito dos campos de pesquisa Label, Input
-	$("#top-bar input").focus(function(){
-		$(this).parents("li").find("label").fadeOut(200)
-	}).blur(function(){
-		if ($(this).val() == "") {
-			$(this).parents("li").find("label").fadeIn(200)
-			}
-	})
-	
-	$("#top-bar label").click(function(){
-		$(this).fadeOut(200)
-	})
-
-	//Menu User
-	$("#menu li.user a").click(function(){
-		if ($(this).parents("li").find("ul").css("display") == "none") { 
-			$(this).parents("li").find("ul").slideDown(200)
-		} else {
-			$(this).parents("li").find("ul").slideUp(200)
-		}
-		return false
-	})
-	
-	//Menu User
-	$(".marcadores li.user a").click(function(){
-		if ($(this).parents("li").find("ul").css("display") == "none") { 
-			$(this).parents("li").find("ul").slideDown(200)
-		} else {
-			$(this).parents("li").find("ul").slideUp(200)
-		}
-		return false
-	})
-	
-	// Abre a barra de pesquisa
-	$("button.pesquisar").click(function(){
-	
-		if ( $('#onde').val() != '')
-			codeAddress()
-	
-	
-		$("#search-bar").slideDown(150)
-		return false;
-	})
-	
-	$("#search-bar .close").click(function(){
-		$("#search-bar").slideUp(100)
-		return false
-	})
-	
 	// Ajuste de altura do mapa
 	//resizeMap()
 	
@@ -87,10 +38,24 @@ function resizeMap(){
 	    var myOptions = {
 	        zoom: 8,
 	        center: local,
-	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	        mapTypeId: google.maps.MapTypeId.ROADMAP,
+	        mapTypeControl: true,
+	        mapTypeControlOptions: {
+	            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+	            position: google.maps.ControlPosition.TOP_RIGHT
+	        },
+	        navigationControl: true,
+	        navigationControlOptions: {
+	            style: google.maps.NavigationControlStyle.SMALL,
+	            position: google.maps.ControlPosition.TOP_RIGHT
+	        },
+	        scaleControl: false,
+	        scaleControlOptions: {
+	            position: google.maps.ControlPosition.BOTTOM_LEFT
+	        }
 	    }
 	    map = new google.maps.Map(document.getElementById("map"), myOptions);
-	    console.log(map)
+	    //console.log(map)
 	    infowindow.open(map)
 
 	    $.geolocation.find(function (location) {
@@ -113,7 +78,7 @@ function resizeMap(){
 	
 	function geo_error(error){
 			alert('Ocorreu um erro')
-			console.log('error')
+			//console.log('error')
 	}
 		
 /**************************************************

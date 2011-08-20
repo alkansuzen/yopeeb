@@ -11,7 +11,7 @@
         $.ajax({
             url: '/Users/Streams',
             success: function (data) {
-                console.log("updateBeeps list success")
+                //console.log("updateBeeps list success")
 //                console.log(data)
                 $(".streams").prepend(data)
             }
@@ -49,35 +49,32 @@
                         
                         	<img class="img-face" src="@Html.DisplayFor(modelItem => item.User.ImageUrl)" />
                             
-                            <span class="face-name">@Html.DisplayFor(modelItem => item.User.IdName)</span>
+                            <span class="face-name">@@@Html.DisplayFor(modelItem => item.User.IdName)</span>
                         
                         </div>
+
+                        <div class="item-date">2 hours ago</div>
                         
                         <div class="item-info">
 
                         
-                            <span class="item-text">
+                            <div class="item-text">
                             
                             	@Html.DisplayFor(modelItem => item.Text)
                             
-                            </span>
+                            </div>
                             
-                            <span class="item-link item-link-firstitem">
-                            	
-                                <img src="Content/Images/status.png" class="valign" />
-                       			
-                                $Labone
-                        	
-                            </span>
-                            
-                            <span class="item-link">
+                            <div class="item-link item-link-firstitem item-link-place" title="LabOne Systems S/A">
 
-                            	
-                                <img src="Content/Images/watch.png" class="valign" />
-                       			
-                                  @Html.DisplayFor(modelItem => item.DateInsert)
+                                <span class="text">$Place</span>
                         	
-                            </span>
+                            </div>
+                            
+                            <div class="item-link item-link-date" title="Jun 05, 1986">
+                       			
+                                <span class="text">@Html.DisplayFor(modelItem => item.DateInsert)</span>
+                        	
+                            </div>
                         
                         </div>
                         

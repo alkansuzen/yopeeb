@@ -35,18 +35,41 @@ $(function () {
         return false
     })
 
-    // abre a barra de pesquisa
-    $("button.pesquisar").click(function () {
-        $("#search-bar").slideDown(150)
-        return false;
-    })
+    // Beep Action
+    $("a.share-beep").click(function () {
+        $("form").submit();
+    });
 
-    $("#search-bar .close").click(function () {
-        $("#search-bar").slideUp(100)
-        return false
-    })
+    $("#datepicker").datepicker({
+        showOn: "button",
+        buttonImage: "http://beepoy.com/Content/Images/icons/calendar.png",
+        buttonImageOnly: true,
+        onSelect: function (date, obj) {
+            $("#datepicker").datepicker("option", "buttonImage", "http://beepoy.com/Content/Images/icons/calendar.png");
+        }
+    });
 
-    // Ajuste de altura do iframe
-    $("#iframeMapa").css({ "height": $(window).height() - 56, "margin-top": "48px" })
+    $(".share-where, .share-when, #box-what, .item-link").tipsy({
+        gravity: 'sw'
+    });
 
+    /*
+    $(".share-where, .item-link-place").hover(
+    function () {
+    $(this).css("background-position", "left top");
+    },
+    function () {
+    $(this).css("background-position", "left bottom");
+    }
+    );
+
+    $(".share-when img").hover(
+    function () {
+    $(this).attr("src", "http://beepoy.com/Content/Images/icons/calendar.png");
+    },
+    function () {
+    $(this).attr("src", "http://beepoy.com/Content/Images/icons/calendar.png");
+    }
+    );
+    */
 })
