@@ -11,19 +11,10 @@
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
 <script type="text/javascript">
-    jQuery(function ($) {
+    $(document).ready(function ($) {
 
         $("#loading").hide()
     
-        $("a.share-beep").click(function () {
-            $("form").submit();
-        });
-
-        $("#datepicker").datepicker({
-            showOn: "button",
-            buttonImage: "http://beepoy.com/Content/Images/icons/calendar.png",
-            buttonImageOnly: true
-        });
     });
 
 </script>
@@ -33,7 +24,7 @@
     @Html.ValidationSummary(true)
                 	<div class="share-itens">
                     <div id="loading">Loading...</div>
-                    <div id="result"></div>    
+                    <!--div id="result"></div>    
                     @Html.ValidationMessageFor(model => model.Text)    
 
                     @Html.DropDownList("PlaceId", String.Empty)
@@ -46,20 +37,22 @@
                     
                     <a href="#" class="share-link"> Link </a>
                     
-                    <a href="#" class="share-video"> Video </a>
+                    <a href="#" class="share-video"> Video </a -->
                     
                     <div class="share-box">
-                        <div class="share-arrow"></div>
-                       	@Html.TextAreaFor(model => model.Text)
+                        <label for="teste"><em>What's happening?</em></label>
+                       	@Html.TextAreaFor(model => model.Text, new { id = "box-what", title="What?" })
                     </div>
                     
                     <div class="share-line">
                     
-                    	<a class="share-where" href="#"></a>
+                    	<a class="share-where" href="#" title="Where?"></a>
 
-                        <a class="share-when" href="#"><input type="text" id="datepicker" /></a>
+                        <a class="share-when" href="#" title="When?">
+                            <input type="text" id="datepicker" style="visibility: hidden" />
+                        </a>
                         
-                        <a class="share-lock" href="#"></a>
+                        <!-- a class="share-lock" href="#"></a -->
     
                         <a class="share-beep" href="#">Beep</a>
                     
