@@ -33,7 +33,7 @@ function resizeMap(){
 	    geocoder = new google.maps.Geocoder();
 	    local = new google.maps.LatLng(-34.397, 150.644);
 	    infowindow = new google.maps.InfoWindow();
-	    infowindow.setContent("Localizamos você aqui")
+	    infowindow.setContent("Are you here?")
 	    infowindow.setPosition(local)
 	    var myOptions = {
 	        zoom: 8,

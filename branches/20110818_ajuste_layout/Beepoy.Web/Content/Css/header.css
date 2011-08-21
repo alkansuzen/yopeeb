@@ -2,8 +2,7 @@
 	Top Bar
 -------------------- */
 #top-bar {
-	/*background:url("../images/backgrounds/top-bar.png") repeat-x scroll 0 0 transparent;*/
-	height:48px;
+	height:58px;
 	left:0;
 	position:relative;
 	top:0;
@@ -12,20 +11,22 @@
 
 /* Logo */
 #top-bar h6{
-	background:url("../images/logos/beepoy-94x30.png") no-repeat scroll 0 0 transparent;
-	/*background:url("../images/beepoy-brand.png") no-repeat scroll 0 0 transparent;*/
-	float:left;
-	height:30px;
-	margin:6px 14px 0 20px;
-	padding:0;
-	position:relative;
-	width:94px;
-	}
+	/*background:url("../images/logos/beepoy-94x30.png") no-repeat scroll 0 0 transparent;*/
+	background:url("../Images/logos/beepoy-brand.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 60px;
+    margin: 2px 14px 0 20px;
+    padding: 0;
+    position: absolute;
+    width: 150px;
+}
 	
 /* Campos de formulário */
 #top-bar ul.form {
-	float:left;
-	margin:10px 15px 0;
+    float: left;
+    left: 200px;
+    position: absolute;
+    top: 20px;
 	}
 	
 #top-bar ul.form li {
@@ -173,9 +174,9 @@ li#search-bar {
 	Menu
 --------------------- */
 #menu {
-	float:right;
-	margin-right:2%;
-	}
+    float: right;
+    margin-right: 1%;
+}
 
 	#menu li {
 		color: #acacac;
@@ -189,12 +190,12 @@ li#search-bar {
 			color:#acacac;
 			display:block;
 			font-size:13px;
-			padding:13px;
+			padding: 20px 13px;
 			text-decoration:none;
 			}
 		
 			#menu li a:hover {
-				background:#000;
+				background: transparent url("../Images/backgrounds/top-bar-hover.png") repeat-x left center;
 				color:#FED100;
 				}
 
@@ -206,7 +207,7 @@ li#search-bar {
 		#menu li.user a {
 			font-size:11px;
 			height:48px;
-			padding:0 5px;
+			padding:5px;
 			width:auto;
 			}
 		
@@ -223,12 +224,12 @@ li#search-bar {
 		
 			/* Submenu */
 			#menu li.user ul{
-				background:#000;
+				background:#222;
 				display:none;
 				position:absolute;
 				left:0;
 				top:48px;
-				width:175px;
+				width:180px;
 				}
 			
 				#menu li.user ul li{
@@ -239,11 +240,11 @@ li#search-bar {
 						display:block;
 						height:auto;
 						padding:10px;
-						width:155px;
+						width:160px;
 						}
 						
 						#menu li.user ul li a:hover{
-							background:#373737;
+							background:#191919;
 							color:#FED100;
 							}
 							

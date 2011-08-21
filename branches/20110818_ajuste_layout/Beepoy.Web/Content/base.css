@@ -17,9 +17,8 @@ body {
 }
 
 #header-bg {
-	background: #1B1B1B;
-	/*background: #FF1B1B url(Images/backgrounds/top-bar.png) repeat-x scroll 0 0 transparent;*/
-	height: 48px;
+	background: url(Images/backgrounds/top-bar.png) repeat-x scroll 0 0 transparent;
+	height: 58px;
 	width: 100%;
 	position:absolute;
 	left: 0px;
@@ -40,7 +39,7 @@ body {
 #wrapper {
 	margin: 0 auto;
 	width: 960px;
-	height: 48px;
+	height: 58px;
 	/*background: #2B;*/
 	display: block;
 	/*overflow: hidden;*/
@@ -64,7 +63,7 @@ body {
 	left: 10px;
 	top: 15px;
 	width: 646px;
-	height: 472px;
+	height: 460px;
 	z-index: 1;
 	float: left;
 	overflow:hidden;
@@ -158,20 +157,6 @@ body {
 	text-decoration: none;
 }
 
-#top-back {
-	/*background: url(Images/back-content.png) no-repeat;*/
-}
-
-
-#footer-dots {
-	position:absolute;
-	left:456px;
-	top:7px;
-	width:25px;
-	height:55px;
-	z-index:2;
-	background: url(Images/footer-dots.png);
-}
 #footer-brand {
 	position:absolute;
 	left:46px;
@@ -183,30 +168,17 @@ body {
 	cursor: pointer;
 }
 
-#footer-info {
-	position:absolute;
-	left:246px;
-	top:3px;
-	width:137px;
-	height:55px;
-	z-index:2;
-	font: bold 14px/23px Arial,Helvetica,sans-serif;
-	color: #FFF;
-	text-align: left;
-	
+#footer-copy {
+    color: #ACACAC;
+    position: absolute;
+    right: 45px;
+    top: 42px;
 }
 
 #footer-menu {
-	position:absolute;
-	left:550px;
-	top:30px;
-	width:321px;
-	height:11px;
-	z-index:2;
-	color: #FFF;
-	font: bold 14px Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	text-align: left;
+    position: absolute;
+    right: 43px;
+    top: 18px;
 }
 
 #footer-menu a:link, #footer-menu a:visited{
@@ -216,7 +188,7 @@ body {
 }
 
 #footer-menu a:hover {
-	color:#999;
+	color:#FED100;
 	text-decoration: none;
 }
 
@@ -485,59 +457,35 @@ h1.indent {
 
 #menu-l #menu .back-home, #content .menu-location, #timeline .menu-location, #menu-l #menu-perfil .back-home, #menu-l #beeps-menu .back-home{
     float: left;
-    height: 22px;
+    font: bold 14px Arial,Helvetica,sans-serif;
     margin-left: 20px;
-    margin-top: 14px;
-    width: 139px;
-}
-
-
-#menu-l #menu .back-home a:link, #menu-l #menu .back-home a:visited, #content .content-menu .menu-location a:link, #content .content-menu .menu-location a:visited, #timeline .menu-location a:link, #timeline .menu-location a:visited, #menu-l #menu-perfil .back-home a:link, #menu-l #menu-perfil .back-home a:visited, #menu-l #beeps-menu .back-home a:link, #menu-l #beeps-menu .back-home a:visited {
-    font: bold 17px Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	color: #2b2b2b;
-}
-
-#menu-l #menu .back-home a:hover, #content .content-menu .menu-location a:hover, #timeline .menu-location a:hover, #menu-l #menu-perfil .back-home a:hover, #menu-l #beeps-menu .back-home a:hover {
-	color: #999;
+    margin-top: 9px;
+    width: 124px;
 }
 
 #menu-l #menu .what, #content .menu-where, #timeline .menu-when, #menu-l #menu-perfil .what, #menu-l #beeps-menu .what {
-    float: left;
-    height: 33px;
-    width: 298px;
-	margin-left: 206px;
-	margin-top: -22px;
-}
-
-#menu-l #menu .what a:link, #menu-l #menu .what a:visited, #content .content-menu a:link, #content .content-menu a:visited, #timeline .menu-when a:link, #timeline .menu-when a:visited, #menu-l #menu-perfil .what a:link, #menu-l #menu-perfil .what a:visited, #menu-l #beeps-menu .what a:link, #menu-l #beeps-menu .what a:visited {
-    font: bold 17px Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	color: #FFF;
-}
-
-#menu-l #menu .what a:hover, #content .content-menu a:hover, #timeline .menu-when a:hover, #menu-l #menu-perfil .what a:hover, #menu-l #beeps-menu .what a:hover{
-    font: bold 17px Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	color: #999;
+    color: #EEEEEE;
+    font: bold 14px Arial,Helvetica,sans-serif;
+    position: relative;
+    top: 6px;
 }
 
 #content .content-menu, #timeline .timeline-menu  {
-	background: url(Images/content-title-back.png) no-repeat;
-	height: 47px;
+	background: url(Images/backgrounds/content-title-back.png) no-repeat;
+	height: 37px;
 }
 
 #content .map {
 	background-color:#FFF;
 	height: 505px;
 	width: 100%;
-	padding-top: 10px;
+	top: -2px;
 }
 
 #timeline {
 	position: relative;
 	left: 10px;
-	top: 20px;
+	top: 10px;
 	width: 646px;
 	
 	z-index: 1;
@@ -552,9 +500,9 @@ h1.indent {
 }
 
 #menu-l #menu-perfil {
-    background: url("Images/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
+    background: url("Images/backgrounds/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
     float: left;
-    height: 47px;
+    height: 37px;
     width: 298px;
 }
 
@@ -618,16 +566,11 @@ h1.indent {
 }
 
 #menu-l #beeps-menu {
-	background: url("Images/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
+	background: url("Images/backgrounds/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
     float: left;
-    height: 47px;
+    height: 37px;
     width: 298px;
 	margin-top: 20px;
-}
-
-
-#menu-l #menu-perfil span.what {
-	margin-left: 168px;
 }
 
 #menu-l #beeps-menu span.what {
@@ -652,17 +595,17 @@ h1.indent {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    width: 24px; height: 23px;
-    background: url("Images/icons/bee24.png") no-repeat scroll left bottom transparent;
+    width: 16px; height: 14px;
+    background: url("Images/icons/bee16.png") no-repeat scroll left bottom transparent;
 }
 
 .item-link-date
 {
     position: absolute;
     bottom: 0px;
-    right: 33px;
-    width: 24px; height: 24px;
-    background: url("Images/icons/calendar.png") no-repeat scroll left bottom transparent;
+    right: 25px;
+    width: 16px; height: 15px;
+    background: url("Images/icons/calendar16.png") no-repeat scroll left bottom transparent;
 }
 
 .item-link-place .text, .item-link-date .text
@@ -690,7 +633,6 @@ h1.indent {
 	background-color:#FFF;
 	height: 400px;
 	width: 100%;
-	padding-top: 10px;
 }
 
 span.menu-where .add-place {
@@ -839,7 +781,7 @@ span.menu-where .add-event {
     box-shadow: 1px 1px 5px -1px rgba(0, 0, 0, 0.25) inset;
     height: 42px;
     overflow: hidden;
-    padding: 3px 5px 5px;
+    padding: 5px;
 }
 
 #share .share-box .share-arrow {
@@ -897,7 +839,6 @@ span.menu-where .add-event {
 
 
 #share a.share-where:hover, #share a.share-when:hover, #share a.share-lock span:hover {
-	text-decoration: underline;
 	color: #b2b2b2;
 }
 
@@ -911,10 +852,17 @@ span.menu-where .add-event {
 }
 
 #share a.share-beep {
-	padding: 3px 9px;
+	width: 65px;
+	height: 25px;
 	color: #FFF;
-	background-color: #FED806;
-	margin-left: 140px;
+	background: url("Images/buttons/beep.png") no-repeat scroll left top transparent;
+	margin-left: 120px;
+}
+
+#share a.share-beep span {
+    position: relative;
+    right: 16px;
+    top: 5px;
 }
 
 #home-wrapper {

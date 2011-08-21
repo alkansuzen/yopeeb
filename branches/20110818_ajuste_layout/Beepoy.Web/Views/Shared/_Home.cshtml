@@ -37,20 +37,20 @@
     
 	        <ul class="form">
                 <li>
-        	        <label for="oque">O quê? <em>Bar, evento, ..</em></label>
+        	        <label for="oque">What? <em>Clubs, events...</em></label>
         	        <input type="text" id="oque" />
                 </li>
         
                 <li>
-        	        <label for="onde">Onde? <em>País, estado, ..</em></label>
+        	        <label for="onde">Where? <em>Country, city...</em></label>
         	        <input type="text" id="onde" />
                 </li>
         
                 <li class="small">
-        	        <button type="submit" class="button pesquisar">Pesquisar</button>
+        	        <button type="submit" class="button pesquisar">Search</button>
                 </li>
         
-                <li id="search-bar">
+                <!-- li id="search-bar">
         	        <p><em>Pesquisa por:</em> <strong>Concessionária</strong> em <strong>São Paulo</strong>,</p>
                     <div class="tags">
             	        <a href="" title="" class="oficina">Oficina</a>
@@ -60,72 +60,23 @@
                     <a href="" title="Add nova Tag" class="add-tag">Add Tag</a>
         	        <a href="" title="Fechar Barra" class="close">X</a>
                     <div class="ghost-back"></div>
-                </li>
+                </li -->
             </ul>
     
    	        <ul id="menu">
                 <li><a href="" title="">Home</a></li>
-                <li><a href="" title="">Perfil</a></li>
-                <!-- li><a href="" title="">Pessoas</a></li -->
+                <li><a href="" title="">Profile</a></li>
                 <li class="user">
                     <a href="" title="" >
             	        <img src="Content/Images/usuario/user.gif" alt="" />
-                        <span>Nome do usuario</span>
+                        <span>username</span>
                     </a>
                     <ul>
-                        <li><a href="" title="">Ajuda</a></li>
                         <li><a href="" title="">Logout</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
-    	<!-- div id="header">
-    	
-        	
-            <div id="beepoy-brand">
-            
-            	<h1 class="indent">Beepoy</h1>
-                
-            </div>
-            
-            <div id="search">
-            
-            	<input type="text" class="search-input" value="Pesquisa" />
-            
-            </div>
-
-            
-            <div id="search-where">
-            
-            	<input type="text" class="search-input search-where" value="Onde?" />
-                <input type="submit" class="search-submit" value=""> 
-            
-            </div>
-            
-            <div id="top-menu">
-            	
-                <div class="top-margin">
-                
-                	<div class="menu-avatar">
-                    
-                    </div>
-                
-                        <a href="#"> Perfil </a>
-                        <a href="#"> Pessoas </a>
-                        <a href="#"> @ViewBag.SessionUser.UserName </a>
-                        <a href="./Users/Logout">Logout</a>
-            	
-                </div>
-                
-            </div>
-            
-            <div id="top-back">
-
-            
-            </div>
-       
-        </div -->
-
 
        @RenderBody()
         
@@ -147,24 +98,17 @@
                     
                     </div>
                     
-                    <div id="footer-info">
-                    
-                    	<p>Beepoy</p>
-                        <p>Av. Paulista, 1049</p>
-
-                        <p>+55 11 5555-5555</p>
-                    
-                    </div>
-                    
                     <div id="footer-menu">
                     
                     	<a href="#"> Home </a>
-                        <a href="#"> Perfil </a>
-
-                        <a href="#"> Nome do usuário </a>
+                        <a href="#"> About </a>
+                        <a href="#"> Help </a>
                     
                     </div>
                     
+                    <div id="footer-copy">
+                        &copy; 2011 Beepoy
+                    </div>
 
                 
                 </div>
