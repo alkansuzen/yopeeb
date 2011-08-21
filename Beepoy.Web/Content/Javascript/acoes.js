@@ -45,7 +45,7 @@ $(function () {
         buttonImage: "http://beepoy.com/Content/Images/icons/calendar.png",
         buttonImageOnly: true,
         onSelect: function (date, obj) {
-            $("#datepicker").datepicker("option", "buttonImage", "http://beepoy.com/Content/Images/icons/calendar.png");
+            $("#datepicker").datepicker("option", "buttonImage", "http://beepoy.com/Content/Images/icons/calendar_on.png");
         }
     });
 
@@ -72,4 +72,14 @@ $(function () {
     }
     );
     */
+
+    $(".share-beep").hover(
+        function () {
+            $(this).css("background-position", "left center");
+        },
+        function () {
+            $(this).css("background-position", "left top");
+        }
+    );
+
 })
