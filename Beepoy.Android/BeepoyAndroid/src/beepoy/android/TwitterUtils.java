@@ -19,7 +19,7 @@ public class TwitterUtils {
 		twitter.setOAuthConsumer(Constants.CONSUMER_KEY, Constants.CONSUMER_SECRET);
 		twitter.setOAuthAccessToken(a);
 		
-		try {
+		try { 
 			twitter.getAccountSettings();
 			return true;
 		} catch (TwitterException e) {
