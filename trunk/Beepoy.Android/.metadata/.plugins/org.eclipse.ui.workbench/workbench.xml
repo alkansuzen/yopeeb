@@ -43,7 +43,7 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BeepoyAndroid/src/beepoy/android/AndroidTwitterSample.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="2585" selectionOffset="499" selectionTopPixel="1312"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BeepoyAndroidActivity.java" partName="BeepoyAndroidActivity.java" path="C:/Projetos/Beepoy.Android/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java" title="BeepoyAndroidActivity.java" tooltip="BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BeepoyAndroidActivity.java" partName="BeepoyAndroidActivity.java" path="C:/Projetos/Beepoy/Beepoy.Android/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java" title="BeepoyAndroidActivity.java" tooltip="BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1105" selectionTopPixel="187"/>
 </editor>
