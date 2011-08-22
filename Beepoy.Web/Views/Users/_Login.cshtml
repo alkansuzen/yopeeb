@@ -1,1 +1,29 @@
-﻿<input type="button" name="Twiter" value="Twiter" onclick="javascript:window.open('./Users/Authorization','_self','')"/>
+﻿
+<div id="dvTwitterLogin">
+
+    <input type="image" name="twitterLogin" id="twitterLogin" src="./Content/Images/twitter_button.png">
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#twitterLogin').hover(
+            function () {
+                $(this).attr({ src: './Content/Images/twitter_button.png' });
+            },
+            function () {
+                $(this).attr({ src: './Content/Images/twitter_button.png' });
+            }
+        );
+    });
+
+    $(document).ready(function () {
+        $('#twitterLogin').click(
+        function () {
+            window.open('./Users/Authorization', '_self', '');
+        }
+    );
+    });
+
+</script>
