@@ -26,6 +26,18 @@
         });
     });
 
+    $("textarea[maxlength]").keypress(function (event) {
+        var key = event.which;
+
+        //todas as teclas incluindo enter
+        if (key >= 33 || key == 13) {
+            var maxLength = $(this).attr("maxlength");
+            var length = this.value.length;
+            if (length >= maxLength) {
+                event.preventDefault();
+            }
+        }
+    });
 </script>
 
 @using (Ajax.BeginForm("create", "beeps", null, new AjaxOptions { UpdateTargetId = "result", LoadingElementId = "loading" }, null))
@@ -50,7 +62,7 @@
                     
                     <div class="share-box">
                         <div class="share-arrow"></div>
-                       	@Html.TextAreaFor(model => model.Text)
+                       	@Html.TextAreaFor(model => model.Text, new { @maxlength = "140" } )
                     </div>
                     
                     <div class="share-line">
