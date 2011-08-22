@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="5" y="40">
 <fastViewData fastViewLocation="1024"/>
@@ -17,39 +17,31 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1313939222856" focus="true" label="Workspace - Debug">
+<page aggregateWorkingSetId="Aggregate for window 1313939222856" focus="true" label="Workspace - Java">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AndroidTwitterSample.java" partName="AndroidTwitterSample.java" path="C:/Projetos/Beepoy.Android/BeepoyAndroid/src/beepoy/android/AndroidTwitterSample.java" title="AndroidTwitterSample.java" tooltip="BeepoyAndroid/src/beepoy/android/AndroidTwitterSample.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BeepoyAndroid/src/beepoy/android/AndroidTwitterSample.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="2585" selectionOffset="499" selectionTopPixel="1312"/>
-</editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BeepoyAndroidActivity.java" partName="BeepoyAndroidActivity.java" path="C:/Projetos/Beepoy/Beepoy.Android/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java" title="BeepoyAndroidActivity.java" tooltip="BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1105" selectionTopPixel="187"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Constants.java" partName="Constants.java" path="C:/Projetos/Beepoy.Android/BeepoyAndroid/src/beepoy/android/Constants.java" title="Constants.java" tooltip="BeepoyAndroid/src/beepoy/android/Constants.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/BeepoyAndroid/src/beepoy/android/Constants.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="213" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1984" selectionTopPixel="403"/>
 </editor>
 </editors>
 <views>
@@ -73,7 +65,9 @@
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1313939222856">
-<customFilters userDefinedPatternsEnabled="false">&#x0A;<xmlDefinedFilters>&#x0A;<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
 <child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
@@ -105,7 +99,7 @@
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.debug.ui.DebugPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -170,40 +164,53 @@
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="left">&#x0A;<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@3c9d17e" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@3c9d17e" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.23911439" ratioLeft="324" ratioRight="1031" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.74958813" ratioLeft="455" ratioRight="152" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<info folder="true" part="bottom" ratio="0.7241936" ratioLeft="449" ratioRight="171" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.7493333" ratioLeft="562" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="right" ratio="0.7493333" ratioLeft="562" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
@@ -252,59 +259,42 @@
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.6467742" ratioLeft="401" ratioRight="219" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.6467742" ratioLeft="401" ratioRight="219" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
 <page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@d30ac34" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
-<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@d30ac34" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.4496788" ratioLeft="210" ratioRight="257" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.VariableView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
@@ -318,168 +308,30 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/Constants.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/twitter/AndroidTwitterSample.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/twitter/Constants.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/twitter/TwitterUtils.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/AndroidTwitterSample.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/OAuthRequestTokenTask.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/PrepareRequestTokenActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/BeepoyAndroid/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/BeepoyAndroid/proguard.cfg"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/BeepoyAndroid/default.properties"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/TwitterUtils.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=BeepoyAndroid/C:\/Program Files \(x86)\/Android\/android-sdk\/platforms\/android-4\/android.jar&lt;android.app(Activity.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=BeepoyAndroid/C:\/Program Files \(x86)\/Android\/android-sdk\/platforms\/android-4\/android.jar&lt;android.view(Window.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/AndroidTwitterSample.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java"/>
 </editors>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="366" y="0"/>
+<item historyLabel="BeepoyAndroid Manifest" index="0"/>
+<item historyLabel="proguard.cfg" index="1">
+<position info="not_deleted" x="1159" y="0"/>
 </item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="367" y="0"/>
-</item>
-<item historyLabel="Constants.java" index="3">
-<position info="not_deleted" x="23" y="7"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="2" y="0"/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="2">
-<position info="not_deleted" x="2700" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="2" y="0"/>
-</item>
-<item historyLabel="Constants.java" index="3">
-<position info="not_deleted" x="23" y="7"/>
-</item>
-<item historyLabel="TwitterUtils.java" index="4">
-<position info="not_deleted" x="30" y="0"/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="Constants.java" index="1">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="OAuthRequestTokenTask.java" index="6">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="PrepareRequestTokenActivity.java" index="7">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="TwitterUtils.java" index="8">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="PrepareRequestTokenActivity.java" index="7">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="OAuthRequestTokenTask.java" index="6">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
+<item historyLabel="BeepoyAndroid Manifest" index="0"/>
+<item historyLabel="default.properties" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
+<item historyLabel="BeepoyAndroid Manifest" index="0"/>
+<item historyLabel="TwitterUtils.java" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
+<item historyLabel="AndroidTwitterSample.java" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="458" y="21"/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
-<position info="not_deleted" x="0" y="3086"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="3307" y="0"/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
-<position info="not_deleted" x="0" y="3086"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
+<item active="true" historyLabel="BeepoyAndroidActivity.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Constants.java" index="1">
-<position info="not_deleted" x="213" y="0"/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
-<position info="not_deleted" x="499" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="AndroidTwitterSample.java" index="5">
-<position info="not_deleted" x="499" y="2585"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="552" y="0"/>
-</item>
-<item historyLabel="Constants.java" index="1">
-<position info="not_deleted" x="625" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="552" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="1106" y="0"/>
-</item>
-<item historyLabel="Activity.class" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Constants.java" index="1">
-<position info="not_deleted" x="625" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="1137" y="0"/>
-</item>
-<item historyLabel="Activity.class" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Constants.java" index="1">
-<position info="not_deleted" x="625" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="1137" y="0"/>
-</item>
-<item historyLabel="Activity.class" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="1137" y="0"/>
-</item>
-<item historyLabel="Window.class" index="10">
-<position/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="1137" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="3030" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="1485" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="1390" y="0"/>
-</item>
-<item historyLabel="BeepoyAndroidActivity.java" index="0">
-<position info="not_deleted" x="1485" y="0"/>
-</item>
-<item historyLabel="Constants.java" index="1">
-<position info="not_deleted" x="625" y="0"/>
-</item>
-<item active="true" historyLabel="BeepoyAndroidActivity.java" index="11">
-<position info="not_deleted" x="1485" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -498,20 +350,26 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BeepoyAndroidActivity.java" tooltip="BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java">
+<persistable path="/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TwitterUtils.java" tooltip="BeepoyAndroid/src/beepoy/android/TwitterUtils.java">
+<persistable path="/BeepoyAndroid/src/beepoy/android/TwitterUtils.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="default.properties" tooltip="BeepoyAndroid/default.properties">
+<persistable path="/BeepoyAndroid/default.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="proguard.cfg" tooltip="BeepoyAndroid/proguard.cfg">
+<persistable path="/BeepoyAndroid/proguard.cfg"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="BeepoyAndroid/AndroidManifest.xml">
+<persistable path="/BeepoyAndroid/AndroidManifest.xml"/>
+</file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Activity.class" tooltip="android.app.Activity">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=BeepoyAndroid/C:\/Program Files \(x86)\/Android\/android-sdk\/platforms\/android-4\/android.jar&lt;android.app(Activity.class"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Constants.java" tooltip="BeepoyAndroid/src/beepoy/android/Constants.java">
 <persistable path="/BeepoyAndroid/src/beepoy/android/Constants.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BeepoyAndroidActivity.java" tooltip="BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java">
-<persistable path="/BeepoyAndroid/src/beepoy/android/BeepoyAndroidActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AndroidTwitterSample.java" tooltip="BeepoyAndroid/src/beepoy/android/AndroidTwitterSample.java">
-<persistable path="/BeepoyAndroid/src/beepoy/android/AndroidTwitterSample.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TwitterUtils.java" tooltip="BeepoyAndroid/src/beepoy/android/TwitterUtils.java">
-<persistable path="/BeepoyAndroid/src/beepoy/android/TwitterUtils.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PrepareRequestTokenActivity.java" tooltip="BeepoyAndroid/src/beepoy/android/PrepareRequestTokenActivity.java">
 <persistable path="/BeepoyAndroid/src/beepoy/android/PrepareRequestTokenActivity.java"/>
