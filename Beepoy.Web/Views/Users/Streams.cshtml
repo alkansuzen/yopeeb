@@ -11,15 +11,13 @@
         $.ajax({
             url: '/Users/Streams',
             success: function (data) {
-                console.log("updateBeeps list success")
-//                console.log(data)
                 $(".streams").prepend(data)
             }
         });
 
     }
 
-    setInterval(UpdateBeepsList, 600000);
+    setInterval(UpdateBeepsList, 10000);
 </script>
 
 
