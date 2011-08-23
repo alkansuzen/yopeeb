@@ -66,7 +66,7 @@ body {
 	height: 460px;
 	z-index: 1;
 	float: left;
-	overflow:hidden;
+	/*overflow:hidden;*/
 }
 
 #footer {
@@ -329,7 +329,7 @@ h1.indent {
 #menu-l #list-itens-home ul {
     border-width: 1px 0;
     float: left;
-    height: 557px;
+    height: 1000px;
     list-style-type: none;
     margin: 0;
     overflow-x: hidden;
@@ -342,7 +342,7 @@ h1.indent {
 
 #menu-l #list-itens-home {
     float: right;
-    height: 557px;
+    height: 1000px;
     overflow: hidden;
     width: 318px;		
 }
@@ -979,4 +979,22 @@ span.menu-where .add-event {
     cursor:pointer;
     text-align:left;
     text-indent:-5000px;
+}
+
+
+#footer.sticky {
+	position:fixed !important;
+	bottom:0;
+}
+
+#content.sticky 
+{
+    position:fixed !important; 
+    bottom:290px;
+}
+
+#timeline.sticky 
+{
+    position:fixed !important;
+    bottom:85px;
 }
