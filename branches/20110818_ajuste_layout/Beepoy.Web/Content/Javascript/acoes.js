@@ -1,6 +1,6 @@
 // JavaScript Document
 
-$(function () {
+$(document).ready(function () {
 
     //Efeito dos campos de pesquisa Label, Input
     $("#top-bar input").focus(function () {
@@ -82,4 +82,28 @@ $(function () {
         }
     );
 
+
+    $('#footer').waypoint(
+		function (event, direction) {
+		    $("#footer, #content, #timeline").toggleClass('sticky', direction === "down");
+		    event.stopPropagation();
+		}, {
+		    offset: '100%'
+		}
+	);
+
+
+    function brasil() {
+        var pos = ($(window).width() - 960) / 2;
+        console.log(pos);
+
+        if (pos < 0) { pos = 0; }
+
+        pos = pos + 308;
+        pos = pos + 'px';
+        $("#timeline").css("left", pos);
+        $("#content").css("left", pos);
+
+        console.log(pos);
+    }
 })
