@@ -7,5 +7,6 @@ namespace Beepoy.SocialMedia.Foursquare
 {
     public class Class1
     {
+        
     }
 }
