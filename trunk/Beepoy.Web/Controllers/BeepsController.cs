@@ -67,10 +67,15 @@ namespace Beepoy.Web.Controllers
                 beep.BeepIdFather = -1;
                 beep.DateInsert = DateTime.Now;
                 beep.DateUpdate = DateTime.Now;
+                
+                System.Globalization.DateTimeFormatInfo dtfi = new System.Globalization.DateTimeFormatInfo();
+                dtfi.ShortDatePattern = "MM-dd-yyyy";
+                dtfi.DateSeparator = "-";
+                beep.DateWhen = Convert.ToDateTime(Request["DateWhen"], dtfi);
 
                 place.IdName = "-";
-                place.Latitude = Convert.ToDouble(Request["latitude"]);
-                place.Longitude = Convert.ToDouble(Request["longitude"]);
+                place.Latitude = Convert.ToDouble(Request["Latitude"]);
+                place.Longitude = Convert.ToDouble(Request["Longitude"]);
                 place.Name = place.Latitude.ToString() + "," + place.Longitude.ToString();
                 place.Description = "";
                 place.User = Db.Users.Find(SessionUser.UserId);
