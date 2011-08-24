@@ -31,6 +31,7 @@ namespace Beepoy.Web.Models
         public long BeepIdFather { get; set; }
         public System.DateTime DateInsert { get; set; }
         public System.DateTime DateUpdate { get; set; }
+        public System.DateTime DateWhen { get; set; }
     
         // Navigation properties
     
