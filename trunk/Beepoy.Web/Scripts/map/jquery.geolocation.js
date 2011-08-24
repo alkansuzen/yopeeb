@@ -21,10 +21,10 @@
 				($.geolocation.object())[(options.track ? 'watchPosition' : 'getCurrentPosition')](function(location){
 					success(location.coords);
 				}, function(){
-					error();
+					//error();
 				}, {enableHighAccuracy: options.highAccuracy});		
 			}else{
-				error();				
+				//error();
 			}
 		},
 		object:function(){

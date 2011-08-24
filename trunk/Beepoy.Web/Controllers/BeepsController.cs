@@ -62,32 +62,42 @@ namespace Beepoy.Web.Controllers
             try
             {
                 // TODO: Add insert logic here
-               
-                    beep.User = Db.Users.Find(SessionUser.UserId);
-                    beep.BeepIdFather = -1;
-                    beep.DateInsert = DateTime.Now;
-                    beep.DateUpdate = DateTime.Now;
-                    
-                    
-                    BeepsPlace bp = new BeepsPlace
-                    {
-                        PlaceId = place.PlaceId,
-                        Beep  = beep,
-                        DateInsert = DateTime.Now,
-                        DateUpdate = DateTime.Now
-                    };
 
-                    Db.Beeps.Add(beep);
-                    Db.BeepsPlaces.Add(bp);
+                beep.User = Db.Users.Find(SessionUser.UserId);
+                beep.BeepIdFather = -1;
+                beep.DateInsert = DateTime.Now;
+                beep.DateUpdate = DateTime.Now;
 
-                    Db.SaveChanges();
+                place.IdName = "-";
+                place.Latitude = Convert.ToDouble(Request["latitude"]);
+                place.Longitude = Convert.ToDouble(Request["longitude"]);
+                place.Name = place.Latitude.ToString() + "," + place.Longitude.ToString();
+                place.Description = "";
+                place.User = Db.Users.Find(SessionUser.UserId);
+                place.ImageUrl = "";
+                place.DateInsert = DateTime.Now;
+                place.DateUpdate = DateTime.Now;
 
-                    TwitterService.SendTweet(beep.Text);
+                BeepsPlace bp = new BeepsPlace
+                {
+                    PlaceId = place.PlaceId,
+                    Beep = beep,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now
+                };
 
-                    return "Sucess";
-               
+                Db.Beeps.Add(beep);
+                Db.Places.Add(place);
+                Db.BeepsPlaces.Add(bp);
+
+                Db.SaveChanges();
+
+                TwitterService.SendTweet(beep.Text);
+
+                return "Sucess";
+
             }
-            catch( Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message.ToString());
                 return e.Message + e.StackTrace + e.InnerException.Message;

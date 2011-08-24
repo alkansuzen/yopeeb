@@ -3,20 +3,22 @@
 
 *{ 
 	margin: 0 auto;
-	padding: 0; 
+	padding: 0;
 }
+
+img { border: 0; }
 
 body {
 	margin: 0 auto;
 	padding: 0;
-	background: #2B2B2B;
+	background: #2B2B2B url(Images/home-background.png) no-repeat 50% 45px;
 	text-align: center; /* hack para o IE */ 
 	font: 11px Verdana,Arial,"Bitstream Vera Sans",sans-serif;
 }
 
 #header-bg {
-	background: #1B1B1B;
-	height: 90px;
+	background: url(Images/backgrounds/top-bar.png) repeat-x scroll 0 0 transparent;
+	height: 58px;
 	width: 100%;
 	position:absolute;
 	left: 0px;
@@ -25,7 +27,7 @@ body {
 }
 
 #header-bg-home {
-	background: url(Images/home-background.png);
+	/*background: url(Images/home-background.png);*/
 	height: 470px;
 	width: 100%;
 	position:absolute;
@@ -37,8 +39,8 @@ body {
 #wrapper {
 	margin: 0 auto;
 	width: 960px;
-	height: 100%;
-	background: #2B;
+	height: 58px;
+	/*background: #2B;*/
 	display: block;
 	/*overflow: hidden;*/
 	position: relative;
@@ -49,18 +51,19 @@ body {
 	left: 0px;
 	top: 0px;
 	width:960px;
-	height:90px;
-	z-index: 1;	
+	height:100px;
+	z-index: 0;	
 
 }
 
 
-#content {
+#content 
+{
 	position:relative;
 	left: 10px;
-	top: 28px;
+	top: 15px;
 	width: 646px;
-	height: 562px;
+	height: 460px;
 	z-index: 1;
 	float: left;
 	overflow:hidden;
@@ -70,7 +73,7 @@ body {
 	position: relative;
 	top: 52px;
 	width: 100%;
-	height: 132px;
+	height: 72px;
 	z-index: 1;
 	float: left;
 	z-index: 0px;
@@ -80,7 +83,7 @@ body {
 #footer #footer-in {
 	width: 960px;
 	z-index: 1;
-	height: 132px;
+	height: 72px;
 	margin: 0 auto;
 	position: relative;
 
@@ -90,7 +93,7 @@ body {
 #beepoy-brand {
 	position:absolute;
 	left:18px;
-	top:13px;
+	top:4px;
 	width:149px;
 	height:51px;
 	z-index:1;
@@ -102,34 +105,40 @@ body {
 #search {
 	position:absolute;
 	left:235px;
-	top:27px;
+	top:13px;
 	width:147px;
-	height:37px;
+	height:20px;
 	z-index:2;
 	color: #FFF;
 	font: bold 14px Arial, Helvetica, sans-serif;
-	background: url(Images/search-back.png);
+	
+	background:#666;
+	border:2px solid #000;
+	border-left:0;
+	border-right:0;
+	padding: 4px 2px;
+	/*background: url(Images/search-back.png);*/
 	
 }
 
 #search-where {
 	position:absolute;
 	left:390px;
-	top:27px;
+	top:13px;
 	width:174px;
 	height:37px;
 	z-index:1;
-	background: url(Images/search-where-back.png);
+	/*background: url(Images/search-where-back.png);*/
 }
 
 #top-menu {
 	position:absolute;
 	left:581px;
-	top:28px;
+	top:14px;
 	width:378px;
 	height:37px;
 	z-index:1;
-	background: url(Images/top-menu-back.png) no-repeat;
+	/*background: url(Images/top-menu-back.png) no-repeat;*/
 	color: #FFF;
 	font: bold 13px Arial, Helvetica, sans-serif;
 	padding-top: 9px;
@@ -148,29 +157,10 @@ body {
 	text-decoration: none;
 }
 
-#top-back {
-	background: url(Images/back-content.png) no-repeat;
-	height: 29px;
-	width: 954px;
-	position: absolute;
-	top: 90px;
-	left: 0px;
-}
-
-
-#footer-dots {
-	position:absolute;
-	left:456px;
-	top:22px;
-	width:25px;
-	height:95px;
-	z-index:2;
-	background: url(Images/footer-dots.png);
-}
 #footer-brand {
 	position:absolute;
 	left:46px;
-	top:39px;
+	top:12px;
 	width:144px;
 	height:45px;
 	z-index:2;
@@ -178,30 +168,17 @@ body {
 	cursor: pointer;
 }
 
-#footer-info {
-	position:absolute;
-	left:246px;
-	top:39px;
-	width:137px;
-	height:55px;
-	z-index:2;
-	font: bold 14px/23px Arial,Helvetica,sans-serif;
-	color: #FFF;
-	text-align: left;
-	
+#footer-copy {
+    color: #ACACAC;
+    position: absolute;
+    right: 45px;
+    top: 42px;
 }
 
 #footer-menu {
-	position:absolute;
-	left:550px;
-	top:62px;
-	width:321px;
-	height:11px;
-	z-index:2;
-	color: #FFF;
-	font: bold 14px Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	text-align: left;
+    position: absolute;
+    right: 43px;
+    top: 18px;
 }
 
 #footer-menu a:link, #footer-menu a:visited{
@@ -211,7 +188,7 @@ body {
 }
 
 #footer-menu a:hover {
-	color:#999;
+	color:#FED100;
 	text-decoration: none;
 }
 
@@ -255,9 +232,9 @@ h1.indent {
 
 #menu-l {
 	position: relative;
-	top: 28px;
+	top: 15px;
 	width: 298px;
-	height: 758px;
+	height: 658px;
 	z-index: 1;
 	float: left;
 	text-align: left;
@@ -426,7 +403,20 @@ h1.indent {
     position: absolute;
     top: 12px;
     width: 185px;
+    height: 95px;
 	overflow: hidden;
+}
+
+.item-date 
+{
+    color: #999999;
+    font-size: 10px;
+    height: 15px;
+    left: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 91px;
+    width: 85px;
 }
 
 #menu-l #list-itens ul li h2, #menu-l #list-itens-perfil ul li h2, #menu-l #list-itens-home ul li h2 {
@@ -437,7 +427,7 @@ h1.indent {
 #menu-l #list-itens ul li span.item-text, #menu-l #list-itens-perfil ul li span.item-text, #menu-l #list-itens-home ul li span.item-text {
 	float: left;
 	margin-top: 4px;
-	line-height: 15px;=
+	line-height: 15px;
 }
 
 #menu-l #list-itens ul li span.item-link, #menu-l #list-itens-perfil ul li span.item-link, #menu-l #list-itens-home ul li span.item-link {
@@ -467,59 +457,35 @@ h1.indent {
 
 #menu-l #menu .back-home, #content .menu-location, #timeline .menu-location, #menu-l #menu-perfil .back-home, #menu-l #beeps-menu .back-home{
     float: left;
-    height: 22px;
+    font: bold 14px Arial,Helvetica,sans-serif;
     margin-left: 20px;
-    margin-top: 14px;
-    width: 139px;
-}
-
-
-#menu-l #menu .back-home a:link, #menu-l #menu .back-home a:visited, #content .content-menu .menu-location a:link, #content .content-menu .menu-location a:visited, #timeline .menu-location a:link, #timeline .menu-location a:visited, #menu-l #menu-perfil .back-home a:link, #menu-l #menu-perfil .back-home a:visited, #menu-l #beeps-menu .back-home a:link, #menu-l #beeps-menu .back-home a:visited {
-    font: bold 17px Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	color: #2b2b2b;
-}
-
-#menu-l #menu .back-home a:hover, #content .content-menu .menu-location a:hover, #timeline .menu-location a:hover, #menu-l #menu-perfil .back-home a:hover, #menu-l #beeps-menu .back-home a:hover {
-	color: #999;
+    margin-top: 9px;
+    width: 124px;
 }
 
 #menu-l #menu .what, #content .menu-where, #timeline .menu-when, #menu-l #menu-perfil .what, #menu-l #beeps-menu .what {
-    float: left;
-    height: 33px;
-    width: 298px;
-	margin-left: 206px;
-	margin-top: -22px;
-}
-
-#menu-l #menu .what a:link, #menu-l #menu .what a:visited, #content .content-menu a:link, #content .content-menu a:visited, #timeline .menu-when a:link, #timeline .menu-when a:visited, #menu-l #menu-perfil .what a:link, #menu-l #menu-perfil .what a:visited, #menu-l #beeps-menu .what a:link, #menu-l #beeps-menu .what a:visited {
-    font: bold 17px Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	color: #FFF;
-}
-
-#menu-l #menu .what a:hover, #content .content-menu a:hover, #timeline .menu-when a:hover, #menu-l #menu-perfil .what a:hover, #menu-l #beeps-menu .what a:hover{
-    font: bold 17px Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	color: #999;
+    color: #EEEEEE;
+    font: bold 14px Arial,Helvetica,sans-serif;
+    position: relative;
+    top: 6px;
 }
 
 #content .content-menu, #timeline .timeline-menu  {
-	background: url(Images/content-title-back.png) no-repeat;
-	height: 47px;
+	background: url(Images/backgrounds/content-title-back.png) no-repeat;
+	height: 37px;
 }
 
 #content .map {
 	background-color:#FFF;
 	height: 505px;
 	width: 100%;
-	padding-top: 10px;
+	top: -2px;
 }
 
 #timeline {
 	position: relative;
 	left: 10px;
-	top: 36px;
+	top: 10px;
 	width: 646px;
 	
 	z-index: 1;
@@ -534,9 +500,9 @@ h1.indent {
 }
 
 #menu-l #menu-perfil {
-    background: url("Images/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
+    background: url("Images/backgrounds/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
     float: left;
-    height: 47px;
+    height: 37px;
     width: 298px;
 }
 
@@ -600,16 +566,11 @@ h1.indent {
 }
 
 #menu-l #beeps-menu {
-	background: url("Images/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
+	background: url("Images/backgrounds/menu-l-title-back-perfil.png") repeat scroll 0 0 transparent;
     float: left;
-    height: 47px;
+    height: 37px;
     width: 298px;
 	margin-top: 20px;
-}
-
-
-#menu-l #menu-perfil span.what {
-	margin-left: 168px;
 }
 
 #menu-l #beeps-menu span.what {
@@ -622,11 +583,36 @@ h1.indent {
 }
 
 .item-link {
-    background-color: #E9E7E8;
+    /*background-color: #EAEAEA;*/
     float: left;
     font-size: 85%;
-    margin-top: 6px;
-    padding: 2px;
+    margin-top: 1px;
+    padding: 1px;
+}
+
+.item-link-place
+{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 16px; height: 14px;
+    background: url("Images/icons/bee16.png") no-repeat scroll left bottom transparent;
+}
+
+.item-link-date
+{
+    position: absolute;
+    bottom: 0px;
+    right: 25px;
+    width: 16px; height: 15px;
+    background: url("Images/icons/calendar16.png") no-repeat scroll left bottom transparent;
+}
+
+.item-link-place .text, .item-link-date .text
+{
+    width: 80%;
+    color: #333333;
+    display: none;
 }
 
 .item-link-firstitem {
@@ -645,9 +631,8 @@ h1.indent {
 
 #content .map-perfil {
 	background-color:#FFF;
-	height: 280px;
+	height: 400px;
 	width: 100%;
-	padding-top: 10px;
 }
 
 span.menu-where .add-place {
@@ -679,7 +664,7 @@ span.menu-where .add-event {
 }
 
 .map-menu {
-	margin-top: 19px;	
+	/*margin-top: 19px;	*/
 }
 
 
@@ -743,9 +728,8 @@ span.menu-where .add-event {
     background-color: #FFFFFF;
     border-bottom: 2px solid #FBEF7A;
     float: left;
-    /*height: 152px;*/
+    height: 130px;
     width: 298px;
-
 }
 
 #share .share-itens {
@@ -790,8 +774,14 @@ span.menu-where .add-event {
 
 #share .share-box textarea{
     height: 58px;
-    width: 265px;
-	
+    width: 258px;
+	background-color: #FFFFFF;
+    border: 1px solid #B9B9B9;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 1px 1px 5px -1px rgba(0, 0, 0, 0.25) inset;
+    height: 42px;
+    overflow: hidden;
+    padding: 5px;
 }
 
 #share .share-box .share-arrow {
@@ -827,41 +817,52 @@ span.menu-where .add-event {
 }
 
 #share a.share-where {
-    background: url(Images/share-where.png) no-repeat scroll left top transparent;
+    background: url(Images/icons/bee24.png) no-repeat scroll left bottom transparent;
     float: left;
-    height: 26px;
-    width: 84px;
+    height: 24px;
+    width: 24px;
 	color: #000;
 }
 
 #share a.share-when {
-    background: url(Images/share-when.png) no-repeat scroll left top transparent;
+    /*background: url(Images/icons/calendar.png) no-repeat scroll left bottom transparent;*/
     float: left;
-    height: 26px;
-    width: 104px;
+    height: 24px;
+    width: 30px;
 	color: #000;
 }
 
+#share a.share-when input 
+{
+    width: 0px;
+}
+
+
 #share a.share-where:hover, #share a.share-when:hover, #share a.share-lock span:hover {
-	text-decoration: underline;
 	color: #b2b2b2;
 }
 
 #share a.share-lock {
     background: url("Images/share-lock.png") no-repeat scroll left top transparent;
     color: #000000;
-    float: left;
     height: 26px;
-    margin-left: 46px;
+    margin-left: 100px;
     margin-top: 3px;
-    width: 74px;
+    width: 34px;
 }
 
-#share a.share-lock span {
-	padding: 3px 5px 2px;
+#share a.share-beep {
+	width: 65px;
+	height: 25px;
 	color: #FFF;
-	background-color: #FED806;
-		
+	background: url("Images/buttons/beep.png") no-repeat scroll left top transparent;
+	margin-left: 120px;
+}
+
+#share a.share-beep span {
+    position: relative;
+    right: 16px;
+    top: 5px;
 }
 
 #home-wrapper {
@@ -959,4 +960,23 @@ span.menu-where .add-event {
     float: left;
     margin-bottom: 10px;
 	margin-top: 5px;
+}
+
+#tracking { display: none; }
+
+#datepicker { width: 40px; }
+.ui-datepicker-trigger {  }
+
+.text-hidden {
+    content:"";
+    text-align:left;
+    text-indent:-5000px;
+}
+	
+.button {
+    border:0;
+    content:"";
+    cursor:pointer;
+    text-align:left;
+    text-indent:-5000px;
 }
