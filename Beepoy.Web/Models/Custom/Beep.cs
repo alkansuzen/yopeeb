@@ -35,5 +35,12 @@ namespace Beepoy.Web.Models
         {
             return this.Text.Split(' ').Where(t => t.ToString().IndexOf('@') == 0);
         }
+
+        public Place Place { get{
+            return this.Place;
+     
+        } }
+
+
     }
 }
