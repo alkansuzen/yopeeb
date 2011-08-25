@@ -83,4 +83,40 @@ $(function () {
         }
     );
 
-})
+
+    $('#footer').waypoint(
+		function (event, direction) {
+		    //console.log(direction);
+		    $("#footer, #content, #timeline").toggleClass('sticky', direction === "down");
+		    if (direction === "down") {
+		        var pos = calcScrollLeftPos();
+		        $("#content, #timeline").css("left", pos);
+		        $(window).bind('resize', function () {
+		            var pos = calcScrollLeftPos();
+		            $("#content, #timeline").css("left", pos);
+		        });
+		    } else {
+		        $.waypoints('refresh');
+		        $("#content, #timeline").css("left", 0);
+		        $(window).unbind('resize');
+		    }
+		    event.stopPropagation();
+		}, {
+		    offset: '100%'
+		}
+	);
+
+});
+
+function calcScrollLeftPos() {
+    var pos = ($(window).width() - 960) / 2;
+    //console.log(pos);
+
+    if (pos < 0) { pos = 0; }
+
+    pos = pos + 298;
+    pos = pos + 'px';
+
+    //console.log(pos);
+    return pos;
+}
