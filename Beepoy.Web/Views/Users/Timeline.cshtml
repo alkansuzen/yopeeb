@@ -42,7 +42,7 @@
           
           foreach ( Beepoy.Web.Library.Markline markline in this.Model.MarkLines)
           {
-              markline.Position.Left = (int) 400*i;                        
+              markline.Position.Left = (int) 300*i;                        
               i++;   
               Html.RenderPartial("_MarkLine", markline );
           }
@@ -66,65 +66,28 @@
 
     <div id="timeline_bg">
 
-    <div class="move block_bg day_start" style="left: 0px; ">
-        <div class="div_one_line" style="width: 46px;"></div>
-            <div class="day_bg" style="width: 46px;">
-            <div class="div_inner"></div>
-            <div class="div_bottom">
+    @{
+       i = 0;
+          
+          foreach ( Beepoy.Web.Library.Markline markline in this.Model.MarkLines)
+          {
+              var left =  300*i + "px";                        
+              
+                <div class="move block_bg day_start" style="left:@left ; ">
+                    <div class="div_one_line" style="width: 46px;"></div>
+                        <div class="day_bg" style="width: 46px;">
+                        <div class="div_inner"></div>
+                        <div class="div_bottom">
 
-                <span class="bottom_start">Jun 20</span>
+                            <span class="bottom_start">@markline.Line</span>
             
-            </div>
-        </div>
-    </div>
-  
-    <div class="move block_bg day_start" style="left: 400px; ">
-        <div class="div_one_line" style="width: 46px;"></div>
-            <div class="day_bg" style="width: 46px;">
-            <div class="div_inner"></div>
-            <div class="div_bottom">
-
-                <span class="bottom_start">Jun 20</span>
-            
-            </div>
-        </div>
-    </div>
-
-      <div class="move block_bg day_start" style="left: 800px; ">
-        <div class="div_one_line" style="width: 46px;"></div>
-            <div class="day_bg" style="width: 46px;">
-            <div class="div_inner"></div>
-            <div class="div_bottom">
-
-                <span class="bottom_start">Jun 20</span>
-            
-            </div>
-        </div>
-    </div>
-
-    <div class="move block_bg day_start" style="left: 1200px; ">
-        <div class="div_one_line" style="width: 46px;"></div>
-            <div class="day_bg" style="width: 46px;">
-            <div class="div_inner"></div>
-            <div class="div_bottom">
-
-                <span class="bottom_start">Jun 20</span>
-            
-            </div>
-        </div>
-    </div>
-
-    <div class="move block_bg day_start" style="left: 1600px; ">
-        <div class="div_one_line" style="width: 46px;"></div>
-            <div class="day_bg" style="width: 46px;">
-            <div class="div_inner"></div>
-            <div class="div_bottom">
-
-                <span class="bottom_start">Jun 20</span>
-            
-            </div>
-        </div>
-    </div>
+                        </div>
+                    </div>
+                </div>
+              i++;
+        
+          }
+       }
 
     </div>
     <div id="bottom_line" style="top: 185px;"></div>

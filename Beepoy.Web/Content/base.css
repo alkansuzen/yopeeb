@@ -18,11 +18,11 @@ body {
 
 #header-bg {
 	background: url(Images/backgrounds/top-bar.png) repeat-x scroll 0 0 transparent;
-	height: 58px;
-	width: 100%;
-	position:absolute;
-	left: 0px;
-	z-index: 0;
+    height: 58px;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    z-index: 2;
 	
 }
 
@@ -231,14 +231,14 @@ h1.indent {
 }
 
 #menu-l {
-	position: relative;
-	top: 15px;
-	width: 298px;
-	height: 658px;
-	z-index: 1;
-	float: left;
-	text-align: left;
-	margin-bottom: 28px;
+    position: absolute;
+    top: 71px;
+    width: 298px;
+    height: 658px;
+    z-index: 1;
+    float: left;
+    text-align: left;
+    margin-bottom: 28px;
 }
 
 #menu-l #results {
@@ -989,11 +989,11 @@ span.menu-where .add-event {
 #content.sticky 
 {
     position:fixed !important; 
-    bottom:290px;
+    top: 59px;
 }
 
 #timeline.sticky 
 {
     position:fixed !important;
-    bottom:85px;
+    top: 516px;
 }
