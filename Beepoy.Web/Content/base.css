@@ -60,18 +60,18 @@ body {
 #content 
 {
 	position:relative;
-	left: 10px;
-	top: 15px;
+	margin-left: 10px;
+	margin-top: 15px;
 	width: 646px;
 	height: 460px;
 	z-index: 1;
 	float: left;
-	overflow:hidden;
+	/*overflow:hidden;*/
 }
 
 #footer {
 	position: relative;
-	top: 52px;
+	margin-top: 52px;
 	width: 100%;
 	height: 72px;
 	z-index: 1;
@@ -329,7 +329,6 @@ h1.indent {
 #menu-l #list-itens-home ul {
     border-width: 1px 0;
     float: left;
-    height: 557px;
     list-style-type: none;
     margin: 0;
     overflow-x: hidden;
@@ -342,9 +341,9 @@ h1.indent {
 
 #menu-l #list-itens-home {
     float: right;
-    height: 557px;
     overflow: hidden;
-    width: 318px;		
+    width: 318px;	
+    margin-bottom: 85px;	
 }
 
 
@@ -484,8 +483,8 @@ h1.indent {
 
 #timeline {
 	position: relative;
-	left: 10px;
-	top: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
 	width: 646px;
 	
 	z-index: 1;
@@ -773,7 +772,7 @@ span.menu-where .add-event {
 }
 
 #share .share-box textarea{
-    height: 58px;
+    height: 48px;
     width: 258px;
 	background-color: #FFFFFF;
     border: 1px solid #B9B9B9;
@@ -979,4 +978,22 @@ span.menu-where .add-event {
     cursor:pointer;
     text-align:left;
     text-indent:-5000px;
+}
+
+
+#footer.sticky {
+	position:fixed !important;
+	bottom:0;
+}
+
+#content.sticky 
+{
+    position:fixed !important; 
+    bottom:290px;
+}
+
+#timeline.sticky 
+{
+    position:fixed !important;
+    bottom:85px;
 }
