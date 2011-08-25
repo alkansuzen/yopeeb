@@ -335,16 +335,36 @@ namespace Beepoy.Web.Library
             return timeline;
 
         }
+   }
 
 
- 
+    public class HtmlPosition
+    {
+        public int Left { get; set; }
+        public int Right { get; set; }
+        public int Top { get; set; }
+        public int Bottom { get; set; }
+
     }
-
 
     public class Markline{
 
+
+        public HtmlPosition Position { get; set; }
+
+
         public Markline(){
             this.beeps = new List<Beep>();
+            this.Position = new HtmlPosition
+            {
+                Bottom = 0,
+                Left = 0,
+                Right = 0,
+                Top = 0
+            };
+                     
+               
+
         }
 
         public Markline(Beep beep, DateTime line):this()

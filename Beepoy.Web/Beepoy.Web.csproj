@@ -321,6 +321,7 @@
     <Content Include="Views\Users\_Login.cshtml" />
     <Content Include="Views\Users\Authorization.cshtml" />
     <Content Include="Views\Users\Authentication.cshtml" />
+    <Content Include="Views\Users\_MarkLine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\menu\" />

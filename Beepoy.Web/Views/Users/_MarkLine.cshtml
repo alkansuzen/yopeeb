@@ -1,0 +1,116 @@
+﻿@model Beepoy.Web.Library.Markline
+       
+
+@{
+    
+    var left = this.Model.Position.Left + "px";
+    
+}
+<div class="move block_cnt hh_mm" style="left:@left">
+        <div class="div_one_line"></div>
+        <div>
+            <div class="div_inner"></div>
+            <div class="div_bottom"></div>
+        </div>
+     @{ 
+        for (int i = 0; i < this.Model.Beeps.Count; i++){
+
+        if ( i == 0 ){    
+         <div id="p776443000" class="plurk" style="visibility: visible; left: 32px; top: 3px;">
+        <table>
+            <tbody>
+            <tr>
+            <td class="td_img">
+                <div class="p_img">
+                   <img src="@this.Model.Beeps[i].User.ImageUrl ">
+                </div>
+            </td>
+            <td>
+                <div id="plurk_cnt_776443000" class="plurk_cnt">
+                    <table>
+                      <tbody>
+                        <tr>
+                            <td class="td_qual">
+                                <span style="padding-right:2px">
+                                <a class="name"  href="/@this.Model.Beeps[i].User.IdName">@this.Model.Beeps[i].User.IdName</a>
+                                         
+                                </span>
+                        </td>
+                        <td class="td_cnt">
+                            <div class="text_holder truncated_media_height">
+                                         
+                                @this.Model.Beeps[i].Text
+                                        
+                            </div>
+                        </td>
+                        </tr>
+                        <tr class="tr_info" style="display: none;">
+                                <td class="td_info" colspan="2">0 plurkers shared this</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </td>
+            <td class="dots">
+                 <div class="inner">...</div>
+            </td>
+            <td class="td_response_count">
+                <span class="response_count">2</span>
+            </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+        }else{
+
+          <div id="p776440814" class="plurk" style="visibility: visible; left: 140px; top: 80px;">
+            <table>
+                    <tbody>
+                    <tr>
+                    <td class="td_img">
+                        <div class="p_img">
+                           <img src="@this.Model.Beeps[i].User.ImageUrl ">
+                        </div>
+                    </td>
+                    <td>
+                        <div id="plurk_cnt_776443000" class="plurk_cnt">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                     <td class="td_qual">
+                                         <span style="padding-right:2px">
+                                         <a class="name"  href="/@this.Model.Beeps[i].User.IdName">@this.Model.Beeps[i].User.IdName</a>
+                                         
+                                         </span>
+                                    </td>
+                                    <td class="td_cnt">
+                                        <div class="text_holder truncated_media_height">
+                                         
+                                            @this.Model.Beeps[i].Text
+                                        
+                                        </div>
+                                    </td>
+                                    </tr>
+                                    <tr class="tr_info" style="display: none;">
+                                         <td class="td_info" colspan="2">0 plurkers shared this</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="dots">
+                         <div class="inner">...</div>
+                    </td>
+                    <td class="td_response_count">
+                        <span class="response_count">2</span>
+                    </td>
+                    </tr>
+                    </tbody>
+                </table>
+          </div>
+         } 
+            
+         }
+            
+      }
+    </div>

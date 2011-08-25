@@ -619,7 +619,7 @@ h1.indent {
 	margin-right: 4px;
 }
 .text-mark {
-	background-color: #F3D71E;
+	/*background-color: #F3D71E;*/
     padding: 4px;
 	font-size: 120%;
 }
