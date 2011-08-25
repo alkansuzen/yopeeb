@@ -1191,10 +1191,10 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="BeepoyModel" ZoomLevel="47">
+      <Diagram Name="BeepoyModel" ZoomLevel="28">
         <EntityTypeShape EntityType="MvcBeepoyModel.Beep" Width="1.5" PointX="5.25" PointY="11.375" Height="3.3263964843749996" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.BeepsTag" Width="1.5" PointX="10.5" PointY="12.125" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="MvcBeepoyModel.Event" Width="1.5" PointX="8.25" PointY="11.625" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBeepoyModel.Event" Width="1.5" PointX="8.25" PointY="11.5" Height="4.0956022135416656" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.EventsTag" Width="1.5" PointX="10.5" PointY="9.125" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.Place" Width="1.5" PointX="3" PointY="15.125" Height="3.1340950520833317" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.Tag" Width="1.5" PointX="8.25" PointY="8.125" Height="2.1725878906249996" IsExpanded="true" />
@@ -1203,12 +1203,12 @@
         <EntityTypeShape EntityType="MvcBeepoyModel.TrackUserUser" Width="1.5" PointX="3" PointY="19" Height="2.172587890624996" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcBeepoyModel.User" Width="1.5" PointX="0.75" PointY="8.125" Height="3.3263964843750031" IsExpanded="true" />
         <AssociationConnector Association="MvcBeepoyModel.Beeps_BeepsTags_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="11.412810360580473" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="11.412810360580473" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="11.412810360580473" />
-          <ConnectorPoint PointX="9.941162998393887" PointY="11.412810360580471" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="11.412810360580473" />
-          <ConnectorPoint PointX="11.25" PointY="11.412810360580473" />
+          <ConnectorPoint PointX="6.75" PointY="11.40625" />
+          <ConnectorPoint PointX="9.8227233589743577" PointY="11.40625" />
+          <ConnectorPoint PointX="9.9893900256410255" PointY="11.40625" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.406249999999998" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="11.40625" />
+          <ConnectorPoint PointX="11.25" PointY="11.40625" />
           <ConnectorPoint PointX="11.25" PointY="12.125" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Events_Beeps_FK1" ManuallyRouted="false">
@@ -1241,41 +1241,45 @@
           <ConnectorPoint PointX="10.5" PointY="13.2112939453125" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Events_EventsTags_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="11.687306692307692" />
-          <ConnectorPoint PointX="10.06607443490112" PointY="11.371232257406572" />
-          <ConnectorPoint PointX="10.183925565098878" PointY="11.253381127208815" />
-          <ConnectorPoint PointX="10.19107443490112" PointY="11.246232257406572" />
-          <ConnectorPoint PointX="10.308925565098878" PointY="11.128381127208815" />
-          <ConnectorPoint PointX="10.3125" PointY="11.124806692307693" />
+          <ConnectorPoint PointX="9.75" PointY="11.562306692307692" />
+          <ConnectorPoint PointX="10.06607443490112" PointY="11.246232257406572" />
+          <ConnectorPoint PointX="10.183925565098878" PointY="11.128381127208815" />
+          <ConnectorPoint PointX="10.19107443490112" PointY="11.121232257406572" />
+          <ConnectorPoint PointX="10.308925565098878" PointY="11.003381127208815" />
+          <ConnectorPoint PointX="10.3125" PointY="10.999806692307693" />
           <ConnectorPoint PointX="10.3125" PointY="11.485087890625" />
           <ConnectorPoint PointX="10.5" PointY="11.297587890625" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Events_TrackUsersEvents_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="11.906155846153848" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="11.906155846153848" />
-          <ConnectorPoint PointX="10.208333333333334" PointY="11.906155846153848" />
-          <ConnectorPoint PointX="11.166666666666666" PointY="11.906155846153848" />
-          <ConnectorPoint PointX="11.333333333333334" PointY="11.906155846153848" />
-          <ConnectorPoint PointX="12.135416666666666" PointY="11.906155846153848" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="11.906155846153848" />
-          <ConnectorPoint PointX="13.5" PointY="11.906155846153848" />
+          <ConnectorPoint PointX="9.75" PointY="11.843655846153848" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.843655846153848" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="11.843655846153848" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="11.843655846153848" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="11.843655846153848" />
+          <ConnectorPoint PointX="12.135416666666666" PointY="11.843655846153848" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="11.843655846153848" />
+          <ConnectorPoint PointX="13.5" PointY="11.843655846153848" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Places_Events_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="15.494650065104167" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="15.494650065104167" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="15.494650065104167" />
-          <ConnectorPoint PointX="7.947916666666667" PointY="15.494650065104167" />
-          <ConnectorPoint PointX="8.1145833333333339" PointY="15.494650065104167" />
-          <ConnectorPoint PointX="8.25" PointY="15.494650065104167" />
+          <ConnectorPoint PointX="4.5" PointY="15.360301106770836" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="15.360301106770836" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="15.360301106770836" />
+          <ConnectorPoint PointX="7.947916666666667" PointY="15.360301106770836" />
+          <ConnectorPoint PointX="8.1145833333333339" PointY="15.360301106770836" />
+          <ConnectorPoint PointX="8.25" PointY="15.360301106770836" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Users_Events_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="9.7187504999999987" />
-          <ConnectorPoint PointX="5.916666666666667" PointY="9.7187504999999987" />
-          <ConnectorPoint PointX="6.083333333333333" PointY="9.7187504999999987" />
-          <ConnectorPoint PointX="8" PointY="9.7187504999999987" />
-          <ConnectorPoint PointX="8" PointY="10.547587890625" />
-          <ConnectorPoint PointX="9" PointY="10.547587890625" />
-          <ConnectorPoint PointX="9" PointY="11.625" />
+          <ConnectorPoint PointX="2.004004862182617" PointY="12.02830078125" />
+          <ConnectorPoint PointX="2.004004862182617" PointY="14.857646484375" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="14.857646484375" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="14.857646484375" />
+          <ConnectorPoint PointX="5.6985897435897437" PointY="14.857646484375" />
+          <ConnectorPoint PointX="5.86525641025641" PointY="14.857646484375" />
+          <ConnectorPoint PointX="6.1451282051282048" PointY="14.857646484375" />
+          <ConnectorPoint PointX="6.3117948717948709" PointY="14.857646484375" />
+          <ConnectorPoint PointX="7.947916666666667" PointY="14.857646484375" />
+          <ConnectorPoint PointX="8.1145833333333339" PointY="14.857646484375" />
+          <ConnectorPoint PointX="8.25" PointY="14.857646484375" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Tags_EventsTags_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="9.75" PointY="9.680041445312499" />
@@ -1295,19 +1299,19 @@
           <ConnectorPoint PointX="3" PointY="16.980499674479169" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Users_TrackUsersEvents_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.2773453125" PointY="8.125" />
-          <ConnectorPoint PointX="1.2773453125" PointY="7.875" />
-          <ConnectorPoint PointX="1.7115918229166669" PointY="7.8749999999999991" />
-          <ConnectorPoint PointX="1.8782584895833334" PointY="7.875" />
+          <ConnectorPoint PointX="1.2399900195312499" PointY="8.125" />
+          <ConnectorPoint PointX="1.2399900195312499" PointY="7.875" />
+          <ConnectorPoint PointX="1.7091507057291666" PointY="7.8749999999999991" />
+          <ConnectorPoint PointX="1.8758173723958331" PointY="7.875" />
           <ConnectorPoint PointX="5.916666666666667" PointY="7.8749999999999991" />
           <ConnectorPoint PointX="6.083333333333333" PointY="7.875" />
           <ConnectorPoint PointX="10.25" PointY="7.875" />
-          <ConnectorPoint PointX="10.25" PointY="11.637607310126372" />
-          <ConnectorPoint PointX="11.166666666666666" PointY="11.637607310126372" />
-          <ConnectorPoint PointX="11.333333333333334" PointY="11.637607310126372" />
-          <ConnectorPoint PointX="12.135416666666666" PointY="11.637607310126372" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="11.637607310126372" />
-          <ConnectorPoint PointX="13.5" PointY="11.637607310126372" />
+          <ConnectorPoint PointX="10.25" PointY="11.593700423076923" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="11.593700423076923" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="11.593700423076923" />
+          <ConnectorPoint PointX="12.135416666666666" PointY="11.593700423076923" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="11.593700423076923" />
+          <ConnectorPoint PointX="13.5" PointY="11.593700423076923" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.Users_TrackUsersPlaces_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.2499999999999996" PointY="12.02830078125" />
@@ -1330,31 +1334,27 @@
         <EntityTypeShape EntityType="MvcBeepoyModel.BeepsPlace" Width="1.5" PointX="7.875" PointY="15.875" Height="1.9210009765625031" />
         <EntityTypeShape EntityType="MvcBeepoyModel.BeepsUser" Width="1.5" PointX="10.875" PointY="5.625" Height="1.921000976562496" />
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsEvents_Beeps" >
-          <ConnectorPoint PointX="6.75" PointY="11.521316833113257" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="11.521316833113257" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="11.521316833113257" />
-          <ConnectorPoint PointX="9.8326565258611" PointY="11.521316833113257" />
-          <ConnectorPoint PointX="9.9993231925277684" PointY="11.521316833113257" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="11.521316833113255" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="11.521316833113257" />
-          <ConnectorPoint PointX="11.166666666666666" PointY="11.521316833113257" />
-          <ConnectorPoint PointX="11.333333333333334" PointY="11.521316833113257" />
-          <ConnectorPoint PointX="12.21875" PointY="11.521316833113257" />
+          <ConnectorPoint PointX="6.75" PointY="11.421875" />
+          <ConnectorPoint PointX="9.8070983589743577" PointY="11.421875" />
+          <ConnectorPoint PointX="9.9737650256410255" PointY="11.421875" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.421874999999998" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="11.421875" />
+          <ConnectorPoint PointX="12.21875" PointY="11.421875" />
           <ConnectorPoint PointX="12.21875" PointY="15.25" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsPlaces_Beeps" >
-          <ConnectorPoint PointX="6.75" PointY="11.498316096846864" />
-          <ConnectorPoint PointX="8.03125" PointY="11.498316096846864" />
+          <ConnectorPoint PointX="6.75" PointY="11.390625" />
+          <ConnectorPoint PointX="8.03125" PointY="11.390625" />
           <ConnectorPoint PointX="8.03125" PointY="15.875" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsUsers_Beeps" >
           <ConnectorPoint PointX="6" PointY="11.375" />
-          <ConnectorPoint PointX="6" PointY="6.3421574163818359" />
-          <ConnectorPoint PointX="10.875" PointY="6.3421574163818359" />
+          <ConnectorPoint PointX="6" PointY="6.3734099163818367" />
+          <ConnectorPoint PointX="10.875" PointY="6.3734099163818367" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsEvents_Events" >
-          <ConnectorPoint PointX="9.75" PointY="15.485301106770832" />
-          <ConnectorPoint PointX="10.875" PointY="15.485301106770832" />
+          <ConnectorPoint PointX="9.75" PointY="15.422801106770832" />
+          <ConnectorPoint PointX="10.875" PointY="15.422801106770832" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsPlaces_Places" >
           <ConnectorPoint PointX="4.5" PointY="15.968749999999998" />
@@ -1363,11 +1363,11 @@
           <ConnectorPoint PointX="7.875" PointY="15.968749999999998" />
         </AssociationConnector>
         <AssociationConnector Association="MvcBeepoyModel.FK_BeepsUsers_Users" >
-          <ConnectorPoint PointX="1.7949251562500002" PointY="8.125" />
-          <ConnectorPoint PointX="1.7949251562500002" PointY="7.1218198327636726" />
-          <ConnectorPoint PointX="5.916666666666667" PointY="7.1218198327636717" />
-          <ConnectorPoint PointX="6.083333333333333" PointY="7.1218198327636726" />
-          <ConnectorPoint PointX="10.875" PointY="7.1218198327636726" />
+          <ConnectorPoint PointX="1.7924840390624999" PointY="8.125" />
+          <ConnectorPoint PointX="1.7924840390624999" PointY="7.1167514035034189" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="7.1167514035034181" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="7.1167514035034189" />
+          <ConnectorPoint PointX="10.875" PointY="7.1167514035034189" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

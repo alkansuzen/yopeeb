@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Library\Coordinates.cs" />
     <Compile Include="Library\DateTimeRange.cs" />
+    <Compile Include="Library\TimeLine.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Beep.cs">
       <DependentUpon>BeepoyModel.tt</DependentUpon>

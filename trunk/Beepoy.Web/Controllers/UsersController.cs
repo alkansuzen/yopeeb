@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Beepoy.Web.Models;
 using Beepoy.Web.Filters;
+using Beepoy.Web.Library;
 using System.Configuration;
 using TweetSharp;
 using TweetSharp.Model;
@@ -130,8 +131,12 @@ namespace Beepoy.Web.Controllers
 
         public ActionResult Timeline()
         {
+            //List<Beep> beeps = SessionUser.FollowingBeeps(beep => beep.DateInsert < DateTime.Now);
 
-            return View();
+            TimeLine timeline = TimeLine.Create(Db.Beeps.Where(b => b.DateInsert < DateTime.Now).ToList());
+
+
+            return View(timeline);
         }
 
 
