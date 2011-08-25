@@ -41,7 +41,7 @@ $(function () {
     });
 
     $("#datepicker").datepicker({
-        dateFormat: 'yyyy-mm-dd',
+        //dateFormat: 'yyyy-mm-dd',
         showOn: "button",
         buttonImage: "http://beepoy.com/Content/Images/icons/calendar.png",
         buttonImageOnly: true,
