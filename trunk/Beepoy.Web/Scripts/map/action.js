@@ -101,6 +101,18 @@ function resizeMap(){
 	        $("#latitude").val(marker.getPosition().lat());
 	        $("#longitude").val(marker.getPosition().lng());
 	    });
+
+	    google.maps.event.addListener(marker, 'drag', function () {
+	        geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
+	            if (status == google.maps.GeocoderStatus.OK) {
+	                if (results[0]) {
+	                    $('#address').val(results[0].formatted_address);
+//	                    $('#latitude').val(marker.getPosition().lat());
+//	                    $('#longitude').val(marker.getPosition().lng());
+	                }
+	            }
+	        });
+	    });
 	}
 	/**************************************************
 		
