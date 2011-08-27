@@ -73,9 +73,9 @@ namespace Beepoy.Web.Controllers
                 dtfi.DateSeparator = "-";
                 beep.DateWhen = Convert.ToDateTime(Request["DateWhen"], dtfi);
 
-                place.IdName = place.Latitude.ToString() + "," + place.Longitude.ToString();
                 place.Latitude = Convert.ToDouble(Request["Latitude"]);
                 place.Longitude = Convert.ToDouble(Request["Longitude"]);
+                place.IdName = place.Latitude.ToString() + "," + place.Longitude.ToString();
                 place.Name = "-";
                 place.Description = Request["Address"].ToString();
                 place.User = Db.Users.Find(SessionUser.UserId);
