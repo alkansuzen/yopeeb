@@ -12,7 +12,10 @@ namespace Beepoy.Web.Controllers
 {
     public class AppController : Controller
     {
-        
+        public AppController()
+        {
+        }
+
         //DataBase connection
         private MvcBeepoyEntities db = new MvcBeepoyEntities();
 

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿@using Beepoy.Web.Helpers
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,7 +37,7 @@
     <div id="wrapper">
 
     	<div id="top-bar">
-	        <h6 class="text-hidden"><a href="/" title="Beepoy, rede social de geolocalização">Beepoy</a></h6>
+	        <h6 class="text-hidden"><a href="/" title="Beepoy - what? where? when?">Beepoy</a></h6>
     
 	        <ul class="form">
                 <li>
@@ -71,10 +73,11 @@
                 <li class="user">
                     <a href="" title="" >
             	        <img src="Content/Images/usuario/user.gif" alt="" />
-                        <span>username</span>
+
+                        <span>@SessionHelper.User.IdName</span>
                     </a>
                     <ul>
-                        <li><a href="" title="">Logout</a></li>
+                        <li><a href="/Users/Logout" title="">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -87,7 +90,7 @@
     </div>
   
     
-    <div id="footer" class="stick">
+    <div id="footer">
 
     	
             	<div id="footer-in">

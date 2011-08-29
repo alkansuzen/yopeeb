@@ -108,6 +108,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Library\Coordinates.cs" />
     <Compile Include="Library\DateTimeRange.cs" />
     <Compile Include="Library\TimeLine.cs" />
@@ -324,6 +325,7 @@
     <Content Include="Views\Users\_MarkLine.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="Content\Images\menu\" />
     <Folder Include="Content\Layout01\Images\menu\" />
     <Folder Include="Content\Layout01\js\" />

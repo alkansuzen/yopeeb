@@ -107,6 +107,7 @@ function resizeMap(){
 	            if (status == google.maps.GeocoderStatus.OK) {
 	                if (results[0]) {
 	                    $('#address').val(results[0].formatted_address);
+	                    $(".share-where").css("background-position", "left top");
 //	                    $('#latitude').val(marker.getPosition().lat());
 //	                    $('#longitude').val(marker.getPosition().lng());
 	                }

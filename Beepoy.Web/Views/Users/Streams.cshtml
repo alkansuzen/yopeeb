@@ -1,87 +1,44 @@
 ﻿@model IEnumerable<Beepoy.Web.Models.Beep>
 
-@{
-    
-    bool first = true;
-}
-
 <script type="text/javascript">
     function UpdateBeepsList() {
 
         $.ajax({
             url: '/Users/Streams',
             success: function (data) {
-                //console.log("updateBeeps list success")
-//                console.log(data)
                 $(".streams").prepend(data)
             }
         });
 
     }
 
-//    setInterval(UpdateBeepsList, 100000);
+    //    setInterval(UpdateBeepsList, 100000);
 </script>
-
-
-
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     
-                 	<li>
-                    	
-                        <div 
-                             @{
-                                 if ( first){ 
-                             
-                               
-                               @: class="hover"
-                                    
-                              first = false;
-                              } 
-                                    
-                           }
-                        
-                        >
- 
-                            
-                        </div>
-                    	
-                        <div class="face">
-                        
-                        	<img class="img-face" src="@Html.DisplayFor(modelItem => item.User.ImageUrl)" />
-                            
-                            <span class="face-name">@@@Html.DisplayFor(modelItem => item.User.IdName)</span>
-                        
-                        </div>
-
-                        <div class="item-date">2 hours ago</div>
-                        
-                        <div class="item-info">
-
-                        
-                            <div class="item-text">
-                            
-                            	@Html.DisplayFor(modelItem => item.Text)
-                            
-                            </div>
-                            
-                            <div class="item-link item-link-firstitem item-link-place" title="LabOne Systems S/A">
-
-                                <span class="text">$Place</span>
-                        	
-                            </div>
-                            
-                            <div class="item-link item-link-date" title="Jun 05, 1986">
-                       			
-                                <span class="text">@Html.DisplayFor(modelItem => item.DateInsert)</span>
-                        	
-                            </div>
-                        
-                        </div>
-                        
-                    
-                    </li> 
+    <li>
+        <div>
+        </div>
+        <div class="face">
+            <img class="img-face" src="@Html.DisplayFor(modelItem => item.User.ImageUrl)" />
+            <span class="face-name">@@@Html.DisplayFor(modelItem => item.User.IdName)</span>
+        </div>
+        <div class="item-date">
+            2 hours ago</div>
+        <div class="item-info">
+            <div class="item-text">
+                @Html.DisplayFor(modelItem => item.Text)
+            </div>
+            <div class="item-link item-link-firstitem item-link-place" title="LabOne Systems S/A">
+                <span class="text">$Place</span>
+            </div>
+            <div class="item-link item-link-date" title="Jun 05, 1986">
+                <span class="text">@Html.DisplayFor(modelItem => item.DateInsert)</span>
+            </div>
+        </div>
+    </li> 
     
     
 
 }
-
