@@ -18,11 +18,11 @@ body {
 
 #header-bg {
 	background: url(Images/backgrounds/top-bar.png) repeat-x scroll 0 0 transparent;
-    height: 58px;
-    width: 100%;
-    position: fixed;
-    left: 0px;
-    z-index: 2;
+	height: 58px;
+	width: 100%;
+	position:absolute;
+	left: 0px;
+	z-index: 0;
 	
 }
 
@@ -231,14 +231,14 @@ h1.indent {
 }
 
 #menu-l {
-    position: absolute;
-    top: 71px;
-    width: 298px;
-    height: 658px;
-    z-index: 1;
-    float: left;
-    text-align: left;
-    margin-bottom: 28px;
+	position: relative;
+	top: 15px;
+	width: 298px;
+	height: 658px;
+	z-index: 1;
+	float: left;
+	text-align: left;
+	margin-bottom: 28px;
 }
 
 #menu-l #results {
@@ -727,7 +727,7 @@ span.menu-where .add-event {
     background-color: #FFFFFF;
     border-bottom: 2px solid #FBEF7A;
     float: left;
-    height: 130px;
+    height: 140px;
     width: 298px;
 }
 
@@ -824,16 +824,20 @@ span.menu-where .add-event {
 }
 
 #share a.share-when {
-    /*background: url(Images/icons/calendar.png) no-repeat scroll left bottom transparent;*/
     float: left;
     height: 24px;
-    width: 30px;
 	color: #000;
 }
 
 #share a.share-when input 
 {
-    width: 0px;
+    border: 0 solid #FF0000;
+    color: #999999;
+    font-size: 12px;
+    left: 83px;
+    position: absolute;
+    top: 131px;
+    width: 65px;
 }
 
 
@@ -989,11 +993,21 @@ span.menu-where .add-event {
 #content.sticky 
 {
     position:fixed !important; 
-    top: 59px;
+    bottom:290px;
 }
 
 #timeline.sticky 
 {
     position:fixed !important;
-    top: 516px;
+    bottom:85px;
+}
+
+#address 
+{
+    border: 1px none;
+    color: #999999;
+    font-size: 12px;
+    margin-top: 2px;
+    visibility: visible;
+    width: 265px;
 }

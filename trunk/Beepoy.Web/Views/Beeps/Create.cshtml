@@ -36,20 +36,6 @@
     @Html.ValidationSummary(true)
                 	<div class="share-itens">
                     <div id="loading">Loading...</div>
-                    <!--div id="result"></div>    
-                    @Html.ValidationMessageFor(model => model.Text)    
-
-                    @Html.DropDownList("PlaceId", String.Empty)
-
-                	<span class="share-title">Share: </span>
-                    
-                    <a href="#" class="share-status"> Status </a>
-
-                    <a href="#" class="share-photo"> Photo </a>
-                    
-                    <a href="#" class="share-link"> Link </a>
-                    
-                    <a href="#" class="share-video"> Video </a -->
                     
                     <div class="share-box">
                         <label for="teste"><em>What's happening?</em></label>
@@ -61,7 +47,7 @@
                     	<a class="share-where" href="#" title="Where?"></a>
 
                         <a class="share-when" href="#" title="When?">
-                            <input type="text" id="datepicker" name="DateWhen" style="visibility: hidden" />
+                            <input type="text" id="datepicker" name="DateWhen" value="Now"/>
                         </a>
                         
                         <!-- a class="share-lock" href="#"></a -->
