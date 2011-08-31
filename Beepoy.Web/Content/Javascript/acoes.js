@@ -37,6 +37,7 @@ $(function () {
 
     // Beep Action
     $("a.share-beep").click(function () {
+        //$("#DateNow").attr("value", new Date().get);
         $("form").submit();
     });
 
@@ -106,15 +107,31 @@ $(function () {
 		}
 	);
 
+    var infoWindowBeep;
     $(".streams li").live('click', function () {
 
         var beepLatLng = new google.maps.LatLng($(this).attr("lat"), $(this).attr("lng"));
 
-        marker.setPosition(beepLatLng);
-        map.setCenter(beepLatLng);
+        //map.setCenter(beepLatLng);
+        map.panTo(beepLatLng);
         //map.setZoom(15);
 
+        if (infoWindowBeep != null)
+            infoWindowBeep.close();
+        infoWindowBeep = new google.maps.InfoWindow();
+        infoWindowBeep.setContent("Beep?");
+        infoWindowBeep.setPosition(beepLatLng);
+        infoWindowBeep.open(map);
+
+        marker.setPosition(beepLatLng);
+
     });
+
+
+    //    $("input").keyup(function () {
+    //        var value = $(this).val();
+    //        $("p").text(value);
+    //    }).keyup();
 
 });
 
