@@ -17,7 +17,7 @@
 @foreach (var item in Model)
 {
     
-    <li>
+    <li lat="@beephelper.showLatitude(item)" lng="@beephelper.showLongitude(item)">
         <div>
         </div>
         <div class="face">
@@ -38,7 +38,7 @@
             </div>
         </div>
     </li> 
-    
+                       
     
 
 }

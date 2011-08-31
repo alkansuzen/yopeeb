@@ -292,6 +292,7 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\beephelper.cshtml" />
     <None Include="Models\BeepoyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BeepoyModel.Context.cs</LastGenOutput>
@@ -325,7 +326,6 @@
     <Content Include="Views\Users\_MarkLine.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="Content\Images\menu\" />
     <Folder Include="Content\Layout01\Images\menu\" />
     <Folder Include="Content\Layout01\js\" />

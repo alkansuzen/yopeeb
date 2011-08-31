@@ -106,6 +106,16 @@ $(function () {
 		}
 	);
 
+    $(".streams li").live('click', function () {
+
+        var beepLatLng = new google.maps.LatLng($(this).attr("lat"), $(this).attr("lng"));
+
+        marker.setPosition(beepLatLng);
+        map.setCenter(beepLatLng);
+        //map.setZoom(15);
+
+    });
+
 });
 
 function calcScrollLeftPos() {

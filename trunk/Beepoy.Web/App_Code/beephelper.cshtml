@@ -1,0 +1,28 @@
+﻿@using Beepoy.Web.Models;
+
+@helper showLatitude( Beep beep) {
+    
+    int length = 8;
+    string strLat = beep.BeepsPlaces.First().Place.Latitude.ToString();
+        
+    if (strLat.Length > length) {
+        @strLat.Replace(",", ".").Remove(length)
+    } else {
+        @strLat
+    }
+    
+}
+
+
+@helper showLongitude( Beep beep) {
+    
+    int length = 8;
+    string strLgn = beep.BeepsPlaces.First().Place.Longitude.ToString();
+
+    if (strLgn.Length > length) {
+        @strLgn.Replace(",", ".").Remove(length)
+    } else {
+        @strLgn
+    }
+    
+}

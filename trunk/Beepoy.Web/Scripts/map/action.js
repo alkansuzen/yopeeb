@@ -87,7 +87,7 @@ function resizeMap(){
 	    /*Colocar no evento onde selecionará local*/
 	    var image = 'http://beepoy.com/Content/Images/icons/bee64.png';
 	    var myLatLng = new google.maps.LatLng(location.latitude, location.longitude);
-	    var marker = new google.maps.Marker({
+	    marker = new google.maps.Marker({
 	        position: myLatLng,
 	        map: map,
 	        icon: image,
@@ -115,6 +115,7 @@ function resizeMap(){
 	        });
 	    });
 	}
+
 	/**************************************************
 		
 	Mecanismo de busca

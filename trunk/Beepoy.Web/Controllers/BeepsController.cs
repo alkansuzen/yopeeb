@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Beepoy.Web.Models;
 using Beepoy.Web.Library;
 using Beepoy.Web.Filters;
+using System.Globalization;
 
 namespace Beepoy.Web.Controllers
 {
@@ -73,8 +74,11 @@ namespace Beepoy.Web.Controllers
                 dtfi.DateSeparator = "-";
                 beep.DateWhen = Convert.ToDateTime(Request["DateWhen"], dtfi);
 
-                place.Latitude = Convert.ToDouble(Request["Latitude"]);
-                place.Longitude = Convert.ToDouble(Request["Longitude"]);
+                CultureInfo ci = new CultureInfo("en-US");
+                ci.NumberFormat.NumberDecimalDigits = 5;
+
+                place.Latitude = double.Parse(Request["Latitude"], ci.NumberFormat);
+                place.Longitude = double.Parse(Request["Longitude"], ci.NumberFormat);
                 place.IdName = place.Latitude.ToString() + "," + place.Longitude.ToString();
                 place.Name = "-";
                 place.Description = Request["Address"].ToString();
